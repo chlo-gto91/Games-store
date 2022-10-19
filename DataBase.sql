@@ -1,11 +1,53 @@
 CREATE DATABASE if not exists Gameshop_database;
 USE Gameshop_database;
 
+DROP TABLE if exists store;
+DROP TABLE if exists editor;
 DROP TABLE if exists client;
 DROP TABLE if exists game;
-DROP TABLE if exists editor;
-DROP TABLE if exists shop;
 
+CREATE TABLE store(
+   Id_store INT,
+   nb_game INT,
+   adress VARCHAR(50),
+   grade INT,
+   store_name VARCHAR(50),
+   PRIMARY KEY(Id_store)
+);
+
+CREATE TABLE editor(
+   ID_editor VARCHAR(50),
+   editor_name VARCHAR(50),
+   PRIMARY KEY(ID_editor)
+);
+
+CREATE TABLE client(
+   ID_client INT,
+   age INT,
+   client_name VARCHAR(50),
+   surname VARCHAR(50),
+   phone VARCHAR(50),
+   list_sale VARCHAR(50),
+   mail_adress VARCHAR(50),
+   Id_store INT NOT NULL,
+   PRIMARY KEY(ID_client),
+   FOREIGN KEY(Id_store) REFERENCES store(Id_store)
+);
+
+CREATE TABLE game(
+   ID_game INT,
+   price INT,
+   game_description VARCHAR(50),
+   game_name VARCHAR(50),
+   category VARCHAR(50),
+   ID_editor VARCHAR(50) NOT NULL,
+   Id_store INT NOT NULL,
+   ID_client INT,
+   PRIMARY KEY(ID_game),
+   FOREIGN KEY(ID_editor) REFERENCES editor(ID_editor),
+   FOREIGN KEY(Id_store) REFERENCES store(Id_store),
+   FOREIGN KEY(ID_client) REFERENCES client(ID_client)
+);
 
 insert into client values ("1","20","Gattino","Chloé","0625126117","Mario kart 8","chloegattino5@gmail.com");
 insert into client values ("2","17","Cantrelle","Noa","0785896324","Wii sport resort","noacantrelle@efrei.net");
