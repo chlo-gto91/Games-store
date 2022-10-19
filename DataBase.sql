@@ -73,5 +73,19 @@ insert into game values ("7","45","basketball game based on the National Basketb
 insert into game values ("8","49","tennis management game", "Tennis manager 2022");
 insert into game values ("9","30","2D side-scrolling platform video game", "Rayman Legends Definitive");
 
-insert into editor values ("1","Electronic Arts"); 
-insert into editor values ("2","Nitendo"); 
+insert into editor values ("1","Electronic Arts"); --Fifa
+insert into editor values ("2","Nitendo"); -- Mario, Animal crossing, Wii sport
+insert into editor values ("3","Activision");
+insert into editor values ("4","Blizzard");
+insert into editor values ("5","Take Two Interactive"); -- NBA 2K
+insert into editor values ("6","Epic Games");
+insert into editor values ("7","Warner Bros");
+insert into editor values ("8","Ubisoft"); -- Assassin, Rayman
+insert into editor values ("9","Gameloft");
+insert into editor values ("10","Tencent");
+insert into editor values ("11","Square Enix");
+insert into editor values ("12","SEGA");
+insert into editor values ("13","Bandai Namco");
+insert into editor values ("14","Mojang Studios"); -- Minecraft
+insert into editor values ("15","Rebound CG"); -- Tennis manager 2022
+
