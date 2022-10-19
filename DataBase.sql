@@ -1,0 +1,26 @@
+insert into client values ("1","20","Gattino","Chloé","0625126117","Mario kart 8","chloegattino5@gmail.com");
+insert into client values ("2","17","Cantrelle","Noa","0785896324","Wii sport resort","noacantrelle@efrei.net");
+insert into client values ("3","31","Rey","Pierre","0698741236","Assassin's Creed Origins","pierre.rey@efrei.net");
+insert into client values ("4","14","Gattino","Manon","0652741670","Mario kart 8","gattinomanon@gmail.com");
+insert into client values ("5","25","Michot","Marie","0766984610","Minecraft","marie.michot@efrei.net");
+insert into client values ("6","38","Harry","Potter","0620000000","Fifa 23","Harry.potter@efrei.net");
+insert into client values ("7","45","Chapron","Nathalie","0645987632","Animal Crossing","nathalie.chapron@efrei.net");
+insert into client values ("8","18","Hecq","Guerlyn","0699765213","NBA 2K23","guerlynhecq@gmail.com");
+insert into client values ("9","17","Pinto","Martin","0755264890","Tennis manager 2022","martin.pinto@gmail.com");
+insert into client values ("10","14","Gattino","Manon","0652741670","Animal Crossing","gattinomanon@gmail.com");
+insert into client values ("11","22","Prim","Lorraine","0650020491","Rayman Legends Definitive","primlorraine@gmail.com");
+
+insert into store values ("1","20","81 route de Saint Germain, 78640", "4","Gameshop");
+
+insert into game values ("1","55","frenzied karting races in the universe of super mario", "Mario kart 8");
+insert into game values ("2","48","Family sports game", "Wii sport resort");
+insert into game values ("3","30","action-adventure open-world stealth game", "Assassin's Creed Origins");
+insert into game values ("4","20","players explore a blocky, procedurally generated 3D world with virtually infinite terrain and may discover and extract raw materials", "Minecraft");
+insert into game values ("5","70","football game that allows the player to develop his favorite team", "Fifa 23");
+insert into game values ("6","52","series of life simulation games in which players control an avatar who starts a new life, in a city full of eccentric animals", "Animal Crossing");
+insert into game values ("7","45","basketball game based on the National Basketball Association", "NBA 2K23");
+insert into game values ("8","49","tennis management game", "Tennis manager 2022");
+insert into game values ("9","30","2D side-scrolling platform video game", "Rayman Legends Definitive");
+
+insert into editor values ("1","Electronic Arts"); 
+insert into editor values ("2","Nitendo"); 
