@@ -1,2 +1,3 @@
 # Games-store
-rfrfrfrfrf
+19/10 
+Starting diagrams and SQL data base
