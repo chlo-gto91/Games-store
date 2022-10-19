@@ -1,3 +1,12 @@
+CREATE DATABASE if not exists Gameshop_database;
+USE Gameshop_database;
+
+DROP TABLE if exists client;
+DROP TABLE if exists game;
+DROP TABLE if exists editor;
+DROP TABLE if exists shop;
+
+
 insert into client values ("1","20","Gattino","Chloé","0625126117","Mario kart 8","chloegattino5@gmail.com");
 insert into client values ("2","17","Cantrelle","Noa","0785896324","Wii sport resort","noacantrelle@efrei.net");
 insert into client values ("3","31","Rey","Pierre","0698741236","Assassin's Creed Origins","pierre.rey@efrei.net");
