@@ -22,7 +22,7 @@ CREATE TABLE editor(
 );
 
 CREATE TABLE client(
-   ID_client INT,
+   ID_client INT auto_increment,
    age INT,
    client_name VARCHAR(50),
    surname VARCHAR(50),
@@ -89,3 +89,5 @@ insert into editor values ("13","Bandai Namco");
 insert into editor values ("14","Mojang Studios"); -- Minecraft
 insert into editor values ("15","Rebound CG"); -- Tennis manager 2022
 
+ATLER TABLE client
+ADD CONSTRAINT phone CHECK (BETWEEN "0600000000" AND "0799999999");
