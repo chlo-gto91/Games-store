@@ -91,3 +91,4 @@ insert into editor values ("15","Rebound CG"); -- Tennis manager 2022
 
 ATLER TABLE client
 ADD CONSTRAINT phone CHECK (BETWEEN "0600000000" AND "0799999999");
+ADD CONSTRAINT ck_age CHECK ( age BETWEEN 16 AND 90);
