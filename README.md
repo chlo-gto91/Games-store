@@ -1,5 +1,4 @@
 # Games-store
 
 19/10 Starting diagrams and SQL data base
-
-test dernier
+ jhgk
