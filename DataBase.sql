@@ -6,15 +6,6 @@ DROP TABLE if exists editor;
 DROP TABLE if exists client;
 DROP TABLE if exists game;
 
-CREATE TABLE store(
-   Id_store INT auto_increment,
-   nb_game INT,
-   adress VARCHAR(50),
-   grade INT,
-   store_name VARCHAR(50),
-   PRIMARY KEY(Id_store)
-);
-
 CREATE TABLE editor(
    ID_editor INT auto_increment,
    editor_name VARCHAR(50),
@@ -63,15 +54,15 @@ insert into client values (NULL,"22","Prim","Lorraine","0650020491","Rayman Lege
 
 insert into store values (NULL,"20","81 route de Saint Germain, 78640", "4","Gameshop");
 
-insert into game values (NULL,"55","frenzied karting races in the universe of super mario", "Mario kart 8");
-insert into game values (NULL,"48","Family sports game", "Wii sport resort");
-insert into game values (NULL,"30","action-adventure open-world stealth game", "Assassin's Creed Origins");
-insert into game values (NULL,"20","players explore a blocky, procedurally generated 3D world with virtually infinite terrain and may discover and extract raw materials", "Minecraft");
-insert into game values (NULL,"70","football game that allows the player to develop his favorite team", "Fifa 23");
-insert into game values (NULL,"52","series of life simulation games in which players control an avatar who starts a new life, in a city full of eccentric animals", "Animal Crossing");
-insert into game values (NULL,"45","basketball game based on the National Basketball Association", "NBA 2K23");
-insert into game values (NULL,"49","tennis management game", "Tennis manager 2022");
-insert into game values (NULL,"30","2D side-scrolling platform video game", "Rayman Legends Definitive");
+insert into game values (NULL,55,"frenzied karting races in the universe of super mario", "Mario kart 8");
+insert into game values (NULL,48,"Family sports game", "Wii sport resort");
+insert into game values (NULL,30,"action-adventure open-world stealth game", "Assassin's Creed Origins");
+insert into game values (NULL,20,"players explore a blocky, procedurally generated 3D world with virtually infinite terrain and may discover and extract raw materials", "Minecraft");
+insert into game values (NULL,70,"football game that allows the player to develop his favorite team", "Fifa 23");
+insert into game values (NULL,52,"series of life simulation games in which players control an avatar who starts a new life, in a city full of eccentric animals", "Animal Crossing");
+insert into game values (NULL,45,"basketball game based on the National Basketball Association", "NBA 2K23");
+insert into game values (NULL,49,"tennis management game", "Tennis manager 2022");
+insert into game values (NULL,30,"2D side-scrolling platform video game", "Rayman Legends Definitive");
 
 insert into editor values (NULL,"Electronic Arts"); --Fifa
 insert into editor values (NULL,"Nitendo"); -- Mario, Animal crossing, Wii sport
