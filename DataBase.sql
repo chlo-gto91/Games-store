@@ -6,15 +6,6 @@ DROP TABLE if exists editor;
 DROP TABLE if exists client;
 DROP TABLE if exists game;
 
-CREATE TABLE store(
-   Id_store INT auto_increment,
-   nb_game INT,
-   adress VARCHAR(50),
-   grade INT,
-   store_name VARCHAR(50),
-   PRIMARY KEY(Id_store)
-);
-
 CREATE TABLE editor(
    ID_editor INT auto_increment,
    editor_name VARCHAR(50),
