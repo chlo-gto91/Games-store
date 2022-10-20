@@ -52,8 +52,6 @@ insert into client values (NULL,17,"Pinto","Martin","0755264890","Tennis manager
 insert into client values (NULL,14,"Gattino","Manon","0652741670","Animal Crossing","gattinomanon@gmail.com");
 insert into client values (NULL,22,"Prim","Lorraine","0650020491","Rayman Legends Definitive","primlorraine@gmail.com");
 
-insert into store values (NULL,20,"81 route de Saint Germain, 78640", "4","Gameshop");
-
 insert into game values (NULL,55,"frenzied karting races in the universe of super mario", "Mario kart 8");
 insert into game values (NULL,48,"Family sports game", "Wii sport resort");
 insert into game values (NULL,30,"action-adventure open-world stealth game", "Assassin's Creed Origins");
