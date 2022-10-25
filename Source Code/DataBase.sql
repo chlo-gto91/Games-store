@@ -7,34 +7,31 @@ DROP TABLE if exists client;
 DROP TABLE if exists game;
 
 CREATE TABLE client(
-   ID_client INT,
+   ID_client INT auto_increment PRIMARY KEY,
    client_age INT,
    client_name VARCHAR(50),
    lastname VARCHAR(50),
    phone VARCHAR(50),
    list_sale VARCHAR(50),
    mail_adress VARCHAR(50),
-   PRIMARY KEY(ID_client)
 );
 
 CREATE TABLE editor(
-   ID_editor VARCHAR(50),
+   ID_editor INT auto_increment PRIMARY KEY,
    editor_name VARCHAR(50),
    creation_date VARCHAR(50),
    country VARCHAR(50),
    number_games VARCHAR(50),
-   PRIMARY KEY(ID_editor)
 );
 
 CREATE TABLE game(
-   ID_game INT,
+   ID_game INT auto_increment PRIMARY KEY,
    price INT,
    game_description VARCHAR(50),
    game_name VARCHAR(50),
    category VARCHAR(50),
    ID_editor VARCHAR(50) NOT NULL,
    ID_client INT,
-   PRIMARY KEY(ID_game),
    FOREIGN KEY(ID_editor) REFERENCES editor(ID_editor),
    FOREIGN KEY(ID_client) REFERENCES client(ID_client)
 );
