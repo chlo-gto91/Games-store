@@ -62,11 +62,11 @@ insert into game values (NULL,49,"tennis management game", "Tennis manager 2022"
 insert into game values (NULL,30,"2D side-scrolling platform video game", "Rayman Legends Definitive");
 
 insert into editor values (NULL,"Electronic Arts", "1982", "USA","348"); --Fifa 1982
-insert into editor values (NULL,"Nitendo", "1889", "Japon"); -- Mario, Animal crossing, Wii sport
-insert into editor values (NULL,"Activision", "1979", "USA");
+insert into editor values (NULL,"Nitendo", "1889", "Japon","924"); -- Mario, Animal crossing, Wii sport
+insert into editor values (NULL,"Activision", "1979", "USA","");
 insert into editor values (NULL,"Blizzard", "1991", "USA");
-insert into editor values (NULL,"Take Two Interactive", "1993", "USA"); -- NBA 2K
-insert into editor values (NULL,"Epic Games", "1991", "USA");
+insert into editor values (NULL,"Take Two Interactive", "1993", "USA","87"); -- NBA 2K
+insert into editor values (NULL,"Epic Games", "1991", "USA","471");
 insert into editor values (NULL,"Warner Bros", "1923", "USA");
 insert into editor values (NULL,"Ubisoft","1986","France","108"); -- Assassin, Rayman
 insert into editor values (NULL,"Gameloft","1999","France");
