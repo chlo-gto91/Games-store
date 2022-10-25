@@ -61,21 +61,21 @@ insert into game values (NULL,45,"basketball game based on the National Basketba
 insert into game values (NULL,49,"tennis management game", "Tennis manager 2022");
 insert into game values (NULL,30,"2D side-scrolling platform video game", "Rayman Legends Definitive");
 
-insert into editor values (NULL,"Electronic Arts", "1982", "Etats-Unis"); --Fifa 1982
+insert into editor values (NULL,"Electronic Arts", "1982", "USA"); --Fifa 1982
 insert into editor values (NULL,"Nitendo", "1889", "Japon"); -- Mario, Animal crossing, Wii sport
-insert into editor values (NULL,"Activision", "1979", "Etats-Unis");
-insert into editor values (NULL,"Blizzard", "1991", "Etats-Unis");
-insert into editor values (NULL,"Take Two Interactive", "1993", "Etats-Unis"); -- NBA 2K
-insert into editor values (NULL,"Epic Games", "1991", "Etats-Unis");
-insert into editor values (NULL,"Warner Bros", "1923", "Etats-Unis");
-insert into editor values (NULL,"Ubisoft"); -- Assassin, Rayman
-insert into editor values (NULL,"Gameloft");
-insert into editor values (NULL,"Tencent");
-insert into editor values (NULL,"Square Enix");
-insert into editor values (NULL,"SEGA");
-insert into editor values (NULL,"Bandai Namco");
-insert into editor values (NULL,"Mojang Studios"); -- Minecraft
-insert into editor values (NULL,"Rebound CG"); -- Tennis manager 2022
+insert into editor values (NULL,"Activision", "1979", "USA");
+insert into editor values (NULL,"Blizzard", "1991", "USA");
+insert into editor values (NULL,"Take Two Interactive", "1993", "USA"); -- NBA 2K
+insert into editor values (NULL,"Epic Games", "1991", "USA");
+insert into editor values (NULL,"Warner Bros", "1923", "USA");
+insert into editor values (NULL,"Ubisoft","1986","France); -- Assassin, Rayman
+insert into editor values (NULL,"Gameloft","1999","France");
+insert into editor values (NULL,"Tencent","1998","Chine");
+insert into editor values (NULL,"Square Enix","2003","Japon");
+insert into editor values (NULL,"SEGA","1951","USA);
+insert into editor values (NULL,"Bandai Namco","2006","Japon");
+insert into editor values (NULL,"Mojang Studios","2009","Suède"); -- Minecraft
+insert into editor values (NULL,"Rebound CG","2017","France"); -- Tennis manager 2022
 
 ATLER TABLE client
 ADD CONSTRAINT ck_phone CHECK (phone BETWEEN "0600000000" AND "0799999999");
