@@ -60,8 +60,8 @@ insert into game values (NULL,30,"2D side-scrolling platform video game", "Rayma
 
 insert into editor values (NULL,"Electronic Arts", "1982", "USA","348"); --Fifa 1982
 insert into editor values (NULL,"Nitendo", "1889", "Japon","924"); -- Mario, Animal crossing, Wii sport
-insert into editor values (NULL,"Activision", "1979", "USA","");
-insert into editor values (NULL,"Blizzard", "1991", "USA");
+insert into editor values (NULL,"Activision", "1979", "USA","145");
+insert into editor values (NULL,"Blizzard", "1991", "USA","19");
 insert into editor values (NULL,"Take Two Interactive", "1993", "USA","87"); -- NBA 2K
 insert into editor values (NULL,"Epic Games", "1991", "USA","471");
 insert into editor values (NULL,"Warner Bros", "1923", "USA","10");
@@ -71,7 +71,7 @@ insert into editor values (NULL,"Tencent","1998","Chine");
 insert into editor values (NULL,"Square Enix","2003","Japon");
 insert into editor values (NULL,"SEGA","1951","USA");
 insert into editor values (NULL,"Bandai Namco","2006","Japon");
-insert into editor values (NULL,"Mojang Studios","2009","Suède"); -- Minecraft
+insert into editor values (NULL,"Mojang Studios","2009","Suède","14"); -- Minecraft
 insert into editor values (NULL,"Rebound CG","2017","France"); -- Tennis manager 2022
 
 ATLER TABLE client
