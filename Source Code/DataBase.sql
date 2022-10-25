@@ -6,29 +6,35 @@ DROP TABLE if exists editor;
 DROP TABLE if exists client;
 DROP TABLE if exists game;
 
-CREATE TABLE editor(
-   ID_editor INT auto_increment PRIMARY KEY,
-   editor_name VARCHAR(50),
-);
-
 CREATE TABLE client(
-   ID_client INT auto_increment PRIMARY KEY,
-   age INT,
+   ID_client INT,
+   client_age INT,
    client_name VARCHAR(50),
-   surname VARCHAR(50),
+   lastname VARCHAR(50),
    phone VARCHAR(50),
    list_sale VARCHAR(50),
    mail_adress VARCHAR(50),
+   PRIMARY KEY(ID_client)
+);
+
+CREATE TABLE editor(
+   ID_editor VARCHAR(50),
+   editor_name VARCHAR(50),
+   creation_date VARCHAR(50),
+   country VARCHAR(50),
+   number_games VARCHAR(50),
+   PRIMARY KEY(ID_editor)
 );
 
 CREATE TABLE game(
-   ID_game INT auto_increment PRIMARY KEY,,
+   ID_game INT,
    price INT,
    game_description VARCHAR(50),
    game_name VARCHAR(50),
    category VARCHAR(50),
    ID_editor VARCHAR(50) NOT NULL,
    ID_client INT,
+   PRIMARY KEY(ID_game),
    FOREIGN KEY(ID_editor) REFERENCES editor(ID_editor),
    FOREIGN KEY(ID_client) REFERENCES client(ID_client)
 );
@@ -55,13 +61,13 @@ insert into game values (NULL,45,"basketball game based on the National Basketba
 insert into game values (NULL,49,"tennis management game", "Tennis manager 2022");
 insert into game values (NULL,30,"2D side-scrolling platform video game", "Rayman Legends Definitive");
 
-insert into editor values (NULL,"Electronic Arts"); --Fifa
-insert into editor values (NULL,"Nitendo"); -- Mario, Animal crossing, Wii sport
-insert into editor values (NULL,"Activision");
-insert into editor values (NULL,"Blizzard");
-insert into editor values (NULL,"Take Two Interactive"); -- NBA 2K
-insert into editor values (NULL,"Epic Games");
-insert into editor values (NULL,"Warner Bros");
+insert into editor values (NULL,"Electronic Arts", "1982", "Etats-Unis"); --Fifa 1982
+insert into editor values (NULL,"Nitendo", "1889", "Japon"); -- Mario, Animal crossing, Wii sport
+insert into editor values (NULL,"Activision", "1979", "Etats-Unis");
+insert into editor values (NULL,"Blizzard", "1991", "Etats-Unis");
+insert into editor values (NULL,"Take Two Interactive", "1993", "Etats-Unis"); -- NBA 2K
+insert into editor values (NULL,"Epic Games", "1991", "Etats-Unis");
+insert into editor values (NULL,"Warner Bros", "1923", "Etats-Unis");
 insert into editor values (NULL,"Ubisoft"); -- Assassin, Rayman
 insert into editor values (NULL,"Gameloft");
 insert into editor values (NULL,"Tencent");
