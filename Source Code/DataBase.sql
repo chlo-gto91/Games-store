@@ -61,7 +61,7 @@ insert into game values (NULL,45,"basketball game based on the National Basketba
 insert into game values (NULL,49,"tennis management game", "Tennis manager 2022");
 insert into game values (NULL,30,"2D side-scrolling platform video game", "Rayman Legends Definitive");
 
-insert into editor values (NULL,"Electronic Arts", "1982", "USA"); --Fifa 1982
+insert into editor values (NULL,"Electronic Arts", "1982", "USA","348"); --Fifa 1982
 insert into editor values (NULL,"Nitendo", "1889", "Japon"); -- Mario, Animal crossing, Wii sport
 insert into editor values (NULL,"Activision", "1979", "USA");
 insert into editor values (NULL,"Blizzard", "1991", "USA");
