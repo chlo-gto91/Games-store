@@ -68,11 +68,11 @@ insert into editor values (NULL,"Blizzard", "1991", "USA");
 insert into editor values (NULL,"Take Two Interactive", "1993", "USA"); -- NBA 2K
 insert into editor values (NULL,"Epic Games", "1991", "USA");
 insert into editor values (NULL,"Warner Bros", "1923", "USA");
-insert into editor values (NULL,"Ubisoft","1986","France); -- Assassin, Rayman
+insert into editor values (NULL,"Ubisoft","1986","France","108"); -- Assassin, Rayman
 insert into editor values (NULL,"Gameloft","1999","France");
 insert into editor values (NULL,"Tencent","1998","Chine");
 insert into editor values (NULL,"Square Enix","2003","Japon");
-insert into editor values (NULL,"SEGA","1951","USA);
+insert into editor values (NULL,"SEGA","1951","USA");
 insert into editor values (NULL,"Bandai Namco","2006","Japon");
 insert into editor values (NULL,"Mojang Studios","2009","Suède"); -- Minecraft
 insert into editor values (NULL,"Rebound CG","2017","France"); -- Tennis manager 2022
