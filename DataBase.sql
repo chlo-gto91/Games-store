@@ -19,8 +19,6 @@ CREATE TABLE client(
    phone VARCHAR(50),
    list_sale VARCHAR(50),
    mail_adress VARCHAR(50),
-   Id_store INT NOT NULL,
-   FOREIGN KEY(Id_store) REFERENCES store(Id_store)
 );
 
 CREATE TABLE game(
@@ -30,10 +28,8 @@ CREATE TABLE game(
    game_name VARCHAR(50),
    category VARCHAR(50),
    ID_editor VARCHAR(50) NOT NULL,
-   Id_store INT NOT NULL,
    ID_client INT,
    FOREIGN KEY(ID_editor) REFERENCES editor(ID_editor),
-   FOREIGN KEY(Id_store) REFERENCES store(Id_store),
    FOREIGN KEY(ID_client) REFERENCES client(ID_client)
 );
 
