@@ -84,6 +84,9 @@ insert into game values (NULL,52,"Series of life simulation games in which playe
 insert into game values (NULL,45,"Basketball game based on the National Basketball Association", "NBA 2K23","Sport",6);
 insert into game values (NULL,49,"Tennis management game", "Tennis manager 2022","Sport",4);
 insert into game values (NULL,30,"2D side-scrolling platform video game", "Rayman Legends Definitive","Adventure",10);
+insert into game values (NULL, 70,"Worlds are colliding in Sonic the Hedgehog’s newest high-speed adventure!","Sonic FRONTIERS", "Adventure", 50);
+sinert into game values (NULL, 60,"Relive the story of Goku and other Z Fighters in DRAGON BALL Z: KAKAROT!", "Dragon Ball Z: Kakarot", 30);
+
 
 insert into editor values (NULL,"Electronic Arts"); --Fifa 1982
 insert into editor values (NULL,"Nitendo"); -- Mario, Animal crossing, Wii sport
