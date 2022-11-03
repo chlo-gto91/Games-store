@@ -82,22 +82,24 @@ insert into game values (NULL,52,"series of life simulation games in which playe
 insert into game values (NULL,45,"basketball game based on the National Basketball Association", "NBA 2K23");
 insert into game values (NULL,49,"tennis management game", "Tennis manager 2022");
 insert into game values (NULL,30,"2D side-scrolling platform video game", "Rayman Legends Definitive");
+insert into game values (NULL,60, "Relive the story of Goku and other Z Fighters in DRAGON BALL Z: KAKAROT!","Dragon Ball Z: Kakarot")
+insert into game values (NULL, 70, "Worlds are colliding in Sonic the Hedgehog’s newest high-speed adventure!", "Sonic FRONTIERS")
 
-insert into editor values (NULL,"Electronic Arts", "1982", "USA","348"); --Fifa 1982
-insert into editor values (NULL,"Nitendo", "1889", "Japon","924"); -- Mario, Animal crossing, Wii sport
-insert into editor values (NULL,"Activision", "1979", "USA","145");
-insert into editor values (NULL,"Blizzard", "1991", "USA","19");
-insert into editor values (NULL,"Take Two Interactive", "1993", "USA","87"); -- NBA 2K
-insert into editor values (NULL,"Epic Games", "1991", "USA","471");
-insert into editor values (NULL,"Warner Bros", "1923", "USA","10");
-insert into editor values (NULL,"Ubisoft","1986","France","108"); -- Assassin, Rayman
-insert into editor values (NULL,"Gameloft","1999","France","187");
-insert into editor values (NULL,"Tencent","1998","Chine");
-insert into editor values (NULL,"Square Enix","2003","Japon");
-insert into editor values (NULL,"SEGA","1951","USA");
-insert into editor values (NULL,"Bandai Namco","2006","Japon");
-insert into editor values (NULL,"Mojang Studios","2009","Suède","14"); -- Minecraft
-insert into editor values (NULL,"Rebound CG","2017","France"); -- Tennis manager 2022
+insert into editor values (NULL,"Electronic Arts"); --Fifa 1982
+insert into editor values (NULL,"Nitendo"); -- Mario, Animal crossing, Wii sport
+insert into editor values (NULL,"Activision");
+insert into editor values (NULL,"Blizzard");
+insert into editor values (NULL,"Take Two Interactive"); -- NBA 2K
+insert into editor values (NULL,"Epic Games");
+insert into editor values (NULL,"Warner Bros");
+insert into editor values (NULL,"Ubisoft"); -- Assassin, Rayman
+insert into editor values (NULL,"Gameloft");
+insert into editor values (NULL,"Tencent");
+insert into editor values (NULL,"Square Enix");
+insert into editor values (NULL,"SEGA"); -- SONIC
+insert into editor values (NULL,"Bandai Namco"); -- Dragon Ball Z; Kakarot
+insert into editor values (NULL,"Mojang Studios"); -- Minecraft
+insert into editor values (NULL,"Rebound CG"); -- Tennis manager 2022
 
 insert into console values (NULL,"500 Go","XBOX ONE","black",250,15);
 insert into console values (NULL,"500 Go","XBOX ONE S","white",350,9);
