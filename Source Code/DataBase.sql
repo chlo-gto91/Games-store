@@ -7,33 +7,58 @@ DROP TABLE if exists client;
 DROP TABLE if exists game;
 
 CREATE TABLE client(
-   ID_client INT auto_increment PRIMARY KEY,
+   ID_client INT,
    client_age INT,
    client_name VARCHAR(50),
    lastname VARCHAR(50),
    phone VARCHAR(50),
    list_sale VARCHAR(50),
    mail_adress VARCHAR(50),
+   PRIMARY KEY(ID_client)
 );
 
 CREATE TABLE editor(
-   ID_editor INT auto_increment PRIMARY KEY,
+   ID_editor INT,
    editor_name VARCHAR(50),
-   creation_date VARCHAR(50),
-   country VARCHAR(50),
-   number_games VARCHAR(50),
+   PRIMARY KEY(ID_editor)
+);
+
+CREATE TABLE console(
+   ID_console INT,
+   stockage VARCHAR(50),
+   console_name VARCHAR(50),
+   console_color VARCHAR(50),
+   console_price INT,
+   console_stock INT,
+   PRIMARY KEY(ID_console)
 );
 
 CREATE TABLE game(
-   ID_game INT auto_increment PRIMARY KEY,
+   ID_game INT,
    price INT,
    game_description VARCHAR(50),
    game_name VARCHAR(50),
    category VARCHAR(50),
-   ID_editor VARCHAR(50) NOT NULL,
+   game_stock INT,
+   ID_editor INT NOT NULL,
+   PRIMARY KEY(ID_game),
+   FOREIGN KEY(ID_editor) REFERENCES editor(ID_editor)
+);
+
+CREATE TABLE have(
    ID_client INT,
-   FOREIGN KEY(ID_editor) REFERENCES editor(ID_editor),
-   FOREIGN KEY(ID_client) REFERENCES client(ID_client)
+   ID_game INT,
+   PRIMARY KEY(ID_client, ID_game),
+   FOREIGN KEY(ID_client) REFERENCES client(ID_client),
+   FOREIGN KEY(ID_game) REFERENCES game(ID_game)
+);
+
+CREATE TABLE buy(
+   ID_client INT,
+   ID_console INT,
+   PRIMARY KEY(ID_client, ID_console),
+   FOREIGN KEY(ID_client) REFERENCES client(ID_client),
+   FOREIGN KEY(ID_console) REFERENCES Console(ID_console)
 );
 
 insert into client values (NULL,20,"Gattino","Chloé","0625126117","Mario kart 8","chloegattino5@gmail.com");
@@ -73,6 +98,17 @@ insert into editor values (NULL,"SEGA","1951","USA");
 insert into editor values (NULL,"Bandai Namco","2006","Japon");
 insert into editor values (NULL,"Mojang Studios","2009","Suède","14"); -- Minecraft
 insert into editor values (NULL,"Rebound CG","2017","France"); -- Tennis manager 2022
+
+insert into console values (NULL,"500 Go","XBOX ONE","black",250,15);
+insert into console values (NULL,"500 Go","XBOX ONE S","white",350,9);
+insert into console values (NULL,"1 To","XBOX ONE X","black",500,5);
+insert into console values (NULL,"500 Go","PS4","black",250,14);
+insert into console values (NULL,"1 To","PS5","white",500,3);
+insert into console values (NULL,"0 Go","Nitendo 3DS","blue",130,6);
+insert into console values (NULL,"32 Go","Nitendo SWITCH","black",260,11);
+insert into console values (NULL,"64 Go","Nitendo SWITCH OLED","white",320,2);
+insert into console values (NULL,"32 Go","Nitendo SWITCH LITE","pink",200,5);
+insert into console values (NULL,"0 Go","Game Boy","grey",60,1);
 
 ATLER TABLE client
 ADD CONSTRAINT ck_phone CHECK (phone BETWEEN "0600000000" AND "0799999999");
