@@ -85,16 +85,20 @@ insert into game values (NULL,45,"Basketball game based on the National Basketba
 insert into game values (NULL,49,"Tennis management game", "Tennis manager 2022","Sport",4);
 insert into game values (NULL,30,"2D side-scrolling platform video game", "Rayman Legends Definitive","Adventure",10);
 insert into game values (NULL, 70,"Worlds are colliding in Sonic the Hedgehog’s newest high-speed adventure!","Sonic FRONTIERS", "Adventure", 50);
-sinert into game values (NULL, 60,"Relive the story of Goku and other Z Fighters in DRAGON BALL Z: KAKAROT!", "Dragon Ball Z: Kakarot", 30);
-
+insert into game values (NULL, 60,"Relive the story of Goku and other Z Fighters in DRAGON BALL Z: KAKAROT!", "Dragon Ball Z: Kakarot", 30);
+insert into game values (NULL, 50,"Call of Duty: WWII Multiplayer engages players in grounded, fast-paced combat across many of World War II's most iconic locations.","Call of Duty®: WWII", 8);
+insert into game values (NULL, 60,"Overwatch 2 is a free-to-play, team-based action game set in the optimistic future, where every match is the ultimate 5v5 battlefield brawl.","Overwatch 2", 18);
+insert into game values (NULL, 10,"Rocket League is a high-powered hybrid of arcade-style soccer and vehicular mayhem with easy-to-understand controls and fluid, physics-driven competition.","Rocket League", 21);
+insert into game values (NULL, 45,"The galaxy is yours in LEGO® Star Wars™: The Skywalker Saga.","Lego Star Wars : La Saga Skywalker", 48);
+insert into game values (NULL, 55,"Take on the world's fearless and become an Asphalt legend in the best arcade racing game","Asphalt 9: Legegnds", 10);
 
 insert into editor values (NULL,"Electronic Arts"); --Fifa 1982
 insert into editor values (NULL,"Nitendo"); -- Mario, Animal crossing, Wii sport
-insert into editor values (NULL,"Activision");
-insert into editor values (NULL,"Blizzard");
+insert into editor values (NULL,"Activision"); -- Call of Duty
+insert into editor values (NULL,"Blizzard"); -- Overwatch 2
 insert into editor values (NULL,"Take Two Interactive"); -- NBA 2K
-insert into editor values (NULL,"Epic Games");
-insert into editor values (NULL,"Warner Bros");
+insert into editor values (NULL,"Epic Games"); -- Rocket League
+insert into editor values (NULL,"Warner Bros"); -- Lego Star Wars : La Saga Skywalker
 insert into editor values (NULL,"Ubisoft"); -- Assassin, Rayman
 insert into editor values (NULL,"Gameloft");
 insert into editor values (NULL,"Tencent");
