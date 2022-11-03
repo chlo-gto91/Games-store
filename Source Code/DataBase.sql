@@ -82,6 +82,16 @@ insert into game values (NULL,52,"series of life simulation games in which playe
 insert into game values (NULL,45,"basketball game based on the National Basketball Association", "NBA 2K23");
 insert into game values (NULL,49,"tennis management game", "Tennis manager 2022");
 insert into game values (NULL,30,"2D side-scrolling platform video game", "Rayman Legends Definitive");
+insert into game values (NULL,55,"Frenzied karting races in the universe of super mario", "Mario kart 8","Family",15);
+insert into game values (NULL,50,"Adventure in the universe of super mario", "Super Mario Bross","Family",14);
+insert into game values (NULL,48,"Family sports game", "Wii sport resort","Sport",12);
+insert into game values (NULL,30,"Action-adventure open-world stealth game", "Assassin's Creed Origins","Adventure",26);
+insert into game values (NULL,20,"Players explore a blocky, procedurally generated 3D world with virtually infinite terrain and may discover and extract raw materials", "Minecraft","Adventure",4);
+insert into game values (NULL,70,"Football game that allows the player to develop his favorite team", "Fifa 23","Sport",8);
+insert into game values (NULL,52,"Series of life simulation games in which players control an avatar who starts a new life, in a city full of eccentric animals", "Animal Crossing","Adventure",9);
+insert into game values (NULL,45,"Basketball game based on the National Basketball Association", "NBA 2K23","Sport",6);
+insert into game values (NULL,49,"Tennis management game", "Tennis manager 2022","Sport",4);
+insert into game values (NULL,30,"2D side-scrolling platform video game", "Rayman Legends Definitive","Adventure",10);
 
 insert into editor values (NULL,"Electronic Arts"); --Fifa 1982
 insert into editor values (NULL,"Nitendo"); -- Mario, Animal crossing, Wii sport
