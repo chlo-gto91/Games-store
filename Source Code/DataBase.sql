@@ -85,12 +85,17 @@ insert into game values (NULL,45,"Basketball game based on the National Basketba
 insert into game values (NULL,49,"Tennis management game", "Tennis manager 2022","Sport",4);
 insert into game values (NULL,30,"2D side-scrolling platform video game", "Rayman Legends Definitive","Adventure",10);
 insert into game values (NULL, 70,"Worlds are colliding in Sonic the Hedgehog’s newest high-speed adventure!","Sonic FRONTIERS", "Adventure", 50);
-insert into game values (NULL, 60,"Relive the story of Goku and other Z Fighters in DRAGON BALL Z: KAKAROT!", "Dragon Ball Z: Kakarot", 30);
-insert into game values (NULL, 50,"Call of Duty: WWII Multiplayer engages players in grounded, fast-paced combat across many of World War II's most iconic locations.","Call of Duty®: WWII", 8);
-insert into game values (NULL, 60,"Overwatch 2 is a free-to-play, team-based action game set in the optimistic future, where every match is the ultimate 5v5 battlefield brawl.","Overwatch 2", 18);
-insert into game values (NULL, 10,"Rocket League is a high-powered hybrid of arcade-style soccer and vehicular mayhem with easy-to-understand controls and fluid, physics-driven competition.","Rocket League", 21);
-insert into game values (NULL, 45,"The galaxy is yours in LEGO® Star Wars™: The Skywalker Saga.","Lego Star Wars : La Saga Skywalker", 48);
-insert into game values (NULL, 55,"Take on the world's fearless and become an Asphalt legend in the best arcade racing game","Asphalt 9: Legegnds", 10);
+insert into game values (NULL, 60,"Relive the story of Goku and other Z Fighters in DRAGON BALL Z: KAKAROT!", "Dragon Ball Z: Kakarot","Action", 30);
+insert into game values (NULL, 50,"Call of Duty: WWII Multiplayer engages players in grounded, fast-paced combat across many of World War II's most iconic locations.","Call of Duty®: WWII","War", 8);
+insert into game values (NULL, 60,"Overwatch 2 is a free-to-play, team-based action game set in the optimistic future, where every match is the ultimate 5v5 battlefield brawl.","Overwatch 2","MOBA" 18);
+insert into game values (NULL, 10,"Rocket League is a high-powered hybrid of arcade-style soccer and vehicular mayhem with easy-to-understand controls and fluid, physics-driven competition.","Rocket League","Car", 21);
+insert into game values (NULL, 45,"The galaxy is yours in LEGO® Star Wars™: The Skywalker Saga.","Lego Star Wars : La Saga Skywalker","Adventure", 48);
+insert into game values (NULL, 55,"Take on the world's fearless and become an Asphalt legend in the best arcade racing game","Asphalt 9: Legends","Car", 10);
+insert into game values (NULL, 20,"Experience Arena of Valor, an epic new 5v5 multiplayer online battle arena (MOBA)","Arena of Valor","RPG", 23);
+insert into game values (NULL, 5,"The game's story follows Cloud Strife, a mercenary who joins an eco-terrorist organization to stop a world-controlling megacorporation ","Final Fantasy VII","Adventure", 1);
+
+
+
 
 insert into editor values (NULL,"Electronic Arts"); --Fifa 1982
 insert into editor values (NULL,"Nitendo"); -- Mario, Animal crossing, Wii sport
@@ -100,9 +105,9 @@ insert into editor values (NULL,"Take Two Interactive"); -- NBA 2K
 insert into editor values (NULL,"Epic Games"); -- Rocket League
 insert into editor values (NULL,"Warner Bros"); -- Lego Star Wars : La Saga Skywalker
 insert into editor values (NULL,"Ubisoft"); -- Assassin, Rayman
-insert into editor values (NULL,"Gameloft");
-insert into editor values (NULL,"Tencent");
-insert into editor values (NULL,"Square Enix");
+insert into editor values (NULL,"Gameloft");-- Asphalt 9
+insert into editor values (NULL,"Tencent"); --  Arena of Valor
+insert into editor values (NULL,"Square Enix");-- Final fantasy VII
 insert into editor values (NULL,"SEGA"); -- SONIC
 insert into editor values (NULL,"Bandai Namco"); -- Dragon Ball Z; Kakarot
 insert into editor values (NULL,"Mojang Studios"); -- Minecraft
