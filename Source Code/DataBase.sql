@@ -74,7 +74,7 @@ insert into client values (NULL,14,"Gattino","Manon","0652741670","Animal Crossi
 insert into client values (NULL,22,"Prim","Lorraine","0650020491","Rayman Legends Definitive","primlorraine@gmail.com");
 
 insert into game values (NULL,55,"Frenzied karting races in the universe of super mario", "Mario kart 8","Family",15);
-insert into game values (NULL,55,"Adventure in the universe of super mario", "Super Mario Bross","Family",14);
+insert into game values (NULL,50,"Adventure in the universe of super mario", "Super Mario Bross","Family",14);
 insert into game values (NULL,48,"Family sports game", "Wii sport resort","Sport",12);
 insert into game values (NULL,30,"Action-adventure open-world stealth game", "Assassin's Creed Origins","Adventure",26);
 insert into game values (NULL,20,"Players explore a blocky, procedurally generated 3D world with virtually infinite terrain and may discover and extract raw materials", "Minecraft","Adventure",4);
