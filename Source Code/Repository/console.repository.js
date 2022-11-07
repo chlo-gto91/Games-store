@@ -58,5 +58,18 @@ module.exports = {
             throw err;
         }
     },
-    //async addOneConsole()
+     async addOneConsole(brandId){ 
+        try {
+            let conn = await pool.getConnection();
+            let sql = "INSERT INTO console (console_id, console) VALUES (NULL, ?) ";
+            const okPacket = await conn.query(sql, consoleId); // affectedRows, insertId
+            conn.end();
+            console.log(okPacket);
+            return okPacket.insertId;
+        }
+        catch (err) {
+            console.log(err);
+            throw err; 
+        }
+    },
 }
