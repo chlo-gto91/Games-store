@@ -54,5 +54,18 @@ module.exports = {
             throw err;
         }
     },
-    //async addOneEditor()
+     async addOneEditor(editorId){ 
+        try {
+            let conn = await pool.getConnection();
+            let sql = "INSERT INTO editor (editor_id, editor) VALUES (NULL, ?) ";
+            const okPacket = await conn.query(sql, editorId); // affectedRows, insertId
+            conn.end();
+            console.log(okPacket);
+            return okPacket.insertId;
+        }
+        catch (err) {
+            console.log(err);
+            throw err; 
+        }
+    },
 }
