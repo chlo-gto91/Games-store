@@ -58,5 +58,18 @@ module.exports = {
             throw err;
         }
     },
-    //async addOneGame()
+     async addOneGame(gameId){ 
+        try {
+            let conn = await pool.getConnection();
+            let sql = "INSERT INTO game (game_id,game) VALUES (NULL, ?) ";
+            const okPacket = await conn.query(sql, gameID); // affectedRows, insertId
+            conn.end();
+            console.log(okPacket);
+            return okPacket.insertId;
+        }
+        catch (err) {
+            console.log(err);
+            throw err; 
+        }
+    },
 }
