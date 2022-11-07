@@ -58,7 +58,7 @@ module.exports = {
             throw err;
         }
     },
-     async addOneConsole(brandId){ 
+     async addOneConsole(consoleId){ 
         try {
             let conn = await pool.getConnection();
             let sql = "INSERT INTO console (console_id, console) VALUES (NULL, ?) "; //console ?
