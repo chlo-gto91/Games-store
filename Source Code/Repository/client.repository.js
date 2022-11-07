@@ -63,7 +63,7 @@ module.exports = {
         try {
             let conn = await pool.getConnection();
             let sql = "INSERT INTO client (client_id, client) VALUES (NULL, ?) ";
-            const okPacket = await conn.query(sql, ClientId); // affectedRows, insertId
+            const okPacket = await conn.query(sql, clientId); // affectedRows, insertId
             conn.end();
             console.log(okPacket);
             return okPacket.insertId;
