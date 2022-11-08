@@ -13,7 +13,7 @@ CREATE TABLE client(
    lastname VARCHAR(50),
    phone VARCHAR(50),
    list_sale VARCHAR(50),
-   mail_adress VARCHAR(50),
+   mail_address VARCHAR(50),
    PRIMARY KEY(ID_client)
 );
 
