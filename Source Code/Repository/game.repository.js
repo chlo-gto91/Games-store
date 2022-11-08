@@ -72,4 +72,19 @@ module.exports = {
             throw err; 
         }
     },
+    async editOneGame(gameId, gamePrice, gameDescription, gameName, gameCategory, gameStock){ 
+        try {
+            let conn = await pool.getConnection();
+            let sql = "UPDATE game SET price=?, game_description=?, game_name=?, category=?, game_stock=? WHERE ID_game=? "; // TODO: named parameters? :something
+            const okPacket = await conn.query(sql, 
+                        [gamePrice, gameDescription, gameName, gameCategory, gameStock, gameId]);
+            conn.end();
+            console.log(okPacket);
+            return okPacket.affectedRows;
+        }
+        catch (err) {
+            console.log(err);
+            throw err; 
+        }
+    }
 }
