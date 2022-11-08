@@ -57,7 +57,7 @@ module.exports = {
      async addOneEditor(editorId){ 
         try {
             let conn = await pool.getConnection();
-            let sql = "INSERT INTO editor (editor_id, editor) VALUES (NULL, ?) ";
+            let sql = "INSERT INTO editor (editor_id, editor_name) VALUES (NULL, ?) ";
             const okPacket = await conn.query(sql, editorId); // affectedRows, insertId
             conn.end();
             console.log(okPacket);

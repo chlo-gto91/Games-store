@@ -62,7 +62,7 @@ module.exports = {
      async addOneClient(clientId){ 
         try {
             let conn = await pool.getConnection();
-            let sql = "INSERT INTO client (client_id, client) VALUES (NULL, ?) ";
+            let sql = "INSERT INTO client (client_id, client_name) VALUES (NULL, ?) ";
             const okPacket = await conn.query(sql, clientId); // affectedRows, insertId
             conn.end();
             console.log(okPacket);

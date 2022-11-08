@@ -61,7 +61,7 @@ module.exports = {
      async addOneConsole(consoleId){ 
         try {
             let conn = await pool.getConnection();
-            let sql = "INSERT INTO console (console_id, console) VALUES (NULL, ?) "; //console ?
+            let sql = "INSERT INTO console (console_id, console_name) VALUES (NULL, ?) "; //console ?
             const okPacket = await conn.query(sql, consoleId); // affectedRows, insertId
             conn.end();
             console.log(okPacket);
