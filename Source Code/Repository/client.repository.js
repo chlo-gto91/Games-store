@@ -5,12 +5,12 @@ module.exports = {
     getBlankClient(){
         return {
             "id_client": 0,
-            "age": 0,
+            "client_age": 0,
             "client_name": 0,
-            "surname": 0,
+            "lastname": 0,
             "phone": 0,
             "list_sale": 0,
-            "mail_adress": 0
+            "mail_address": 0
         };
     },
     async getAllClient(){
@@ -73,4 +73,20 @@ module.exports = {
             throw err; 
         }
     },
+     async editOneCar(clientID, clientAge, clientName, clientLastname, clientPhone, clientListSale, clientMail_addresse){ 
+        try {
+            let conn = await pool.getConnection();
+            let sql = "UPDATE client SET client_age=?, client_name=?, lastname=?, phone=?, list_sale=?, mail_addresse=?  WHERE ID_client=? "; // TODO: named parameters? :something
+            const okPacket = await conn.query(sql, 
+                        [clientAge, clientName, clientLastname, clientPhone, clientListSale, clientMail_addresse,clientID]);
+            conn.end();
+            console.log(okPacket);
+            return okPacket.affectedRows;
+        }
+        catch (err) {
+            console.log(err);
+            throw err; 
+        }
+    }
+    
 }

@@ -13,7 +13,7 @@ CREATE TABLE client(
    lastname VARCHAR(50),
    phone VARCHAR(50),
    list_sale VARCHAR(50),
-   mail_adress VARCHAR(50),
+   mail_address VARCHAR(50),
    PRIMARY KEY(ID_client)
 );
 
@@ -61,6 +61,31 @@ CREATE TABLE buy(
    FOREIGN KEY(ID_console) REFERENCES Console(ID_console)
 );
 
+insert into have values (1,15);
+insert into have values (2,12);
+insert into have values (3,11);
+insert into have values (4,6);
+insert into have values (5,2);
+insert into have values (6,1);
+insert into have values (7,9);
+insert into have values (8,11);
+insert into have values (9,7);
+insert into have values (10,15);
+
+
+insert into buy values (1,3);
+insert into buy values (2,3);
+insert into buy values (3,8);
+insert into buy values (4,9);
+insert into buy values (5,5);
+insert into buy values (6,5);
+insert into buy values (7,5);
+insert into buy values (8,2);
+insert into buy values (9,10);
+insert into buy values (10,4);
+
+
+
 insert into client values (NULL,20,"Gattino","Chloé","0625126117","Mario kart 8","chloegattino5@gmail.com");
 insert into client values (NULL,17,"Cantrelle","Noa","0785896324","Wii sport resort","noacantrelle@efrei.net");
 insert into client values (NULL,31,"Rey","Pierre","0698741236","Assassin's Creed Origins","pierre.rey@efrei.net");
@@ -93,8 +118,6 @@ insert into game values (NULL, 45,"The galaxy is yours in LEGO® Star Wars™: T
 insert into game values (NULL, 55,"Take on the world's fearless and become an Asphalt legend in the best arcade racing game","Asphalt 9: Legends","Car", 10);
 insert into game values (NULL, 20,"Experience Arena of Valor, an epic new 5v5 multiplayer online battle arena (MOBA)","Arena of Valor","RPG", 23);
 insert into game values (NULL, 5,"The game's story follows Cloud Strife, a mercenary who joins an eco-terrorist organization to stop a world-controlling megacorporation ","Final Fantasy VII","Adventure", 1);
-
-
 
 
 insert into editor values (NULL,"Electronic Arts"); --Fifa 1982

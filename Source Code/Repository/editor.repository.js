@@ -68,4 +68,19 @@ module.exports = {
             throw err; 
         }
     },
+    async editOneEditor(EditorId, EditorName){ 
+        try {
+            let conn = await pool.getConnection();
+            let sql = "UPDATE editor SET editor_name=? WHERE ID_editor=? "; // TODO: named parameters? :something
+            const okPacket = await conn.query(sql, 
+                        [EditorName, EditorId]);
+            conn.end();
+            console.log(okPacket);
+            return okPacket.affectedRows;
+        }
+        catch (err) {
+            console.log(err);
+            throw err; 
+        }
+    }
 }
