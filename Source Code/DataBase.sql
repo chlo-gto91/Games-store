@@ -63,7 +63,21 @@ CREATE TABLE buy(
 );
 
 
-
+insert into editor values (NULL,"Electronic Arts"); --  Fifa 1982 1
+insert into editor values (NULL,"Nitendo"); -- Mario, Animal crossing, Wii sport 2
+insert into editor values (NULL,"Activision"); -- Call of Duty 3
+insert into editor values (NULL,"Blizzard"); -- Overwatch 2 4 
+insert into editor values (NULL,"Take Two Interactive"); -- NBA 2K 5
+insert into editor values (NULL,"Epic Games"); -- Rocket League 6 
+insert into editor values (NULL,"Warner Bros"); -- Lego Star Wars : La Saga Skywalker 7
+insert into editor values (NULL,"Ubisoft"); -- Assassin, Rayman 8
+insert into editor values (NULL,"Gameloft");-- Asphalt 9 9 
+insert into editor values (NULL,"Tencent"); --  Arena of Valor 10
+insert into editor values (NULL,"Square Enix");-- Final fantasy VII 11
+insert into editor values (NULL,"SEGA"); -- SONIC 12 
+insert into editor values (NULL,"Bandai Namco"); -- Dragon Ball Z; Kakarot 13 
+insert into editor values (NULL,"Mojang Studios"); -- Minecraft 14
+insert into editor values (NULL,"Rebound CG"); -- Tennis manager 2022 15
 
 insert into client values (NULL,20,"Gattino","Chloé","0625126117","Mario kart 8","chloegattino5@gmail.com");
 insert into client values (NULL,17,"Cantrelle","Noa","0785896324","Wii sport resort","noacantrelle@efrei.net");
@@ -98,22 +112,6 @@ insert into game values (NULL, 55,"Take on the world's fearless and become an As
 insert into game values (NULL, 20,"Experience Arena of Valor, an epic new 5v5 multiplayer online battle arena (MOBA)","Arena of Valor","RPG", 23,10);
 insert into game values (NULL, 5,"The game's story follows Cloud Strife, a mercenary who joins an eco-terrorist organization to stop a world-controlling megacorporation ","Final Fantasy VII","Adventure", 1,11);
 
-
-insert into editor values (NULL,"Electronic Arts"); --  Fifa 1982 1
-insert into editor values (NULL,"Nitendo"); -- Mario, Animal crossing, Wii sport 2
-insert into editor values (NULL,"Activision"); -- Call of Duty 3
-insert into editor values (NULL,"Blizzard"); -- Overwatch 2 4 
-insert into editor values (NULL,"Take Two Interactive"); -- NBA 2K 5
-insert into editor values (NULL,"Epic Games"); -- Rocket League 6 
-insert into editor values (NULL,"Warner Bros"); -- Lego Star Wars : La Saga Skywalker 7
-insert into editor values (NULL,"Ubisoft"); -- Assassin, Rayman 8
-insert into editor values (NULL,"Gameloft");-- Asphalt 9 9 
-insert into editor values (NULL,"Tencent"); --  Arena of Valor 10
-insert into editor values (NULL,"Square Enix");-- Final fantasy VII 11
-insert into editor values (NULL,"SEGA"); -- SONIC 12 
-insert into editor values (NULL,"Bandai Namco"); -- Dragon Ball Z; Kakarot 13 
-insert into editor values (NULL,"Mojang Studios"); -- Minecraft 14
-insert into editor values (NULL,"Rebound CG"); -- Tennis manager 2022 15
 
 insert into console values (NULL,"500 Go","XBOX ONE","black",250,15);
 insert into console values (NULL,"500 Go","XBOX ONE S","white",350,9);
@@ -150,7 +148,3 @@ insert into buy values (8,2);
 insert into buy values (9,10);
 insert into buy values (10,4);
 
-
-ATLER TABLE client
-ADD CONSTRAINT ck_phone CHECK (phone BETWEEN "0600000000" AND "0799999999");
-ADD CONSTRAINT ck_age CHECK ( age BETWEEN 16 AND 90);
