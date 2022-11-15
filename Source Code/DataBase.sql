@@ -14,7 +14,7 @@ CREATE TABLE client(
    phone VARCHAR(50),
    list_sale VARCHAR(50),
    mail_address VARCHAR(50),
-   password VARCHAR(50),
+   client_password VARCHAR(50),
    PRIMARY KEY(ID_client)
 );
 
