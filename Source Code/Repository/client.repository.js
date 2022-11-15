@@ -73,7 +73,7 @@ module.exports = {
             throw err; 
         }
     },
-     async editOneCar(clientID, clientAge, clientName, clientLastname, clientPhone, clientListSale, clientMail_addresse){ 
+     async editOneClient(clientID, clientAge, clientName, clientLastname, clientPhone, clientListSale, clientMail_addresse){ 
         try {
             let conn = await pool.getConnection();
             let sql = "UPDATE client SET client_age=?, client_name=?, lastname=?, phone=?, list_sale=?, mail_addresse=?  WHERE ID_client=? "; // TODO: named parameters? :something
