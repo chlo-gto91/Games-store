@@ -25,7 +25,7 @@ app.listen(process.env.WEB_PORT, '0.0.0.0',
 
 app.get('/', (request, response) => { // 'GET' as a HTTP VERB, not as a 'getter'!
     let clientIp = request.ip;
-    response.send(`Hello, dear ${clientIp}. I am a nodejs website...`);
+    response.send(`Hello, dear ${clientIp}. Tu as enfin réussi`);
     response.end(); // optional
 });
 
