@@ -60,7 +60,7 @@ module.exports = {
             throw err;
         }
     },
-     async addOneClient(clientId){ 
+     async addOneClient(clientId){  //comment  creer un ID alors qu'il s'incrémente seul ?
         try {
             let conn = await pool.getConnection();
             let sql = "INSERT INTO client (client_id, client_name) VALUES (NULL, ?) ";
