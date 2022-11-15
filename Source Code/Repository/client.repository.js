@@ -10,7 +10,8 @@ module.exports = {
             "lastname": 0,
             "phone": 0,
             "list_sale": 0,
-            "mail_address": 0
+            "mail_address": 0,
+            "password": 0
         };
     },
     async getAllClient(){
@@ -73,12 +74,12 @@ module.exports = {
             throw err; 
         }
     },
-     async editOneCar(clientID, clientAge, clientName, clientLastname, clientPhone, clientListSale, clientMail_addresse){ 
+     async editOneClient(clientID, clientAge, clientName, clientLastname, clientPhone, clientListSale, clientMail_addresse, clientPassword){ 
         try {
             let conn = await pool.getConnection();
-            let sql = "UPDATE client SET client_age=?, client_name=?, lastname=?, phone=?, list_sale=?, mail_addresse=?  WHERE ID_client=? "; // TODO: named parameters? :something
+            let sql = "UPDATE client SET client_age=?, client_name=?, lastname=?, phone=?, list_sale=?, mail_addresse=?, password=?  WHERE ID_client=? "; // TODO: named parameters? :something
             const okPacket = await conn.query(sql, 
-                        [clientAge, clientName, clientLastname, clientPhone, clientListSale, clientMail_addresse,clientID]);
+                        [clientAge, clientName, clientLastname, clientPhone, clientListSale, clientMail_addresse, clientPassword,clientID]);
             conn.end();
             console.log(okPacket);
             return okPacket.affectedRows;
