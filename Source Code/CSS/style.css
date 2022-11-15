@@ -1,6 +1,6 @@
 /*css page*/
 body{
-    background: #67BE4B;
+    background: #348196;
    }
    #container{
     width:400px;
@@ -16,13 +16,33 @@ body{
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
    }
    #container h1{
-    width: 38%;
+    width: 71%;
     margin: 0 auto;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
    }
    
-   /* Full-width inputs */
+   /* Cases for texts */
    input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+   }
+
+   /* Cases for numbers */
+   input[type=number], input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+   }
+
+   /* Cases for email */
+   input[type=email], input[type=email] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -33,7 +53,7 @@ body{
    
    /* Set a style for all buttons */
    input[type=submit] {
-    background-color: #53af57;
+    background-color: #348196;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -43,6 +63,6 @@ body{
    }
    input[type=submit]:hover {
     background-color: white;
-    color: #53af57;
-    border: 1px solid #53af57;
+    color: #348196;
+    border: 1px solid #348196;
    }
