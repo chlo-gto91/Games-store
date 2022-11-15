@@ -14,6 +14,7 @@ CREATE TABLE client(
    phone VARCHAR(50),
    list_sale VARCHAR(50),
    mail_address VARCHAR(50),
+   client_password VARCHAR(50),
    PRIMARY KEY(ID_client)
 );
 
@@ -79,17 +80,17 @@ insert into editor values (NULL,"Bandai Namco"); -- Dragon Ball Z; Kakarot 13
 insert into editor values (NULL,"Mojang Studios"); -- Minecraft 14
 insert into editor values (NULL,"Rebound CG"); -- Tennis manager 2022 15
 
-insert into client values (NULL,20,"Gattino","Chloé","0625126117","Mario kart 8","chloegattino5@gmail.com");
-insert into client values (NULL,17,"Cantrelle","Noa","0785896324","Wii sport resort","noacantrelle@efrei.net");
-insert into client values (NULL,31,"Rey","Pierre","0698741236","Assassin's Creed Origins","pierre.rey@efrei.net");
-insert into client values (NULL,14,"Gattino","Manon","0652741670","Mario kart 8","gattinomanon@gmail.com");
-insert into client values (NULL,25,"Michot","Marie","0766984610","Minecraft","marie.michot@efrei.net");
-insert into client values (NULL,38,"Harry","Potter","0620000000","Fifa 23","Harry.potter@efrei.net");
-insert into client values (NULL,45,"Chapron","Nathalie","0645987632","Animal Crossing","nathalie.chapron@efrei.net");
-insert into client values (NULL,18,"Hecq","Guerlyn","0699765213","NBA 2K23","guerlynhecq@gmail.com");
-insert into client values (NULL,17,"Pinto","Martin","0755264890","Tennis manager 2022","martin.pinto@gmail.com");
-insert into client values (NULL,14,"Gattino","Manon","0652741670","Animal Crossing","gattinomanon@gmail.com");
-insert into client values (NULL,22,"Prim","Lorraine","0650020491","Rayman Legends Definitive","primlorraine@gmail.com");
+insert into client values (NULL,20,"Gattino","Chloé","0625126117","Mario kart 8","chloegattino5@gmail.com","cloclo91");
+insert into client values (NULL,17,"Cantrelle","Noa","0785896324","Wii sport resort","noacantrelle@efrei.net","nono640");
+insert into client values (NULL,31,"Rey","Pierre","0698741236","Assassin's Creed Origins","pierre.rey@efrei.net","pierropierro");
+insert into client values (NULL,14,"Gattino","Manon","0652741670","Mario kart 8","gattinomanon@gmail.com","manongat");
+insert into client values (NULL,25,"Michot","Marie","0766984610","Minecraft","marie.michot@efrei.net","marie77");
+insert into client values (NULL,38,"Harry","Potter","0620000000","Fifa 23","Harry.potter@efrei.net","vol2mort");
+insert into client values (NULL,45,"Chapron","Nathalie","0645987632","Animal Crossing","nathalie.chapron@efrei.net","natlesang");
+insert into client values (NULL,18,"Hecq","Guerlyn","0699765213","NBA 2K23","guerlynhecq@gmail.com","guegue13");
+insert into client values (NULL,17,"Pinto","Martin","0755264890","Tennis manager 2022","martin.pinto@gmail.com","pintouch13");
+insert into client values (NULL,14,"Gattino","Manon","0652741670","Animal Crossing","gattinomanon@gmail.com","manongat");
+insert into client values (NULL,22,"Prim","Lorraine","0650020491","Rayman Legends Definitive","primlorraine@gmail.com","lolo91");
 
 
 insert into game values (NULL,55,"Frenzied karting races in the universe of super mario", "Mario kart 8","Family",15,2); --

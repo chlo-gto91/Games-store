@@ -41,6 +41,16 @@ body{
     box-sizing: border-box;
    }
 
+   /* Cases for phone */
+   input[type=string], input[type=string] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+   }
+
    /* Cases for email */
    input[type=email], input[type=email] {
     width: 100%;
