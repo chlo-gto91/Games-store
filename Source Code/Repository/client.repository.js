@@ -32,7 +32,7 @@ module.exports = {
         try {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM client WHERE ID_client =? ";
-            const rows = await conn.query(sql, ID_client);
+            const rows = await conn.query(sql, [ID_client]); //crochet si sql entre id_client
             conn.end();
             console.log("ROWS FETCHED: "+rows.length);
             if (rows.length == 1){
@@ -50,7 +50,7 @@ module.exports = {
         try {
             let conn = await pool.getConnection();
             let sql = "DELETE FROM client WHERE ID_client=?";
-            const okPacket = await conn.query(sql, ID_client);
+            const okPacket = await conn.query(sql, [ID_client]);
             conn.end();
             console.log(okPacket);
             return okPacket.affectedRows;
@@ -64,7 +64,7 @@ module.exports = {
         try {
             let conn = await pool.getConnection();
             let sql = "INSERT INTO client (client_id, client_name) VALUES (NULL, ?) ";
-            const okPacket = await conn.query(sql, clientId); // affectedRows, insertId
+            const okPacket = await conn.query(sql, [clientId]); // affectedRows, insertId
             conn.end();
             console.log(okPacket);
             return okPacket.insertId;
