@@ -44,3 +44,4 @@ app.use(session({
 
 app.use("/static", express.static(__dirname + '/static'));
 app.use("/main_page", require("./controllers/mainpage.route"));
+app.use("/CreateAccount", require("./controllers/CreateAccountpage.route"));
