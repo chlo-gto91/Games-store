@@ -42,3 +42,5 @@ app.use(session({
     resave: false
 }));
 
+app.use("/static", express.static(__dirname + '/static'));
+app.use("/main_page", require("./controllers/mainpage.route"));
