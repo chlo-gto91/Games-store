@@ -1,23 +1,76 @@
 <!-- mainpage_view.ejs -->
-<html>
-    <head>
-        <title> GAMES SHOP </title> <!--Page name-->
-    
-        <link rel="stylesheet" href="style_projet.css"><!--css page name-->
-    
-        <!--same top for each pages-->
-        <div class="TopPage">
-            <SPAN style="position : absolute; top :5px; left:5px">
-                <img alt="Image" src="C:\Users\PCG\Documents\EFREI BIO\EFREI L3 + MOBILITE\sem 1 Mobilité\Web Programming\PROJET\logo.png" height="150" width="250">
-        </div>
-    
-    </head>
-    
-    <footer>
-        <!--BAS DE PAGE -->
-        <div class="footer">
-            <a href="\Users\PCG\Documents\EFREI BIO\EFREI L3 + MOBILITE\sem 1 Mobilité\Web Programming\PROJET\contactUs">CONTACT </a>
-            <li> CONTACT US : 01 22 65 92 40 
-        </div>
-    </footer>
-</html>
+
+<%- include("partial_headers.ejs"); %>
+
+    <body>
+        <style>
+            body{
+                background-color: darkslategray; /* Juste pour pas me péter les yeux */
+            }
+            /* remove les points devant les li */
+            #parameter{
+                border: 1px solid black;
+                width: 10%;
+                height: 100%; 
+                position: fixed;
+                left: 0;
+            }
+            #price{
+                text-align:center;
+                
+            }
+            #test{
+                font-size: 15px;
+            }
+        </style>
+
+
+
+    <div id="parameter">
+        <form id="price">
+            <label for="price1"> Price : <br/></label>
+            <input type="range" min="1" max="150" value="75" class="slider">
+
+        </form>
+        <ul id="Game_type_list">
+            <label for="category"> <br><br><br> Category : </label>
+            <li>Action</li>
+            <li>Adventure</li>
+            <li>Car</li>
+            <li>Family</li>
+            <li>MOBA</li>
+            <li>RPG</li>
+            <li>Sport</li>
+            <li>War</li>
+        </ul>
+
+        <ul id="Editor_list">
+            <label id="test" for="Editor"> <br><br><br> Editor : <br></label>
+            <li>Electronic Arts</li>
+            <li>Nitendo</li>
+            <li>Activision</li>
+            <li>Blizzard</li>
+            <li>Take Two Interactive</li>
+            <li>Epic Games</li>
+            <li>Warner Bros</li>
+            <li>Ubisoft</li>
+            <li>Gameloft</li>
+            <li>Tencent</li>
+            <li>Square Enix</li>
+            <li>SEGA</li>
+            <li>Bandai Namco</li>
+            <li>Mojang Studios</li>
+            <li>Rebound CG</li>
+        </ul>
+
+    </div>
+        
+
+
+
+
+    </body>
+
+
+<%- include("partial_footer.ejs"); %>
+  
