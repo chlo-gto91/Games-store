@@ -1,4 +1,4 @@
-pool = require("../utils/db.js");
+pool = require("../Repository/db.js");
 
 
 module.exports = {
@@ -44,6 +44,40 @@ module.exports = {
             throw err;
         }
     },
+    async getOneGameByCategory(category_game){
+        try {
+            let conn = await pool.getConnection();
+            let sql = "SELECT * FROM game WHERE category =? ";
+            const rows = await conn.query(sql, category_game);
+            conn.end();
+            console.log("ROWS FETCHED: "+rows.length);
+            if (rows.length == 1){
+                return rows[0];
+            }else{
+                return false;
+            }
+        }
+        catch (err) {
+            console.log(err);
+            throw err;
+        }
+    },
+
+    async getStockOfAGame(game_name){
+        try {
+            let conn = await pool.getConnection();
+            let sql = "SELECT game_stock FROM game WHERE game_name =? ";
+            const stock = await conn.query(sql, game_name);
+            conn.end();
+            console.log("The stock is "+stock);
+            return stock;
+        }
+        catch (err) {
+            console.log(err);
+            throw err;
+        }
+
+    },
     async delOneGame(ID_game) {
         try {
             let conn = await pool.getConnection();
@@ -85,6 +119,21 @@ module.exports = {
         catch (err) {
             console.log(err);
             throw err; 
+        }
+    },
+
+    async editGameStock(game_name, exemples_bought){
+        try {
+            let conn = await pool.getConnection();
+            let sql = "UPDATE game_stock=? WHERE game_name=?";
+            const okPacket = await conn.query(sql, this.getStockOfAGame(game_name)-exemples_bought, game_name); // exemples_bought should be 1 but in case someone wants to buy 2 games
+            conn.end();
+            console.log(okPacket);
+            return okPacket.affectedRows;
+        }
+        catch(err){
+            console.log(err);
+            throw err;
         }
     }
 }
