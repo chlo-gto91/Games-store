@@ -16,6 +16,10 @@
                 var td5 = ligne.insertCell(4);
             };
 
+            function DelRows(){
+                document.getElementById('table').deleteRow(-1);
+            }
+
 
             async function SortByParameter(category){
                 var games = await gameRepo.getAllGameByCategory(category);
@@ -283,6 +287,7 @@
             </tr>
         </table>
         <button onclick="AddRows()">Add rows</button>
+        <button onclick="DelRows()">Del rows</button>
     </div>
 </div>    
     </body>
