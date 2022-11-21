@@ -44,7 +44,7 @@ module.exports = {
             throw err;
         }
     },
-    async getOneGameByCategory(category_game){
+    async getAllGameByCategory(category_game){
         try {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM game WHERE category =? ";
