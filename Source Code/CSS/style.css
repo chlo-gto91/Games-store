@@ -32,7 +32,7 @@ body{
    }
 
    /* Cases for numbers */
-   input[type=number], input[type=number] {
+   input[type=integer], input[type=integer] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
