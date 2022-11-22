@@ -42,6 +42,6 @@ app.use(session({
     resave: false
 }));
 
-app.use("/static", express.static(__dirname + '/static'));
+app.use(express.static("Source Codes"));
 app.use("/main_page", require("./controllers/mainpage.route"));
 app.use("/CreateAccount", require("./controllers/CreateAccountpage.route"));
