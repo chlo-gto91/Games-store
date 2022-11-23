@@ -1,15 +1,40 @@
 <!-- partial_footer.ejs -->
 
     <footer>
-    <!--
+    
         <style>
             .footer{
-                
-                position: fixed;
+                position: absolute;
                 bottom: 0;
-                
+                width: 100%;
+                /* Set the fixed height of the footer here */
+                height: 300px;   
             }
-            
+            footer {
+                padding-top: 30px;
+                background-color: #292c2f;
+                color: #bbb;
+            }
+
+            footer a {
+                color: #999;
+                text-decoration:none;
+            }
+
+            footer a:hover, footer a:focus {
+                color: #aaa;
+                text-decoration:none;
+                border-bottom:1px dotted #999;
+            }
+
+            footer .form-control {
+                background-color: #1f2022;
+                box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+                border: none;
+                resize: none;
+                color: #d1d2d2;
+                padding: 0.7em 1em;
+            }
             img {
                 display: block;
                 margin-left: auto;
@@ -17,11 +42,17 @@
                 width: 50%;
               }
         </style>
-    -->
-<!-- 
+    
             <div class="footer">
-            <img src="image/Logo20Game-Shop.png" alt="Logo" />
-            <li> CONTACT US : 01 22 65 92 40  </li>
+                <div class="col-6">
+                    <ul class="list-unstyled">
+                        <li><a href="">Team : Noa CANTRELLE, Chloé GATTINO, Pierre REY</a></li>
+                        <li><a href="">Contact us : infos@gamestore.com</a></li>
+                        <li><a href="">Help & Support</a></li>
+                    </ul>
+                </div>
+                <img src="image/Logo20Game-Shop.png" alt="Logo" />
+                
         </div>
 -->
     </footer>
