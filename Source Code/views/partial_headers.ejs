@@ -1,127 +1,137 @@
 <!-- partial_headers.ejs -->
 <html>
 
-    <header>
         <div class = "header">
-            
-            <ul>
-                <li><div class="logo">
-                    <a href="https://www.codeur.com">
-                    <img class="logo" src="logo.png" alt="logo" style="float: left" >
-                    </a>
-                </div></li>
+        
+        <ul>
 
-                <li><div class="search_bar">
-                    <!--Création barre de recherche-->    <!-- Onchange : Execute a JavaScript when the user changes the content of an input field:-->
-                    <input class="search" type = "texte" id ="search" value = ""  placeholder="Search ..."  onchange = "openPage()">
-                    <input class="bouton" alt="search" src="Search-icon.png" type="button" onclick = "openPage()" />
-                </div></li>
+            <li><div class="logo">
+                <a href="https://www.codeur.com">
+                <img class="logo" src="logo.png" alt="logo" style="float: left" >
+                </a>
+            </div></li>
+
+            <li><div class="search_bar">
+                <!--Création barre de recherche-->    <!-- Onchange : Execute a JavaScript when the user changes the content of an input field:-->
+                <input class="search" type = "texte" id ="search" value = ""  placeholder="Search ..."  onchange = "openPage()">
+                <input class="bouton" type="button" onclick = "openPage()" />
+            </div></li>
+
+ 
+            <div class="images"></div>
+            <li><a href=".......">
+                <img class="log" alt="LOG" src="profil.png" style="float: right">
+                </a></li>
+
+            <li><a href="......">
+                <img class="checkout" alt="cart" src="panier.png" style="float: right">
+                </a>
+            </li></div>
+
+        
+        </ul>
+
+    </div>
+
+
+
+
+    <script>
+        function openPage(){
+            var a = document.getElementById("search").value;
+
+            if(a==="call of duty" || a==="Call of Duty" || a==="Call Of Duty" || a==="call of Duty"){
+                window.open("test.html")
+            }
+            else
+            window.alert("Game not found !!!");
+        }
+    </script>
+        
+        
+        
+        
+<style>
+        
+
+.header{
+border-style: inset;
+  border: none;
+  padding: 0;
+  margin: 0; 
+  top: 0;
+  background: linear-gradient(to bottom right, blue, pink);
+  z-index: 99;
+  box-shadow: 0 0 10px rgba(0,0,0,0.9);
+  position:relative;
+}
+
+.logo img{
+    width: 280px;
+    height: 100px;
+  }
+
+.images img {
+    width: auto;
+    height: auto;
+  }
+
+a:link {
+    text-decoration: none;
+  }
+
+.header ul{
+  margin: auto;
+    display: flex;
+    padding: 5px -5px 5px -5px; /*top right bottom left*/
+
+  }
+
+
+.header ul li{
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    }
+
+
+.header li a{
+    font-family: Arial, Helvetica, sans-serif;
+    background: -webkit-linear-gradient(315deg, #1f5bb6 0%, #15db39 74%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-color: #b8c6db;
+    text-decoration: none;
+    text-transform: uppercase;    
+    }
+
+
+.search_bar{
+    position: relative;
+    width: 250px;
+    height: auto;
+    display:inline-block;
+}    
+
+.search_bar .search{
+    width: 200px;
+    height: 28px;
     
-                <div class="images"></div>
-                <li><a href=".......">
-                    <img class="log" alt="LOG" src="profil2.png" style="float: right">
-                    </a></li>
+}
 
-                <li><a href="......">
-                    <img class="checkout" alt="cart" src="panier.png" style="float: right">
-                    </a>
-                </li></div>
-
-            </ul>
-
-        </div>
-
-        <script>
-            function openPage(){
-                var a = document.getElementById("search").value;
-
-                if(a==="call of duty" || a==="Call of Duty" || a==="Call Of Duty" || a==="call of Duty"){
-                    window.open("test.html")
-                }
-                else
-                window.alert("Game not found !!!");
-            }
-        </script>
-        
-        
-        
-        
-        
-        <style>
-            .header{
-                border-style: inset;
-                border: none;
-                padding: 0;
-                margin: 0;
-                position: sticky; 
-                top: 0;
-                background: linear-gradient(to bottom right, blue, pink);
-                z-index: 99;
-                box-shadow: 0 0 10px rgba(0,0,0,0.9);
-                font-family: Arial, Helvetica, sans-serif;
-            }
-
-            .logo img{
-                width: 280px;
-                height: 100px;
-            }
-
-            .images img {
-                width: auto;
-                height: auto;
-            }
-
-            a:link {
-                text-decoration: none;
-            }
-
-            .header ul{
-                margin: 0;
-                padding: 0;
-                display: flex;
-                font-size: large;
-                padding: 15px 2px 15px 2px; /*top right bottom left*/
-                font-weight: bold;
-            }
+.bouton{
+    width: 35px;
+    background-image: url(\recherche.png);
+    height: 35px;
+    padding: 0;
+    float:right;
+}   
+                  
+          
+</style>
 
 
-            .header ul li{
-                max-width: 800px;
-                margin: 0 auto;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-            }
-
-
-            .header li a{
-                font-family: Arial, Helvetica, sans-serif;
-                background: -webkit-linear-gradient(315deg, #1f5bb6 0%, #15db39 74%);
-                background-clip: border-box;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-color: #b8c6db;
-                text-decoration: none;
-                text-transform: uppercase;    
-            }
-
-            .search_bar{
-                position: relative;
-                width: 250px;
-                height: auto;
-                display:inline-block;
-            }    
-
-            .search_bar .search{
-                width: 200px;
-                height: 28px;
-            }
-
-            .search_bar .bouton{
-                width: 35px;
-                height: 35px;
-                padding: 0;
-                float:right;
-            }
-            </style>
     </header>
