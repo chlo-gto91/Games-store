@@ -26,6 +26,20 @@ module.exports = {
             throw err;
         }
     },
+    async getAllGameStock(){
+        try{
+            let conn = await pool.getConnection();
+            let sql = "SELECT game_stock FROM game";
+            const rows = await conn.query(sql);
+            conn.end();
+            console.log("ROWS FETCHED: "+rows.length);
+            return rows;
+        }
+        catch (err) {
+            console.log(err);
+            throw err;
+        }
+    },
     async getOneGame(ID_game){
         try {
             let conn = await pool.getConnection();
