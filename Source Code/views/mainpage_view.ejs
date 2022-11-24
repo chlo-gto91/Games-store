@@ -144,7 +144,7 @@
         </ul>
 
     </div>
-
+<% for (var game of game_stock) { %>
     <div id="viewing_bloc">
         <table id="table">
             <tr>
@@ -156,16 +156,16 @@
             </tr>
             <tr>
                 <td></td>
-                <td>Mario Kart 8</td>
-                <td>Frenzied karting races in the universe of super mario</td>
-                <td>15</td><!--15-->
-                <td>55</td>
+                <td><%= game.game_name %></td><!--Mario Kart 8-->
+                <td><%= game.game_description %></td><!--Frenzied karting races in the universe of super mario-->
+                <td><%= game.game_stock %></td><!--15-->
+                <td><%= game.price %></td><!--55-->
             </tr>
-            <tr>
+            <!--<tr>
                 <td></td>
                 <td>Super Mario Bros</td>
                 <td>Adventure in the universe of super mario</td>
-                <td>14</td><!--14-->
+                <td>14</td>
                 <td>50</td>
             </tr>
             <tr>
@@ -286,12 +286,13 @@
                 <td>The game's story follows Cloud Strife, a mercenary who joins an eco-terrorist organization to stop a world-controlling megacorporation </td>
                 <td>1</td>
                 <td>5</td>
-            </tr>
+            </tr>-->
+       
         </table>
-        <button onclick="AddRows()">Add rows</button>
-        <button onclick="DelRows()">Del rows</button>
     </div>
-
+<% } %>
+<button onclick="AddRows()">Add rows</button>
+<button onclick="DelRows()">Del rows</button>
 </div>    
     </body>
 
