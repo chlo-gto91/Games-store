@@ -3,42 +3,8 @@
 <%- include("partial_headers.ejs"); %>
 
     <body>
+        <!--
         <script>
-
-            const gameRepo = require('../Repository/game.repository');
-
-            function AddRows(){
-                var table = document.getElementById('table');
-                var ligne = table.insertRow(-1);
-                var td1 = ligne.insertCell(0);
-                var td2 = ligne.insertCell(1);
-                var td3 = ligne.insertCell(2);
-                var td4 = ligne.insertCell(3); 
-                var td5 = ligne.insertCell(4);
-            };
-
-            function DelRows(){
-                document.getElementById('table').deleteRow(-1);
-            }
-
-
-            async function SortByParameter(category){
-                var games = await gameRepo.getAllGameByCategory(category);
-
-                var flashMessage = request.session.flashMessage;
-                request.session.flashMessage = "";
-
-                alert("J'ai trié en fonction de " + category);
-
-                response.render("mainpage_view",{"games ": games, "flashMessage": flashMessage});
-            };
-
-
-            async function SortByEditor(editor){
-                alert("Trier par : " + editor);
-            };
-
-
             $(function(){
                 $('.range').next().text('--'); // Default value
                 $('.range').on('input', function(){
@@ -46,8 +12,24 @@
                     $(this).next().text($set);
                 });
             });
-        </script>
 
+        function AddRows(){
+            var table = document.getElementById('table');
+            var ligne = table.insertRow(-1);
+            var td1 = ligne.insertCell(0);
+            var td2 = ligne.insertCell(1);
+            var td3 = ligne.insertCell(2);
+            var td4 = ligne.insertCell(3); 
+            var td5 = ligne.insertCell(4);
+        };
+
+        function DelRows(){
+            document.getElementById('table').deleteRow(-1);
+        }
+
+        </script>
+-->
+        
 <div id="ensemble">
     <div id="parameter">
         <form id="price">
@@ -58,14 +40,14 @@
         </form>
         <ul id="Game_type_list">
             <label id="list_parameter" for="category"> <br><br><br> Category : </label>
-            <li><a href="#" onclick="SortByParameter('Action')">Action</a></li>
-            <li><a href="#" onclick="SortByParameter('Adventure')">Adventure</a></li>
-            <li><a href="#" onclick="SortByParameter('Car')">Car</a></li>
-            <li><a href="#" onclick="SortByParameter('Family')">Family</a></li>
-            <li><a href="#" onclick="SortByParameter('MOBA')">MOBA</a></li>
-            <li><a href="#" onclick="SortByParameter('RPG')">RPG</a></li>
-            <li><a href="#" onclick="SortByParameter('Sport')">Sport</a></li>
-            <li><a href="#" onclick="SortByParameter('War')">War</a></li>
+            <li><a href='/main_page/SortParameter/Action'>Action</a></li>
+            <li><a href='/main_page/SortParameter/Adventure'>Adventure</a></li>
+            <li><a href='/main_page/SortParameter/Car'>Car</a></li>
+            <li><a href='/main_page/SortParameter/Family'>Family</a></li>
+            <li><a href='/main_page/SortParameter/MOBA'>MOBA</a></li>
+            <li><a href='/main_page/SortParameter/RPG'>RPG</a></li>
+            <li><a href='/main_page/SortParameter/Sport'>Sport</a></li>
+            <li><a href='/main_page/SortParameter/War'>War</a></li>
         </ul>
 
         <ul id="Editor_list">

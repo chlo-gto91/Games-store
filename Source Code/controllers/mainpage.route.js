@@ -7,6 +7,23 @@ const gameRepo = require('../Repository/game.repository');
 
 
 router.get('/', gameStockShowAction);
+router.get('/SortParameter/:Parameter', SortByParameter);
+router.get('/SortEditor/:Editor', SortByEditor);
+
+
+async function SortByParameter(request, response){
+    var game_Parameter = await gameRepo.getAllGameByCategory(request.params.Parameter);
+    var flashMessage = request.session.flashMessage;
+    request.session.flashMessage = "";
+    //console.log(game_Parameter);
+
+    response.render("gameParameter_view", {"game_Parameter": game_Parameter, "flashMessage": flashMessage});
+}
+
+
+async function SortByEditor(request, response){
+    alert("Trier par : " + editor);
+}
 
 
 async function gameStockShowAction(request, response){
@@ -19,12 +36,8 @@ async function gameStockShowAction(request, response){
 
 
 
-// http://localhost:8000/mainpage
 
-/*
-router.get('/', (req, res) => {
-    res.render('mainpage_view', { favourites: []});
-});
-*/
+
+// http://localhost:8000/mainpage
 
 module.exports = router;

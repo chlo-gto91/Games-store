@@ -1,0 +1,25 @@
+<%- include("partial_headers.ejs"); %>
+<body>
+    <table class="table2">
+        <tr>
+            <th>&nbsp;</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Stock</th>
+            <th>Price</th>
+        </tr>
+        <% for (var game of game_Parameter) { %>
+        <tr>
+            <td><%= game.category %></td>
+            <td><%= game.game_name %></td><!--Mario Kart 8-->
+            <td><%= game.game_description %></td><!--Frenzied karting races in the universe of super mario-->
+            <td><%= game.game_stock %></td><!--15-->
+            <td><%= game.price %></td><!--55-->
+        </tr>
+        <% } %>
+
+    </table>
+   
+</body>
+
+<%- include("partial_footer.ejs"); %>

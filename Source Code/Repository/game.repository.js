@@ -61,15 +61,11 @@ module.exports = {
     async getAllGameByCategory(category_game){
         try {
             let conn = await pool.getConnection();
-            let sql = "SELECT * FROM game WHERE category =? ";
+            let sql = "SELECT * FROM game WHERE category =?";
             const rows = await conn.query(sql, category_game);
             conn.end();
             console.log("ROWS FETCHED: "+rows.length);
-            if (rows.length == 1){
-                return rows[0];
-            }else{
-                return false;
-            }
+            return rows;
         }
         catch (err) {
             console.log(err);
