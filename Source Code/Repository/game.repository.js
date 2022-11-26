@@ -73,6 +73,21 @@ module.exports = {
         }
     },
 
+    async getAllGameByprice(price){
+        try {
+            let conn = await pool.getConnection();
+            let sql = "SELECT * FROM game WHERE price <=?";
+            const rows = await conn.query(sql, price);
+            conn.end();
+            console.log("ROWS FETCHED: "+rows.length);
+            return rows;
+        }
+        catch (err) {
+            console.log(err);
+            throw err;
+        }
+    },
+
     async getStockOfAGame(game_name){
         try {
             let conn = await pool.getConnection();

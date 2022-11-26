@@ -3,15 +3,15 @@
 <%- include("partial_headers.ejs"); %>
 
     <body>
-        <!--
+
         <script>
-            $(function(){
+        $(function(){
                 $('.range').next().text('--'); // Default value
                 $('.range').on('input', function(){
                     var $set = $(this).val();
                     $(this).next().text($set);
                 });
-            });
+        });
 
         function AddRows(){
             var table = document.getElementById('table');
@@ -28,16 +28,22 @@
         }
 
         </script>
--->
+
         
 <div id="ensemble">
     <div id="parameter">
-        <form id="price">
-            <label for="price1"> Price : <br/></label>
-            <input type="range" id="marange" class="range" name="a" min="0" max="100" step="1" value="50" oninput="result4.value=parseInt(a.value)">
-            <output name = "result4">--</output>
+        <ul class="price">
+            <label id="list_parameter" for="price"> Price : </label>
+            <li><a href="">0 - 10 EUR</a></li>
+            <li><a href="">10 - 20 EUR</a></li>
+            <li><a href="">20 - 30 EUR</a></li>
+            <li><a href="">30 - 40 EUR</a></li>
+            <li><a href="">40 - 50 EUR</a></li>
+            <li><a href="">50 - 60 EUR</a></li>
+            <li><a href="">60 - 70 EUR</a></li>
 
-        </form>
+        </ul>
+
         <ul id="Game_type_list">
             <label id="list_parameter" for="category"> <br><br><br> Category : </label>
             <li><a href='/main_page/SortParameter/Action'>Action</a></li>
@@ -52,21 +58,21 @@
 
         <ul id="Editor_list">
             <label id="list_parameter" for="Editor"> <br><br><br> Editor : <br></label>
-            <li><a href="#" onclick="SortByEditor('Electronic Arts')">Electronic Arts</a></li>
-            <li><a href="#" onclick="SortByEditor('Nitendo')">Nitendo</a></li>
-            <li><a href="#" onclick="SortByEditor('Activision')">Activision</a></li>
-            <li><a href="#" onclick="SortByEditor('Blizzard')">Blizzard</a></li>
-            <li><a href="#" onclick="SortByEditor('Take Two Interactive')">Take Two Interactive</a></li>
-            <li><a href="#" onclick="SortByEditor('Epic Games')">Epic Games</a></li>
-            <li><a href="#" onclick="SortByEditor('Warner Bros')">Warner Bros</a></li>
-            <li><a href="#" onclick="SortByEditor('Ubisoft')">Ubisoft</a></li>
-            <li><a href="#" onclick="SortByEditor('Gameloft')">Gameloft</a></li>
-            <li><a href="#" onclick="SortByEditor('Tencent')">Tencent</a></li>
-            <li><a href="#" onclick="SortByEditor('Square Enix')">Square Enix</a></li>
-            <li><a href="#" onclick="SortByEditor('SEGA')">SEGA</a></li>
-            <li><a href="#" onclick="SortByEditor('Bandai Namco')">Bandai Namco</a></li>
-            <li><a href="#" onclick="SortByEditor('Mojang Studios')">Mojang Studios</a></li>
-            <li><a href="#" onclick="SortByEditor('Rebound CG')">Rebound CG</a></li>
+            <li><a href='/main_page/SortEditor/Electronic Arts'>Electronic Arts</a></li>
+            <li><a href='/main_page/SortEditor/Nitendo'>Nitendo</a></li>
+            <li><a href='/main_page/SortEditor/Activision'>Activision</a></li>
+            <li><a href='/main_page/SortEditor/Blizzard'>Blizzard</a></li>
+            <li><a href='/main_page/SortEditor/Take Two Interactive'>Take Two Interactive</a></li>
+            <li><a href='/main_page/SortEditor/Epic Games'>Epic Games</a></li>
+            <li><a href='/main_page/SortEditor/Warner Bros'>Warner Bros</a></li>
+            <li><a href='/main_page/SortEditor/Ubisoft'>Ubisoft</a></li>
+            <li><a href='/main_page/SortEditor/Gameloft'>Gameloft</a></li>
+            <li><a href='/main_page/SortEditor/Tencent'>Tencent</a></li>
+            <li><a href='/main_page/SortEditor/Square Enix'>Square Enix</a></li>
+            <li><a href='/main_page/SortEditor/SEGA'>SEGA</a></li>
+            <li><a href='/main_page/SortEditor/Bandai Namco'>Bandai Namco</a></li>
+            <li><a href='/main_page/SortEditor/Mojang Studios'>Mojang Studios</a></li>
+            <li><a href='/main_page/SortEditor/Rebound CG'>Rebound CG</a></li>
         </ul>
 
     </div>
@@ -89,141 +95,13 @@
                     <td><%= game.price %></td><!--55-->
                 </tr>
 
-                <% } %>
-                <!--<tr>
-                    <td></td>
-                    <td>Super Mario Bros</td>
-                    <td>Adventure in the universe of super mario</td>
-                    <td>14</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Wii Sport resort</td>
-                    <td>Family sports game</td>
-                    <td>12</td>
-                    <td>48</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Assasin's Creed Origins</td>
-                    <td>Action-adventure open-world stealth game</td>
-                    <td>26</td>
-                    <td>30</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Minecraft</td>
-                    <td>Players explore a blocky, procedurally generated 3D world with virtually infinite terrain and may discover and extract raw materials</td>
-                    <td>4</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Fifa 23</td>
-                    <td>Football game that allows the player to develop his favorite team</td>
-                    <td>8</td>
-                    <td>70</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Animal Crossing</td>
-                    <td>Series of life simulation games in which players control an avatar who starts a new life, in a city full of eccentric animals</td>
-                    <td>9</td>
-                    <td>52</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>NBA 2K23</td>
-                    <td>Basketball game based on the National Basketball Association</td>
-                    <td>6</td>
-                    <td>45</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Tennis manager 2022</td>
-                    <td>Tennis management game</td>
-                    <td>4</td>
-                    <td>49</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Rayman Legends Definitive</td>
-                    <td>2D side-scrolling platform video game</td>
-                    <td>10</td>
-                    <td>30</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Sonic FRONTIERS</td>
-                    <td>Worlds are colliding in Sonic the Hedgehog’s newest high-speed adventure!</td>
-                    <td>50</td>
-                    <td>70</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Dragon Ball Z: Kakarot</td>
-                    <td>Relive the story of Goku and other Z Fighters in DRAGON BALL Z: KAKAROT!</td>
-                    <td>30</td>
-                    <td>60</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Call of Duty®: WWII</td>
-                    <td>Call of Duty: WWII Multiplayer engages players in grounded, fast-paced combat across many of World War II's most iconic locations.</td>
-                    <td>8</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Overwatch 2</td>
-                    <td>Overwatch 2 is a free-to-play, team-based action game set in the optimistic future, where every match is the ultimate 5v5 battlefield brawl.</td>
-                    <td>18</td>
-                    <td>60</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Rocket League</td>
-                    <td>Rocket League is a high-powered hybrid of arcade-style soccer and vehicular mayhem with easy-to-understand controls and fluid, physics-driven competition.</td>
-                    <td>21</td>
-                    <td>10</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Lego Star Wars : La Saga Skywalker</td>
-                    <td>The galaxy is yours in LEGO® Star Wars™: The Skywalker Saga.","Lego Star Wars : La Saga Skywalker</td>
-                    <td>48</td>
-                    <td>45</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Asphalt 9: Legends</td>
-                    <td>Take on the world's fearless and become an Asphalt legend in the best arcade racing game</td>
-                    <td>10</td>
-                    <td>55</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Arena of Valor</td>
-                    <td>Experience Arena of Valor, an epic new 5v5 multiplayer online battle arena (MOBA)</td>
-                    <td>23</td>
-                    <td>20</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>Final Fantasy VII</td>
-                    <td>The game's story follows Cloud Strife, a mercenary who joins an eco-terrorist organization to stop a world-controlling megacorporation </td>
-                    <td>1</td>
-                    <td>5</td>
-                </tr>-->
-           
+                <% } %>    
             </table>
         </div>
 </div>   
 
 <button onclick="AddRows()">Add rows</button>
 <button onclick="DelRows()">Del rows</button> 
-    </body>
 
 
 <%- include("partial_footer.ejs"); %>

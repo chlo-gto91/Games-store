@@ -7,8 +7,18 @@ const gameRepo = require('../Repository/game.repository');
 
 
 router.get('/', gameStockShowAction);
+router.get('/SortPrice/:Price', SortByPrice);
 router.get('/SortParameter/:Parameter', SortByParameter);
 router.get('/SortEditor/:Editor', SortByEditor);
+
+async function SortByPrice(request, response){
+    var game_price = await gameRepo.getAllGameByprice(request.params.price);
+    var flashMessage = request.session.flashMessage;
+    request.session.flashMessage ="";
+
+    console.log(game_price);
+    response.render("gamePrice_view", {"game_price": game_price, "flashMessage": flashMessage});
+}
 
 
 async function SortByParameter(request, response){
@@ -22,7 +32,12 @@ async function SortByParameter(request, response){
 
 
 async function SortByEditor(request, response){
-    alert("Trier par : " + editor);
+    var game_Editor = await gameRepo.getAllGameByCategory(request.params.Editor);
+    var flashMessage = request.session.flashMessage;
+    request.session.flashMessage = "";
+    //console.log(game_Editor);
+
+    response.render("gameParameter_view", {"game_Parameter": game_Editor, "flashMessage": flashMessage});
 }
 
 
