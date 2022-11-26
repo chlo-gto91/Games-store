@@ -1,8 +1,10 @@
 <!-- partial_headers.ejs -->
 <html>
-<header>
+<head>
     <link rel="stylesheet" type="text/css" href="../CSS/mainpage_style.css"/>
-
+    <link rel="stylesheet" type="text/css" href="../CSS/header_style.css"/>
+</head>
+<body>
 
         <div class = "header">
         
@@ -15,6 +17,8 @@
             </div></li>
 
             <li><div class="search_bar">
+
+
                 <!--Création barre de recherche-->    <!-- Onchange : Execute a JavaScript when the user changes the content of an input field:-->
                 <input class="search" type = "texte" id ="search" value = ""  placeholder="Search ..."  onchange = "openPage()">
                 <input class="bouton" type="button" onclick = "openPage()" />
@@ -35,9 +39,6 @@
         </ul>
 
     </div>
-
-
-
 
         <script>
             function openPage(){
