@@ -26,10 +26,26 @@ module.exports = {
             throw err;
         }
     },
+
+    async getAllEditor(){
+        try{
+            let conn = await pool.getConnection();
+            let sql = "SELECT * FROM Editor";
+            const rows = await conn.query(sql);
+            conn.end();
+            console.log("ROWS FETCHED: "+rows.length);
+            return rows;
+        }
+        catch (err) {
+            console.log(err);
+            throw err;
+        }
+
+    },
     async getAllGameStock(){
         try{
             let conn = await pool.getConnection();
-            let sql = "SELECT * FROM game";
+            let sql = "SELECT * FROM game, Editor";
             const rows = await conn.query(sql);
             conn.end();
             console.log("ROWS FETCHED: "+rows.length);
@@ -40,6 +56,7 @@ module.exports = {
             throw err;
         }
     },
+
     async getOneGame(ID_game){
         try {
             let conn = await pool.getConnection();
@@ -72,17 +89,32 @@ module.exports = {
             throw err;
         }
     },
-
-    async getAllGameByprice(price){
+    async getAllGameByEditor(Editor){
         try {
             let conn = await pool.getConnection();
-            let sql = "SELECT * FROM game WHERE price <=?";
-            const rows = await conn.query(sql, price);
+            let sql = "SELECT * FROM game WHERE ID_editor =?";
+            const rows = await conn.query(sql, Editor);
             conn.end();
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
         catch (err) {
+            console.log(err);
+            throw err;
+        }
+
+    },
+
+    async getGameByPrice(price_game){
+        try{
+            let conn = await pool.getConnection();
+            let sql  = "SELECT * FROM game WHERE price <= ?";
+            const rows = await conn.query(sql, price_game);
+            conn.end();
+            console.log("ROWS FETCHED: "+rows.length);
+            return rows;
+        }
+        catch(err) {
             console.log(err);
             throw err;
         }

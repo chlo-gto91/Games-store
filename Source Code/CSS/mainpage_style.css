@@ -47,4 +47,6 @@ a:hover, a:active{
     width: 32% ;
 }
 
-
+#table a{
+    color: black;
+}
