@@ -2,17 +2,8 @@
 
 <%- include("partial_headers.ejs"); %>
 
-    <body>
 
         <script>
-        $(function(){
-                $('.range').next().text('--'); // Default value
-                $('.range').on('input', function(){
-                    var $set = $(this).val();
-                    $(this).next().text($set);
-                });
-        });
-
         function AddRows(){
             var table = document.getElementById('table');
             var ligne = table.insertRow(-1);
@@ -37,10 +28,10 @@
             <li><a href='/main_page/SortPrice/10'>inf 10 EUR</a></li>
             <li><a href='/main_page/SortPrice/20'>inf 20 EUR</a></li>
             <li><a href='/main_page/SortPrice/30'>inf 30 EUR</a></li>
-            <li><a href="/main_page/SortPrice/40">30 - 40 EUR</a></li>
-            <li><a href="/main_page/SortPrice/50">40 - 50 EUR</a></li>
-            <li><a href="/main_page/SortPrice/60">50 - 60 EUR</a></li>
-            <li><a href="/main_page/SortPrice/70">60 - 70 EUR</a></li>
+            <li><a href="/main_page/SortPrice/40">inf 40 EUR</a></li>
+            <li><a href="/main_page/SortPrice/50">inf 50 EUR</a></li>
+            <li><a href="/main_page/SortPrice/60">inf 60 EUR</a></li>
+            <li><a href="/main_page/SortPrice/70">inf 70 EUR</a></li>
 
         </ul>
 
@@ -58,45 +49,44 @@
 
         <ul id="Editor_list">
             <label id="list_parameter" for="Editor"> <br><br><br> Editor : <br></label>
-            <% for (var g of game_stock) { %>
-
-            <li><a href='/main_page/SortEditor/<%= g.ID_editor %>'></a></li>
-            <% } %>
-        </ul>
-<!--            <li><a href='/main_page/SortEditor/<%= g.ID_editor %>'>Nitendo</a></li>
+            <li><a href='/main_page/SortEditor/1'>Electronic Arts</a></li>
+            <li><a href='/main_page/SortEditor/2'>Nitendo</a></li>
             <li><a href='/main_page/SortEditor/3'>Activision</a></li>
-            <li><a href='/main_page/SortEditor/3'>Blizzard</a></li>
-            <li><a href='/main_page/SortEditor/4'>Take Two Interactive</a></li>
-            <li><a href='/main_page/SortEditor/5'>Epic Games</a></li>
-            <li><a href='/main_page/SortEditor/6'>Warner Bros</a></li>
-            <li><a href='/main_page/SortEditor/7'>Ubisoft</a></li>
-            <li><a href='/main_page/SortEditor/8'>Gameloft</a></li>
-            <li><a href='/main_page/SortEditor/9'>Tencent</a></li>
-            <li><a href='/main_page/SortEditor/10'>Square Enix</a></li>
-            <li><a href='/main_page/SortEditor/11'>SEGA</a></li>
-            <li><a href='/main_page/SortEditor/12'>Bandai Namco</a></li>
-            <li><a href='/main_page/SortEditor/13'>Mojang Studios</a></li>
-            <li><a href='/main_page/SortEditor/14'>Rebound CG</a></li>-->
+            <li><a href='/main_page/SortEditor/4'>Blizzard</a></li>
+            <li><a href='/main_page/SortEditor/5'>Take Two Interactive</a></li>
+            <li><a href='/main_page/SortEditor/6'>Epic Games</a></li>
+            <li><a href='/main_page/SortEditor/7'>Warner Bros</a></li>
+            <li><a href='/main_page/SortEditor/8'>Ubisoft</a></li>
+            <li><a href='/main_page/SortEditor/9'>Gameloft</a></li>
+            <li><a href='/main_page/SortEditor/10'>Tencent</a></li>
+            <li><a href='/main_page/SortEditor/11'>Square Enix</a></li>
+            <li><a href='/main_page/SortEditor/12'>SEGA</a></li>
+            <li><a href='/main_page/SortEditor/13'>Bandai Namco</a></li>
+            <li><a href='/main_page/SortEditor/14'>Mojang Studios</a></li>
+            <li><a href='/main_page/SortEditor/15'>Rebound CG</a></li>
+        </ul>
+
+    
     </div>
 
         <div id="viewing_bloc">
             <table id="table">
                 <tr>
-                    <th>&nbsp;</th>
+                    <th>Image</th>
                     <th>Name</th>
                     <th>Description</th>
                     <th>Stock</th>
                     <th>Price</th>
-                    <th>&nbsp;</th>
+                    <th>Cart</th>
                 </tr>
                 <% for (var game of game_stock) { %>
                 <tr>
                     <td></td>
-                    <td><%= game.game_name %></td><!--Mario Kart 8-->
-                    <td><%= game.game_description %></td><!--Frenzied karting races in the universe of super mario-->
-                    <td><%= game.game_stock %></td><!--15-->
-                    <td><%= game.price %></td><!--55-->
-                    <td><a href="/main_page/cart/<%= game.ID_game %> ">Add to Cart</a></td>
+                    <td><%= game.game_name %></td>
+                    <td><%= game.game_description %></td>
+                    <td><%= game.game_stock %></td>
+                    <td><%= game.price %></td>
+                    <td><a href='/main_page/cart/<%= game.ID_game %>'>Add to Cart</a></td>
                 </tr>
 
                 <% } %>    

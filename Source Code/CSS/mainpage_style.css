@@ -2,7 +2,6 @@
 #ensemble{
     position: relative;
     display: flex;
-    flex-direction: column-reverse;
 }
 
 #parameter{
@@ -36,17 +35,21 @@ a:hover, a:active{
 }
 
 #viewing_bloc{
-    margin-left: 10%;
     border: 1px solid black;
-    width: 80%;
+    width: 100%;
     height: fit-content;
 }
 
 #viewing_bloc th,td{
     border: 1px solid black;
-    width: 32% ;
+    width: fit-content;
 }
 
 #table a{
     color: black;
+}
+
+#table{
+    height: 782px;
+    width: 100%;
 }

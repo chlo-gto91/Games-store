@@ -1,4 +1,4 @@
-pool = require("../utils/db.js");
+pool = require("../Repository/db.js");
 
 
 module.exports = {

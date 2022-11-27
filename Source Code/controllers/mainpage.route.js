@@ -46,17 +46,18 @@ async function gameStockShowAction(request, response){
     let game_stock = await gameRepo.getAllGameStock();
     let flashMessage = request.session.flashMessage;
     request.session.flashMessage = "";
+    
     //console.log(game_stock);
-    response.render("mainpage_view", {"game_stock": game_stock, "game_editor": game_editor, "flashMessage": flashMessage});
+    response.render("mainpage_view", {"game_stock": game_stock, "flashMessage": flashMessage});
 }
 
 async function AddToCart(request, response){
-    let game_to_cart = await gameRepo.getOneGame(request.params.game_ID);
+    let game_cart = await gameRepo.getOneGame(request.params.game_ID);
     let flashMessage = request.session.flashMessage;
     request.session.flashMessage = "";
 
     //console.log(game_to_cart);
-    response.render("cart", {"game_to_cart": game_to_cart, "flashMessage": flashMessage});
+    response.render("cart", {"game_cart": game_cart, "flashMessage": flashMessage});
 }
 
 

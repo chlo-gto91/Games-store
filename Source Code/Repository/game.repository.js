@@ -30,7 +30,7 @@ module.exports = {
     async getAllEditor(){
         try{
             let conn = await pool.getConnection();
-            let sql = "SELECT * FROM Editor";
+            let sql = "SELECT * FROM editor";
             const rows = await conn.query(sql);
             conn.end();
             console.log("ROWS FETCHED: "+rows.length);
@@ -42,10 +42,11 @@ module.exports = {
         }
 
     },
+
     async getAllGameStock(){
         try{
             let conn = await pool.getConnection();
-            let sql = "SELECT * FROM game, Editor";
+            let sql = "SELECT * FROM game";
             const rows = await conn.query(sql);
             conn.end();
             console.log("ROWS FETCHED: "+rows.length);
