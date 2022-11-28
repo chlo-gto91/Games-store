@@ -27,7 +27,7 @@ CREATE TABLE editor(
 
 CREATE TABLE console(
    ID_console INT auto_increment,
-   stockage VARCHAR(50),
+   stockage INT,
    console_name VARCHAR(50),
    console_color VARCHAR(50),
    console_price INT,
@@ -114,16 +114,16 @@ insert into game values (NULL, 20,"Experience Arena of Valor, an epic new 5v5 mu
 insert into game values (NULL, 5,"The game's story follows Cloud Strife, a mercenary who joins an eco-terrorist organization to stop a world-controlling megacorporation ","Final Fantasy VII","Adventure", 1,11);
 
 
-insert into console values (NULL,"500 Go","XBOX ONE","black",250,15);
-insert into console values (NULL,"500 Go","XBOX ONE S","white",350,9);
-insert into console values (NULL,"1 To","XBOX ONE X","black",500,5);
-insert into console values (NULL,"500 Go","PS4","black",250,14);
-insert into console values (NULL,"1 To","PS5","white",500,3);
-insert into console values (NULL,"0 Go","Nitendo 3DS","blue",130,6);
-insert into console values (NULL,"32 Go","Nitendo SWITCH","black",260,11);
-insert into console values (NULL,"64 Go","Nitendo SWITCH OLED","white",320,2);
-insert into console values (NULL,"32 Go","Nitendo SWITCH LITE","pink",200,5);
-insert into console values (NULL,"0 Go","Game Boy","grey",60,1);
+insert into console values (NULL,500,"XBOX ONE","black",250,15);
+insert into console values (NULL,500,"XBOX ONE S","white",350,9);
+insert into console values (NULL,1000,"XBOX ONE X","black",500,5);
+insert into console values (NULL,500,"PS4","black",250,14);
+insert into console values (NULL,1000,"PS5","white",500,3);
+insert into console values (NULL,0,"Nitendo 3DS","blue",130,6);
+insert into console values (NULL,32,"Nitendo SWITCH","black",260,11);
+insert into console values (NULL,64,"Nitendo SWITCH OLED","white",320,2);
+insert into console values (NULL,32,"Nitendo SWITCH LITE","pink",200,5);
+insert into console values (NULL,0,"Game Boy","grey",60,1);
 
 
 insert into have values (1,15);

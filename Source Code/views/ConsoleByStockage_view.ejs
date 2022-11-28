@@ -1,0 +1,24 @@
+<%- include("partial_headers.ejs"); %>
+
+<table class="table_console_price">
+    <tr>
+        <th>Name</th>
+        <th>Stockage</th>
+        <th>Color</th>
+        <th>Stock</th>
+        <th>Price</th>
+        <th>Cart</th>
+    </tr>
+    <% for (var console of stockage_console) { %>
+    <tr>
+        <td><%= console.console_name %></td>
+        <td><%= console.stockage %></td>
+        <td><%= console.console_color %></td>
+        <td><%= console.console_stock %></td>
+        <td><%= console.console_price %></td>
+        <td> Add to Cart </td>
+    </tr>
+    <% } %>
+</table>
+
+<%- include("partial_footer.ejs"); %>

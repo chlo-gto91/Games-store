@@ -26,6 +26,34 @@ module.exports = {
             throw err;
         }
     },
+    async getConsoleByPrice(price_console){
+        try{
+            let conn = await pool.getConnection();
+            let sql = "SELECT * FROM console WHERE console_price <= ?";
+            const rows = await conn.query(sql, price_console);
+            conn.end();
+            console.log("ROWS FETCHED: "+rows.length);
+            return rows;
+        }
+        catch (err) {
+            console.log(err);
+            throw err;
+        }
+    },
+    async getConsoleByStockage(stockage){
+        try{
+            let conn = await pool.getConnection();
+            let sql = "SELECT * FROM console WHERE stockage  <= ?";
+            const rows = await conn.query(sql, stockage);
+            conn.end();
+            console.log("ROWS FETCHED: "+rows.length);
+            return rows;
+        }
+        catch (err) {
+            console.log(err);
+            throw err;
+        }
+    },
     async getOneConsole(ID_console){
         try {
             let conn = await pool.getConnection();
