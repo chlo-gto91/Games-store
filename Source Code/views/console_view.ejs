@@ -1,7 +1,50 @@
 <%- include("partial_headers.ejs"); %>
+<div class="console_ensemble">
 
-<div class="list_console">
-    
+    <div class="console_parameter">
+        <ul class="console_price">
+            <label class="list_console_parameter" for="price"> Price : </label>
+            <li><a href='/console/ConsoleByPrice/100'>inf 100 EUR</a></li>
+            <li><a href='/console/ConsoleByPrice/200'>inf 200 EUR</a></li>
+            <li><a href='/console/ConsoleByPrice/300'>inf 300 EUR</a></li>
+            <li><a href="/console/ConsoleByPrice/400">inf 400 EUR</a></li>
+            <li><a href="/console/ConsoleByPrice/500">inf 500 EUR</a></li>
+        </ul>
+
+
+        <ul class="console_stockage">
+            <label class="list_console_parameter" for="stockage"> Stockage : </label>
+            <li><a href="/console/ConsoleByStockage/64"> inf 64 Go</a></li>
+            <li><a href="/console/ConsoleByStockage/128"> inf 128 Go</a></li>
+            <li><a href="/console/ConsoleByStockage/500"> inf 500 Go</a></li>
+            <li><a href="/console/ConsoleByStockage/1000"> inf 1 To</a></li>
+        </ul>
+        
+    </div>
+
+    <div class="list_console">
+        <table class="">
+            <tr>
+                <th>Name</th>
+                <th>Stockage</th>
+                <th>Color</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Cart</th>
+            </tr>
+            <% for (var console of console) { %>
+            <tr>
+                <td><%= console.console_name %></td>
+                <td><%= console.stockage %></td>
+                <td><%= console.console_color %></td>
+                <td><%= console.console_stock %></td>
+                <td><%= console.console_price %></td>
+                <td> Add to Cart </td>
+            </tr>
+            <% } %>
+        </table>
+        
+    </div>
 </div>
 
 <%- include("partial_footer.ejs"); %>
