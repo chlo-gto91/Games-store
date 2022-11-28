@@ -1,188 +1,100 @@
-<!-- LogPage_view.ejs -->
 
 <%- include("partial_headers.ejs"); %>
 
-<meta charset="utf-8">
 
-<div class="form">
-    <span class="form_title"> Sign up</span>;
-    <form action="">
-        <div class="form_input">
-                <i class="ri-user-line">x</i>
-                <input type="text" placeholder= "Name">
-                <span class="bar"></span>
-        </div>  
-        <div class= "form_input">
-            <i class="ri-mail-line"></i>
-            <input type="text" placeholder="Email">
-            <span class="bar"></span>
-        </div>
-        <div class= " form_input">
-            <i class="ri-lock-line"></i>
-            <input type="text" placeholder= "Password">
-            <span class="bar"></span>
-        </div>
-        <div class="form_input">
-            <i class="ri-lock-line"></i>
-            <input type="text" placeholder="Confirm password">
-            <span class="bar"></span>
-        </div>
-        <button type="submit"class="form button">Sign up</button>
-        <span class="form_switch">
-            Already have an account? <a href="#">Login</a>
-        </span>
-    </form>
-</div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        form {border: 3px solid #f1f1f1;}
 
-<style>
-    *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    }   
-
-    html {
-        font-size: 10px;
-        font-family:'Poppins', sans-serif;
-    }
-    
-    body {
-        font-size:1.6rem;
-        background-color:#f6c9ff;
-    }
-    
-    .form {
-        position: relative;
-        max-width:40rem;
-        padding: 10rem 0;;
-        color:#fff;
-        background-color:#fff;
-        border-radius:1rem;
-        boX-shadow: 0 1px 1rem rgba(0,0,0,.1);
-        isolation: isolate;
-    }
-    
-    .form::before {
-        content:"";
-        position: absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height: 10rem;
-        background: linear-gradient(to left, #fc6767,#ec008c);
-        border-radius: 1rem 1rem 100% 100%;
-        z-index: -1;
-    }
-
-    .form_title {
-        position:absolute;
-        top: 3.5rem;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 2.5rem;
-    }
-        
-    .form>form {
-        padding: 2.5rem;
-        background-color: inherit;
-    }
-        
-    .form_input{
-        position:relative;
-        display: flex;
-        align-items: baseline;
-        margin: 0 auto;
-    }
-        
-    .form_input>i {
-        font-size: 2rem;
-        margin-right: 1rem;
-        color: #fc6767;
-    }
-        
-    .form_input input {
-        position: relative;
-        width:100%;
-        font:inherit;
-        padding: 1rem 0;
-        margin-top:.5rem;
-        border:none;
-        outline: none;
-    }
-
-    .form_ input .bar {
-        position: adsolute;
-        left: 0;
-        bottom:0;
-        background-color: rgba(0, 0, 0, .1);
+        input[type=text], input[type=password] {
         width: 100%;
-        height:1px;
-    }
-        
-    .form_input .bar::before {
-        content:"";
-        position: absolute;
-        background-color:#f66767;
-        width:100%;
-        height: 2px;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform .5s;
-    }
-        
-    .form_input>input:focus+.bar::before {
-        transform: scalex(1);
-    }
-        
-    .form_botton {
-        display: block;
-        margin: 2.5rem auto 3rem;
-        padding: 1rem 5rem;
-        background: linear-gradient(to left, #fc6767,#ec008c);
-        color: #fff;
-        font:inherit;
-        border:.5rem solid #fff;
-        outline: none;
-        cursor:pointer;
-        border-radius: 3rem;
-    }
-        
-    .form_button:hover {
-        background: linear-gradient(to right,#fc6767,#ec008c);
-    }
-        
-    .form_switch {
-        display: block;
-        text-align: center;
-        font-size: 1.5rem;
-        color: #a1a1a1;
-    }
-        
-    .form_switch a {
-        text-decoration: none ;
-        color: #Fc6767;
-    }
-        
-    .form_switch a:hover {
-        text-decoration: underline;
-    }
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        }
 
-    @media screen and (min-width: 43.75em) {
-        .form::before{
-            height: 30rem;
+        button {
+        background-color: #04AA6D;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
         }
-        .form_title {
-            left: 10rem;
-            transform: none;
+
+        button:hover {
+        opacity: 0.8;
         }
-        .form>form {
-            transform: translateX(10rem);
-            border-radius: inherit;
-            box-shadow: inherit;
+
+        .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
         }
+
+        .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        }
+
+        img.avatar {
+        width: 15%;
+        border-radius: 50%;
+        }
+
+        .container {
+        padding: 16px;
+        }
+
+        span.psw {
+        float: right;
+        padding-top: 16px;
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+        .cancelbtn {
+            width: 100%;
+        }
+        }
+    </style>
+
+<body>
+
+<h2>Login Form</h2>
+
+<form action="/action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="image\Avatar.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
         
-    }
-    
-</style>
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+
+</body>
 
 <%- include("partial_footer.ejs"); %>
