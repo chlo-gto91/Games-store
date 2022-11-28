@@ -47,3 +47,4 @@ app.use("/image", express.static(__dirname + '/image'));
 app.use("/main_page", require("./controllers/mainpage.route"));
 app.use("/CreateAccount", require("./controllers/CreateAccountpage.route"));
 app.use("/console", require("./controllers/Console"));
+app.use("/LogIn", require("./controllers/Log"));
