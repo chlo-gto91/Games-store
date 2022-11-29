@@ -17,7 +17,7 @@ async function ConsoleShowAction(request, response){
     response.render("console_view", {"console":console, "flashMessage":flashMessage});
 }
 
-async function SortConsoleByPrice(response, request){
+async function SortConsoleByPrice(request, response){
     var console_price = await consoleRepo.getConsoleByPrice(request.params.PriceConsole);
     var flashMessage = request.session.flashMessage;
     request.session.flashMessage = "";
@@ -29,7 +29,7 @@ async function SortConsoleByStockage(request, response){
     var stockage_console = await consoleRepo.getConsoleByStockage(request.params.StockageConsole);
     var flashMessage = request.session.flashMessage;
     request.session.flashMessage ="";
-    console.log(stockage_console);
+    //console.log(stockage_console);
 
     response.render("ConsoleByStockage_view", {"stockage_console":stockage_console, "flashMessage":flashMessage });
 }
