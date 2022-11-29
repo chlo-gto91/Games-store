@@ -1,8 +1,8 @@
 // controllers/auth.route.js
 const express = require('express');
 const router = express.Router();
-const auth = require("../utils/users.auth");
-const userRepo = require("../utils/users.repository");
+const auth = require("../Repository/users.auth");
+const userRepo = require("../Repository/users.repository");
 
 // http://localhost:9000/auth
 router.get('/', (req, res) => res.render('auth_view', { extraContent: "" }) );
@@ -18,15 +18,15 @@ async function userAction(request, response) {
   response.render("auth_view", { "extraContent": userJson });
 }
 
-async function protectedGetAction(request, response) {
+async function protectedGetAction(request, response) { //redirect link
   if (request.isAuthenticated()) {
     if (request.user.user_role === "ADMIN") {
-      response.redirect("/auth/admin");
+      response.redirect("/auth/admin"); //admin page
     } else {
-      response.redirect("/auth/user");
+      response.redirect("/auth/user"); //user page
     }
   } else {
-      response.redirect("/auth");
+      response.redirect("/auth"); //log in page
   }
 }
 
