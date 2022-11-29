@@ -25,6 +25,7 @@
     <div class="list_console">
         <table class="">
             <tr>
+                <th>Image</th>
                 <th>Name</th>
                 <th>Stockage</th>
                 <th>Color</th>
@@ -34,12 +35,13 @@
             </tr>
             <% for (var console of console) { %>
             <tr>
+                <td></td>
                 <td><%= console.console_name %></td>
                 <td><%= console.stockage %></td>
                 <td><%= console.console_color %></td>
                 <td><%= console.console_stock %></td>
                 <td><%= console.console_price %></td>
-                <td> Add to Cart </td>
+                <td><a href="/main_page/cart/<%= console.ID_console %>">Add to cart</a></td>
             </tr>
             <% } %>
         </table>

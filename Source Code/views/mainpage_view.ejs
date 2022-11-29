@@ -23,7 +23,7 @@
         
 <div id="ensemble">
     <div id="parameter">
-        <ul class="price">
+        <ul id="Game_Price_list">
             <label id="list_parameter" for="price"> Price : </label>
             <li><a href='/main_page/SortPrice/10'>inf 10 EUR</a></li>
             <li><a href='/main_page/SortPrice/20'>inf 20 EUR</a></li>
@@ -47,7 +47,7 @@
             <li><a href='/main_page/SortParameter/War'>War</a></li>
         </ul>
 
-        <ul id="Editor_list">
+        <ul id="Game_Editor_list">
             <label id="list_parameter" for="Editor"> <br><br><br> Editor : <br></label>
             <li><a href='/main_page/SortEditor/1'>Electronic Arts</a></li>
             <li><a href='/main_page/SortEditor/2'>Nitendo</a></li>
@@ -71,25 +71,27 @@
 
         <div id="viewing_bloc">
             <table id="table">
+                <!--
                 <tr>
-                    <th>Image</th>
+                    <th id="th_image">Image</th>
                     <th>Name</th>
                     <th>Description</th>
                     <th>Stock</th>
                     <th>Price</th>
                     <th>Cart</th>
                 </tr>
+                -->
                 <% for (var game of game_stock) { %>
                 <tr>
-                    <td></td>
-                    <td><%= game.game_name %></td>
-                    <td><%= game.game_description %></td>
-                    <td><%= game.game_stock %></td>
-                    <td><%= game.price %></td>
-                    <td><a href='/main_page/cart/<%= game.ID_game %>'>Add to Cart</a></td>
+                    <td id="td_image"></td>
+                        <td><%= game.game_name %></td>
+                        <td><%= game.game_description %></td>
+                        <td><%= game.game_stock %></td>
+                        <td><%= game.price %></td>
+                        <td><a href='/main_page/cart/<%= game.ID_game %>'>Add to Cart</a></td>
                 </tr>
-
-                <% } %>    
+                <% } %>
+                
             </table>
         </div>
 </div>   
@@ -97,6 +99,55 @@
 <button onclick="AddRows()">Add rows</button>
 <button onclick="DelRows()">Del rows</button> 
 
+<!---
+#ensemble{
+    position: relative;
+    display: flex;
+}
 
+#parameter{
+    margin-top: 0;
+    border: 1px solid black;
+    width: fit-content;
+    height: 100%;
+
+}
+
+#parameter a{
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+a:hover, a:active{
+    color: none;
+}
+
+
+#table a{
+    color: black;
+}
+
+#table{
+    position: relative;
+    display: flex;
+}
+
+#table tr{
+    height: 200px;
+    width: 150px;
+}
+
+
+#table{
+    height: 250px;
+    border: 1px solid black;
+    width: auto;
+}
+-->
 <%- include("partial_footer.ejs"); %>
   

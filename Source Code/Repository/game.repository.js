@@ -109,7 +109,7 @@ module.exports = {
     async getGameByPrice(price_game){
         try{
             let conn = await pool.getConnection();
-            let sql  = "SELECT * FROM game WHERE price <= ?";
+            let sql  = "SELECT * FROM game WHERE price <= ? ORDER BY price";
             const rows = await conn.query(sql, price_game);
             conn.end();
             console.log("ROWS FETCHED: "+rows.length);

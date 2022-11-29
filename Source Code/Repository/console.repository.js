@@ -29,7 +29,7 @@ module.exports = {
     async getConsoleByPrice(price_console){
         try{
             let conn = await pool.getConnection();
-            let sql = "SELECT * FROM console WHERE console_price <= ?";
+            let sql = "SELECT * FROM console WHERE console_price <= ? ORDER BY console_price";
             const rows = await conn.query(sql, price_console);
             conn.end();
             console.log("ROWS FETCHED: "+rows.length);
@@ -43,7 +43,7 @@ module.exports = {
     async getConsoleByStockage(stockage){
         try{
             let conn = await pool.getConnection();
-            let sql = "SELECT * FROM console WHERE stockage  <= ?";
+            let sql = "SELECT * FROM console WHERE stockage  <= ? ORDER BY stockage";
             const rows = await conn.query(sql, stockage);
             conn.end();
             console.log("ROWS FETCHED: "+rows.length);
