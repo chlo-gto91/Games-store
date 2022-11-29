@@ -51,7 +51,7 @@ async function loginPostAction(request, response) {
 }
 
 function logoutAction(request, response) {
-    request.logout(function(err) {
+    request.logout(function(err) { //it destroyes all and remove the session
         if (err) { return next(err); }
         response.redirect('/auth');
     });
