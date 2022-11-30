@@ -38,7 +38,7 @@ async function loginPostAction(request, response) {
     request.login(client, function (err) { 
         if (err) { console.log("ERROR"); console.log(err); return next(err); }
 
-        if (request.client.user_role === "ADMIN") { //??????????
+        if (request.client.client_role === "ADMIN") { 
             return response.redirect("/auth/admin");
         } else {
             return response.redirect("/auth/user");
