@@ -84,8 +84,8 @@
                 <% for (var game of game_stock) { %>
                 <tr>
                     <td id="td_image"></td>
-                        <td><%= game.game_name %></td>
-                        <td><%= game.game_description %></td>
+                        <td><h1><%= game.game_name %></h1></td>
+                        <!-- <td><%= game.game_description %></td> -->
                         <td><%= game.game_stock %></td>
                         <td><%= game.price %></td>
                         <td><a href='/main_page/cart/<%= game.ID_game %>'>Add to Cart</a></td>
