@@ -14,11 +14,11 @@ module.exports = {
     });
   },
 
-  checkAuthentication(mail) { //to check mail ? or another thing
+  checkAuthentication(role) {
     return function (request, response, next) {
       if (request.isAuthenticated()) {
-        if (mail) {
-          if (mail === request.client.mail_address) { 
+        if (role) {
+          if (role === request.client.user_role) { 
             return next();
           } else {
             return response.end("401 Unautorized (bad user level)"); // TODO: Hierarchy
@@ -32,4 +32,5 @@ module.exports = {
       }
     }
   }
+
 };
