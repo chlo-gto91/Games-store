@@ -24,10 +24,10 @@ module.exports = {
       let conn = await pool.getConnection();
       let sql = "SELECT * FROM client WHERE client_name = ? AND client_password COLLATE utf8mb4_general_ci  = sha2(concat(user_created, ?), 224) COLLATE utf8mb4_general_ci "; 
       // TODO: better salt+pw hash - COLLATE usually not needed
-      const rows = await conn.query(sql, [username, password]);
+      const rows = await conn.query(sql, [clientname, client_password]);
       conn.end();
 
-      if (rows.length == 1 && rows[0].user_name === username) {
+      if (rows.length == 1 && rows[0].client_name === clientname) {
         return true;
       } else {
         return false;

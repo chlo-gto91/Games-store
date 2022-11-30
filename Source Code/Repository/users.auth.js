@@ -5,20 +5,20 @@ module.exports = {
   initialization(app) {
     app.use(passport.initialize());
     app.use(passport.session());
-    passport.serializeUser(function (user, done) { //successfull log in
-      done(null, user.user_name);
+    passport.serializeUser(function (client, done) { //successfull log in
+      done(null, client.client_name);
     });
-    passport.deserializeUser(async function (username, done) {
-      let user = await usersRepo.getOneUser(username);
-      done(null, user);
+    passport.deserializeUser(async function (clientname, done) {
+      let user = await usersRepo.getOneUser(clientname);
+      done(null, client);
     });
   },
 
-  checkAuthentication(role) {
+  checkAuthentication(mail) { //to check mail ? or another thing
     return function (request, response, next) {
       if (request.isAuthenticated()) {
-        if (role) {
-          if (role === request.user.user_role) { 
+        if (mail) {
+          if (mail === request.client.mail_address) { 
             return next();
           } else {
             return response.end("401 Unautorized (bad user level)"); // TODO: Hierarchy
