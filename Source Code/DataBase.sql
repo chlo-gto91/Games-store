@@ -8,7 +8,6 @@ DROP TABLE if exists game;
 
 CREATE TABLE client(
    ID_client INT auto_increment,
-
    client_age INT,
    client_name VARCHAR(50),
    lastname VARCHAR(50),

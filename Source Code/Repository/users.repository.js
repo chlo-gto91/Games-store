@@ -1,7 +1,7 @@
 pool = require("../Repository/db.js");
 
 module.exports = {
-  async getOneUser(clientname) {
+  async getOneClient(clientname) {
     try {
       let conn = await pool.getConnection();
       let sql = "SELECT ID_client,client_name,client_age,lastname,phone,client_role,mail_address FROM client WHERE client_name = ? "; // must leave out the password+hash
