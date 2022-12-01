@@ -81,22 +81,40 @@
                     <th>Cart</th>
                 </tr>
                 -->  
-
+                <div class="global-container">
                     <div class="grid-container">
                     <% for (var game of game_stock) { %>    
                         <div class="grid-item">Image</div>
                             <div class="grid-item">
                                 <div class="grid-item2">
                                     <ul>                              
-                                        <li> <h3> <%= game.game_name %> </h3> </li>
-                                        <li> <%= game.price %> </li>
-                                        <li> <%= game.game_stock %> </li>
+                                        <li><h4><%= game.game_name %></h4></li>
+                                        <li><%= game.price %></li>
+                                        <li><%= game.game_stock %></li>
                                         <li><a href='/main_page/cart/<%= game.ID_game %>'>Add to Cart</a></li>   
                                     </ul>               
                                 </div>                          
                             </div>
                     <% } %>
-                    </div>    
+                    </div> 
+                    <!--
+                    <div class="grid-container">
+                        <% for (var game1 of game_stock1) { %>    
+                            <div class="grid-item">Image</div>
+                                <div class="grid-item">
+                                    <div class="grid-item2">
+                                        <ul>                              
+                                            <li> <h4><%= game1.game_name %></h4> </li>
+                                            <li><%= game1.price %></li>
+                                            <li><%= game1.game_stock %></li>
+                                            <li><a href='/main_page/cart/<%= game1.ID_game %>'>Add to Cart</a></li>   
+                                        </ul>               
+                                    </div>                          
+                                </div>
+                        <% } %>
+                        </div>  
+                        -->
+                    </div>
      
             </table>
         </div>
