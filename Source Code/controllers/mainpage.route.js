@@ -11,17 +11,18 @@ router.get('/SortPrice/:Price', SortGameByPrice);
 router.get('/SortParameter/:Parameter', SortGameByParameter);
 router.get('/SortEditor/:Editor', SortGameByEditor);
 router.get('/cart/:game_ID', AddToCart);
+router.get('/oneGame/:game_ID', ShowOneGame);
 
 
 
 async function gameStockShowAction(request, response){
-    let game_stock = await gameRepo.getGameIDunder10();
-    let game_stock1 = await gameRepo.getGameIDover10();
+    let game_stock = await gameRepo.getAllGame();
+    // let game_stock1 = await gameRepo.getGameIDover10();
     let flashMessage = request.session.flashMessage;
     request.session.flashMessage = "";
     
     //console.log(game_stock);
-    response.render("mainpage_view", {"game_stock": game_stock,"game_stock1": game_stock1, "flashMessage": flashMessage});
+    response.render("mainpage_view", {"game_stock": game_stock, "flashMessage": flashMessage});
 }
 
 
@@ -62,6 +63,14 @@ async function AddToCart(request, response){
 
     //console.log(game_to_cart);
     response.render("cart", {"game_cart": game_cart, "flashMessage": flashMessage});
+}
+
+async function ShowOneGame(request, response){
+    let onegame = await gameRepo.getOneGame(request.params.game_ID);
+    let flashMessage = request.session.flashMessage;
+    request.session.flashMessage = "";
+
+    response.render("game_view", {"onegame": onegame, "flashMessage": flashMessage});
 }
 
 // http://localhost:8000/mainpage
