@@ -15,12 +15,13 @@ router.get('/cart/:game_ID', AddToCart);
 
 
 async function gameStockShowAction(request, response){
-    let game_stock = await gameRepo.getAllGameStock();
+    let game_stock = await gameRepo.getGameIDunder10();
+    let game_stock1 = await gameRepo.getGameIDover10();
     let flashMessage = request.session.flashMessage;
     request.session.flashMessage = "";
     
     //console.log(game_stock);
-    response.render("mainpage_view", {"game_stock": game_stock, "flashMessage": flashMessage});
+    response.render("mainpage_view", {"game_stock": game_stock,"game_stock1": game_stock1, "flashMessage": flashMessage});
 }
 
 

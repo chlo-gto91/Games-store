@@ -26,7 +26,36 @@ module.exports = {
             throw err;
         }
     },
+    async getGameIDunder10(){
+        try{
+            let conn = await pool.getConnection();
+            let sql = "SELECT * FROM game WHERE id_game<=10";
+            const rows = await conn.query(sql);
+            conn.end();
+            console.log("ROWS FETCHED: "+rows.length);
+            return rows;
+        }
+        catch (err) {
+            console.log(err);
+            throw err;
+        }
 
+    },
+    async getGameIDover10(){
+        try{
+            let conn = await pool.getConnection();
+            let sql = "SELECT * FROM game WHERE id_game>10";
+            const rows = await conn.query(sql);
+            conn.end();
+            console.log("ROWS FETCHED: "+rows.length);
+            return rows;
+        }
+        catch (err) {
+            console.log(err);
+            throw err;
+        }
+
+    },
     async getAllEditor(){
         try{
             let conn = await pool.getConnection();
