@@ -20,7 +20,7 @@ async function userAction(request, response) {
 
 async function protectedGetAction(request, response) { //redirect link
   if (request.isAuthenticated()) {
-    if (request.client.mail_address === "ADMIN") {
+    if (request.client.client_role === "ADMIN") {
       response.redirect("/auth/admin"); //admin page
     } else {
       response.redirect("/auth/user"); //user page
