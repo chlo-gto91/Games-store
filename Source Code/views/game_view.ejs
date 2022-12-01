@@ -1,0 +1,39 @@
+<%- include("partial_headers.ejs"); %>
+
+
+
+<div class="game">
+
+    <% for (var onegame of onegame) { %>
+    <div class="image">
+        <img src = "" alt="game">
+    </div>
+
+    <div class="infos">
+        <div class="description">
+            <h1> <% = onegame.game_name %></h1>
+            <p> <% = onegame.game_description %> </p>
+        </div>
+        <div class="data&buy">
+            <div class="data">
+                <ul>
+                    <li><% = onegame.%></li>
+                    <li><% = onegame.price %></li>
+                    <li><% = onegame.game_stock %></li>
+                </ul>
+            </div>
+            <div class="buy">
+
+                <button onclick=""> BUY </button>
+
+            </div>
+        </div>
+
+    </div>
+<% }%>
+
+</div>
+
+
+
+<%- include("partial_footer.ejs"); %>

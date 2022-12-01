@@ -8,6 +8,7 @@ DROP TABLE if exists game;
 
 CREATE TABLE client(
    ID_client INT auto_increment,
+   client_created datetime,
    client_age INT,
    client_name VARCHAR(50),
    lastname VARCHAR(50),
@@ -81,17 +82,17 @@ insert into editor values (NULL,"Bandai Namco"); -- Dragon Ball Z; Kakarot; The 
 insert into editor values (NULL,"Mojang Studios"); -- Minecraft 14
 insert into editor values (NULL,"Rebound CG"); -- Tennis manager 2022 15
 
-insert into client values (NULL,20,"Gattino","Chloé","0625126117","Mario kart 8","chloegattino5@gmail.com",'USER',sha2(concat(now(),'cloclo91'), 224));
-insert into client values (NULL,17,"Cantrelle","Noa","0785896324","Wii sport resort","noacantrelle@efrei.net",'ADMIN',,sha2(concat(now(),'nono640'), 224));
-insert into client values (NULL,31,"Rey","Pierre","0698741236","Assassin's Creed Origins","pierre.rey@efrei.net",'ADMIN',sha2(concat(now(),'pierropierro'), 224));
-insert into client values (NULL,14,"Gattino","Manon","0652741670","Mario kart 8","gattinomanon@gmail.com",'USER',sha2(concat(now(),'manongat'), 224));
-insert into client values (NULL,25,"Michot","Marie","0766984610","Minecraft","marie.michot@efrei.net",'USER',sha2(concat(now(),'marie77'), 224));
-insert into client values (NULL,38,"Harry","Potter","0620000000","Fifa 23","Harry.potter@efrei.net",'USER',sha2(concat(now(),'vol2mort'), 224));
-insert into client values (NULL,45,"Chapron","Nathalie","0645987632","Animal Crossing","nathalie.chapron@efrei.net",'ADMIN',sha2(concat(now(),'natlesang'), 224));
-insert into client values (NULL,18,"Hecq","Guerlyn","0699765213","NBA 2K23","guerlynhecq@gmail.com",'ADMIN',sha2(concat(now(),'guegue13'), 224));
-insert into client values (NULL,17,"Pinto","Martin","0755264890","Tennis manager 2022","martin.pinto@gmail.com",'USER',sha2(concat(now(),'pintouch13'), 224));
-insert into client values (NULL,14,"Gattino","Manon","0652741670","Animal Crossing","gattinomanon@gmail.com",'USER',sha2(concat(now(),'manongat'), 224));
-insert into client values (NULL,22,"Prim","Lorraine","0650020491","Rayman Legends Definitive","primlorraine@gmail.com",'ADMIN',sha2(concat(now(),'lolo91'), 224));
+insert into client values (NULL,now(),20,"Gattino","Chloé","0625126117","Mario kart 8","chloegattino5@gmail.com",'USER',sha2(concat(now(),'cloclo91'), 224));
+insert into client values (NULL,now(),17,"Cantrelle","Noa","0785896324","Wii sport resort","noacantrelle@efrei.net",'ADMIN',,sha2(concat(now(),'nono640'), 224));
+insert into client values (NULL,now(),31,"Rey","Pierre","0698741236","Assassin's Creed Origins","pierre.rey@efrei.net",'ADMIN',sha2(concat(now(),'pierropierro'), 224));
+insert into client values (NULL,now(),14,"Gattino","Manon","0652741670","Mario kart 8","gattinomanon@gmail.com",'USER',sha2(concat(now(),'manongat'), 224));
+insert into client values (NULL,now(),25,"Michot","Marie","0766984610","Minecraft","marie.michot@efrei.net",'USER',sha2(concat(now(),'marie77'), 224));
+insert into client values (NULL,now(),38,"Harry","Potter","0620000000","Fifa 23","Harry.potter@efrei.net",'USER',sha2(concat(now(),'vol2mort'), 224));
+insert into client values (NULL,now(),45,"Chapron","Nathalie","0645987632","Animal Crossing","nathalie.chapron@efrei.net",'ADMIN',sha2(concat(now(),'natlesang'), 224));
+insert into client values (NULL,now(),18,"Hecq","Guerlyn","0699765213","NBA 2K23","guerlynhecq@gmail.com",'ADMIN',sha2(concat(now(),'guegue13'), 224));
+insert into client values (NULL,now(),17,"Pinto","Martin","0755264890","Tennis manager 2022","martin.pinto@gmail.com",'USER',sha2(concat(now(),'pintouch13'), 224));
+insert into client values (NULL,now(),14,"Gattino","Manon","0652741670","Animal Crossing","gattinomanon@gmail.com",'USER',sha2(concat(now(),'manongat'), 224));
+insert into client values (NULL,now(),22,"Prim","Lorraine","0650020491","Rayman Legends Definitive","primlorraine@gmail.com",'ADMIN',sha2(concat(now(),'lolo91'), 224));
 
 
 insert into game values (NULL,55,"Frenzied karting races in the universe of super mario", "Mario kart 8","Family",15,2); --

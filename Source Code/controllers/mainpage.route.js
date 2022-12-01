@@ -11,6 +11,7 @@ router.get('/SortPrice/:Price', SortGameByPrice);
 router.get('/SortParameter/:Parameter', SortGameByParameter);
 router.get('/SortEditor/:Editor', SortGameByEditor);
 router.get('/cart/:game_ID', AddToCart);
+router.get('/oneGame/:game_ID', ShowOneGame);
 
 
 
@@ -62,6 +63,14 @@ async function AddToCart(request, response){
 
     //console.log(game_to_cart);
     response.render("cart", {"game_cart": game_cart, "flashMessage": flashMessage});
+}
+
+async function ShowOneGame(request, response){
+    let onegame = await gameRepo.getOneGame(request.params.game_ID);
+    let flashMessage = request.session.flashMessage;
+    request.session.flashMessage = "";
+
+    response.render("game_view", {"onegame": onegame, "flashMessage": flashMessage});
 }
 
 // http://localhost:8000/mainpage

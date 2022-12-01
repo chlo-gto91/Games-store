@@ -5,6 +5,7 @@ module.exports = {
     getBlankClient(){
         return {
             "id_client": 0,
+            "client_created": 0,
             "client_age": 0,
             "client_name": 0,
             "lastname": 0,
