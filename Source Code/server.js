@@ -42,6 +42,9 @@ app.use(session({
     resave: false
 }));
 
+const auth = require("./Repository/users.auth");
+auth.initialization(app);
+
 app.use("/CSS", express.static(__dirname + '/CSS'));
 app.use("/image", express.static(__dirname + '/image'));
 app.use("/main_page", require("./controllers/mainpage.route"));
