@@ -1,8 +1,11 @@
 CREATE DATABASE if not exists Gameshop_database;
 USE Gameshop_database;
 
-DROP TABLE if exists store;
+
+DROP TABLE if exists buy;
 DROP TABLE if exists have;
+DROP TABLE if exists console;
+DROP TABLE if exists store;
 DROP TABLE if exists game;
 DROP TABLE if exists editor;
 DROP TABLE if exists client;
@@ -18,7 +21,7 @@ CREATE TABLE client(
    list_sale VARCHAR(50),
    mail_address VARCHAR(50),
    client_role VARCHAR(50),
-   client_password VARCHAR(50),
+   client_password VARCHAR(500),
    PRIMARY KEY(ID_client)
 );
 
@@ -80,12 +83,12 @@ insert into editor values (NULL,"Gameloft");-- Asphalt 9 9
 insert into editor values (NULL,"Tencent"); --  Arena of Valor 10
 insert into editor values (NULL,"Square Enix");-- Final fantasy VII 11
 insert into editor values (NULL,"SEGA"); -- SONIC 12 
-insert into editor values (NULL,"Bandai Namco"); -- Dragon Ball Z; Kakarot 13 
+insert into editor values (NULL,"Bandai Namco"); -- Dragon Ball Z; Kakarot; The Witcher 3; 13 
 insert into editor values (NULL,"Mojang Studios"); -- Minecraft 14
 insert into editor values (NULL,"Rebound CG"); -- Tennis manager 2022 15
 
 insert into client values (NULL,now(),20,"Gattino","Chloé","0625126117","Mario kart 8","chloegattino5@gmail.com",'USER',sha2(concat(now(),'cloclo91'), 224));
-insert into client values (NULL,now(),17,"Cantrelle","Noa","0785896324","Wii sport resort","noacantrelle@efrei.net",'ADMIN',,sha2(concat(now(),'nono640'), 224));
+insert into client values (NULL,now(),17,"Cantrelle","Noa","0785896324","Wii sport resort","noacantrelle@efrei.net",'ADMIN',sha2(concat(now(),'nono640'), 224));
 insert into client values (NULL,now(),31,"Rey","Pierre","0698741236","Assassin's Creed Origins","pierre.rey@efrei.net",'ADMIN',sha2(concat(now(),'pierropierro'), 224));
 insert into client values (NULL,now(),14,"Gattino","Manon","0652741670","Mario kart 8","gattinomanon@gmail.com",'USER',sha2(concat(now(),'manongat'), 224));
 insert into client values (NULL,now(),25,"Michot","Marie","0766984610","Minecraft","marie.michot@efrei.net",'USER',sha2(concat(now(),'marie77'), 224));
@@ -116,7 +119,7 @@ insert into game values (NULL, 45,"The galaxy is yours in LEGO® Star Wars™: T
 insert into game values (NULL, 55,"Take on the world's fearless and become an Asphalt legend in the best arcade racing game","Asphalt 9: Legends","Car", 10,9);
 insert into game values (NULL, 20,"Experience Arena of Valor, an epic new 5v5 multiplayer online battle arena (MOBA)","Arena of Valor","RPG", 23,10);
 insert into game values (NULL, 5,"The game's story follows Cloud Strife, a mercenary who joins an eco-terrorist organization to stop a world-controlling megacorporation ","Final Fantasy VII","Adventure", 1,11);
-
+-- insert into game values (NULL, 30, "Alors que la guerre fait rage à travers les royaumes du Nord, vous acceptez le contrat de votre vie et partez à la recherche de l'enfant de la prophétie, une arme vivante capable de changer le monde.","RPG", 20, 13);
 
 insert into console values (NULL,500,"XBOX ONE","black",250,15);
 insert into console values (NULL,500,"XBOX ONE S","white",350,9);
