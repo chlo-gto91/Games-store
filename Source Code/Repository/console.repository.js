@@ -17,7 +17,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM console";
             const rows = await conn.query(sql);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
@@ -31,7 +31,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM console WHERE console_price <= ? ORDER BY console_price";
             const rows = await conn.query(sql, price_console);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
@@ -45,7 +45,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM console WHERE stockage  <= ? ORDER BY stockage";
             const rows = await conn.query(sql, stockage);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
@@ -59,7 +59,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM console WHERE ID_console =? ";
             const rows = await conn.query(sql, ID_console);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             if (rows.length == 1){
                 return rows[0];
@@ -77,7 +77,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "DELETE FROM console WHERE ID_console=?";
             const okPacket = await conn.query(sql, ID_console);
-            conn.end();
+            conn.release();
             console.log(okPacket);
             return okPacket.affectedRows;
         }
@@ -91,7 +91,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "INSERT INTO console (console_id, console_name) VALUES (NULL, ?) "; //console ?
             const okPacket = await conn.query(sql, consoleId); // affectedRows, insertId
-            conn.end();
+            conn.release();
             console.log(okPacket);
             return okPacket.insertId;
         }
@@ -106,7 +106,7 @@ module.exports = {
             let sql = "UPDATE console SET stockage=?, console_name=?, console_color=?, console_price=?, console_stock=? WHERE ID_console=? "; // TODO: named parameters? :something
             const okPacket = await conn.query(sql, 
                         [consoleStockage, consoleName, consoleColor, consolePrice, consoleStock, consoleId]);
-            conn.end();
+           conn.release();
             console.log(okPacket);
             return okPacket.affectedRows;
         }

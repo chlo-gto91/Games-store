@@ -17,7 +17,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM game";
             const rows = await conn.query(sql);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
@@ -31,7 +31,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM game WHERE id_game<=10";
             const rows = await conn.query(sql);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
@@ -46,7 +46,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM game WHERE id_game>10";
             const rows = await conn.query(sql);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
@@ -61,7 +61,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM editor";
             const rows = await conn.query(sql);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
@@ -77,7 +77,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM game";
             const rows = await conn.query(sql);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
@@ -92,7 +92,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM game WHERE ID_game =? ";
             const rows = await conn.query(sql, ID_game);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             if (rows.length == 1){
                 return rows[0];
@@ -110,7 +110,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM game WHERE category =?";
             const rows = await conn.query(sql, category_game);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
@@ -124,7 +124,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM game WHERE ID_editor =?";
             const rows = await conn.query(sql, Editor);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
@@ -140,7 +140,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql  = "SELECT * FROM game WHERE price <= ? ORDER BY price";
             const rows = await conn.query(sql, price_game);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
@@ -155,7 +155,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT game_stock FROM game WHERE game_name =? ";
             const stock = await conn.query(sql, game_name);
-            conn.end();
+            conn.release();
             console.log("The stock is "+stock);
             return stock;
         }
@@ -170,7 +170,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "DELETE FROM game WHERE ID_game=?";
             const okPacket = await conn.query(sql, ID_game);
-            conn.end();
+            conn.release();
             console.log(okPacket);
             return okPacket.affectedRows;
         }
@@ -184,7 +184,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "INSERT INTO game (game_id,game_name) VALUES (NULL, ?) ";
             const okPacket = await conn.query(sql, gameID); // affectedRows, insertId
-            conn.end();
+            conn.release();
             console.log(okPacket);
             return okPacket.insertId;
         }
@@ -199,7 +199,7 @@ module.exports = {
             let sql = "UPDATE game SET price=?, game_description=?, game_name=?, category=?, game_stock=? WHERE ID_game=? "; // TODO: named parameters? :something
             const okPacket = await conn.query(sql, 
                         [gamePrice, gameDescription, gameName, gameCategory, gameStock, gameId]);
-            conn.end();
+            conn.release();
             console.log(okPacket);
             return okPacket.affectedRows;
         }
@@ -214,7 +214,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "UPDATE game_stock=? WHERE game_name=?";
             const okPacket = await conn.query(sql, this.getStockOfAGame(game_name)-exemples_bought, game_name); // exemples_bought should be 1 but in case someone wants to buy 2 games
-            conn.end();
+            conn.release();
             console.log(okPacket);
             return okPacket.affectedRows;
         }

@@ -9,7 +9,7 @@ module.exports = {
       done(null, client.client_name);
     });
     passport.deserializeUser(async function (clientname, done) {
-      let user = await usersRepo.getOneUser(clientname);
+      let user = await usersRepo.getOneClient(clientname);
       done(null, client);
     });
   },

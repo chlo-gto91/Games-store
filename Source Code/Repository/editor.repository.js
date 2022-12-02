@@ -13,7 +13,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM editor";
             const rows = await conn.query(sql);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
@@ -27,7 +27,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM editor WHERE ID_editor =? ";
             const rows = await conn.query(sql, ID_client);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             if (rows.length == 1){
                 return rows[0];
@@ -45,7 +45,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "DELETE FROM editor WHERE ID_editor=?";
             const okPacket = await conn.query(sql, ID_editor);
-            conn.end();
+            conn.release();
             console.log(okPacket);
             return okPacket.affectedRows;
         }
@@ -59,7 +59,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "INSERT INTO editor (editor_id, editor_name) VALUES (NULL, ?) ";
             const okPacket = await conn.query(sql, editorName); // affectedRows, insertId
-            conn.end();
+            conn.release();
             console.log(okPacket);
             return okPacket.insertId;
         }
@@ -74,7 +74,7 @@ module.exports = {
             let sql = "UPDATE editor SET editor_name=? WHERE ID_editor=? "; // TODO: named parameters? :something
             const okPacket = await conn.query(sql, 
                         [EditorName, EditorId]);
-            conn.end();
+            conn.release();
             console.log(okPacket);
             return okPacket.affectedRows;
         }

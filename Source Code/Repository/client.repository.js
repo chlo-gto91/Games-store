@@ -21,7 +21,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM client";
             const rows = await conn.query(sql);
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
@@ -35,7 +35,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM client WHERE ID_client =? ";
             const rows = await conn.query(sql, [ID_client]); //crochet si sql entre id_client
-            conn.end();
+            conn.release();
             console.log("ROWS FETCHED: "+rows.length);
             if (rows.length == 1){
                 return rows[0];
@@ -53,7 +53,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "DELETE FROM client WHERE ID_client=?";
             const okPacket = await conn.query(sql, [ID_client]);
-            conn.end();
+            conn.release();
             console.log(okPacket);
             return okPacket.affectedRows;
         }
@@ -67,7 +67,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "INSERT INTO client (client_id) VALUES (NULL) ";
             const okPacket = await conn.query(sql, []); // affectedRows, insertId
-            conn.end();
+            conn.release();
             console.log(okPacket);
             return okPacket.insertId;
         }
@@ -82,7 +82,7 @@ module.exports = {
             let sql = "UPDATE client SET client_age=?, client_name=?, lastname=?, phone=?, list_sale=?, mail_addresse=?, client_password=?  WHERE ID_client=? "; // TODO: named parameters? :something
             const okPacket = await conn.query(sql, 
                         [clientAge, clientName, clientLastname, clientPhone, clientListSale, clientMail_addresse, clientPassword,clientID]);
-            conn.end();
+            conn.release();
             console.log(okPacket);
             return okPacket.affectedRows;
         }
