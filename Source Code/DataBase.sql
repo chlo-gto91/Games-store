@@ -2,9 +2,11 @@ CREATE DATABASE if not exists Gameshop_database;
 USE Gameshop_database;
 
 DROP TABLE if exists store;
+DROP TABLE if exists have;
+DROP TABLE if exists game;
 DROP TABLE if exists editor;
 DROP TABLE if exists client;
-DROP TABLE if exists game;
+
 
 CREATE TABLE client(
    ID_client INT auto_increment,

@@ -88,7 +88,7 @@
                             <div class="grid-item">
                                 <div class="grid-item2">
                                     <ul>                              
-                                        <li><h4><%= game.game_name %></h4></li>
+                                        <li><a href='/main_page/oneGame/<%= game.ID_game %>'><h4><%= game.game_name %></h4></a></li>
                                         <li><%= game.price %></li>
                                         <li><%= game.game_stock %></li>
                                         <li><a href='/main_page/cart/<%= game.ID_game %>'>Add to Cart</a></li>   
@@ -97,6 +97,7 @@
                             </div>
                     <% } %>
                     </div> 
+                    
 
                     </div>
      

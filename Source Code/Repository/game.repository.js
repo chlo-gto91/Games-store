@@ -105,6 +105,25 @@ module.exports = {
             throw err;
         }
     },
+
+    async getOneGameAndEditor(ID_game){
+        try {
+            let conn = await pool.getConnection();
+            let sql = "SELECT * FROM game INNER JOIN editor ON game.ID_editor=editor.ID_editor WHERE ID_game =? ";
+            const rows = await conn.query(sql, ID_game);
+            conn.end();
+            console.log("ROWS FETCHED: "+rows.length);
+            if (rows.length == 1){
+                return rows[0];
+            }else{
+                return false;
+            }
+        }
+        catch (err) {
+            console.log(err);
+            throw err;
+        }
+    },
     async getAllGameByCategory(category_game){
         try {
             let conn = await pool.getConnection();
