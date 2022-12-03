@@ -12,7 +12,9 @@ router.get('/SortParameter/:Parameter', SortGameByParameter);
 router.get('/SortEditor/:Editor', SortGameByEditor);
 router.get('/cart/:game_ID', AddToCart);
 router.get('/oneGame/:game_ID', ShowOneGame);
-
+router.get('/adminview', AdminView);
+router.get('/EditTable/:game_ID', EditTable);
+router.get('/UpdateGame/:game_ID', UpdateGame);
 
 
 async function gameStockShowAction(request, response){
@@ -73,6 +75,36 @@ async function ShowOneGame(request, response){
     response.render("game_view", {"onegame": onegame, "flashMessage": flashMessage});
 }
 
+async function AdminView(request, response){
+    let adminview = await gameRepo.getAllGame();
+    let flashMessage = request.session.flashMessage;
+    request.session.flashMessage = "";
+    //console.log(onegame);
+    response.render("admin_view", {"adminview": adminview, "flashMessage": flashMessage});
+}
+
+async function EditTable(request, response){
+    let EditOneGame = await gameRepo.getOneGameAndEditor(request.params.game_ID);
+    let game_category = await gameRepo.getAllGame();
+    // let flashMessage = request.session.flashMessage;
+    // request.session.flashMessage = "";
+    //console.log(game_category);
+    response.render("editgame_view", {"EditOneGame": EditOneGame, "game_category":game_category});
+}
+
+async function UpdateGame(request, response){
+    var gameID = request.params.game_ID;
+    var numRows = await gameRepo.editOneGame(gameID,
+        request.body.Game_Name,
+        request.body.Game_Description,
+        request.body.Game_Category,
+        request.body.Game_Price,
+        request.body.Game_Stock,
+        );
+
+    request.session.flashMessage = "ROWS UPDATED: "+ numRows;
+    response.redirect("/main_page/adminview");
+}
 // http://localhost:8000/mainpage
 
 module.exports = router;

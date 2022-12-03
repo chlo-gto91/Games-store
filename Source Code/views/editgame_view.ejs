@@ -1,0 +1,68 @@
+<%- include("partial_headers.ejs"); %>
+
+<div class="ensemble">
+    <div class="one_game">
+        <!-- <li><%= EditOneGame.game_name %></li>
+        <li><%= EditOneGame.game_description %></li>
+        <li><%= EditOneGame.category %></li>
+        <li><%= EditOneGame.price %></li>
+        <li><%= EditOneGame.game_stock %></li> -->
+        <li>Mario kart 8</li>
+        <li>Frenzied karting races in the universe of super mario</li>
+        <li>Family</li>
+        <li>55</li>
+        <li>15</li>
+    </div>
+
+
+    <style>
+        .table_edit input{
+            width: max-content;
+        }
+    </style>
+
+
+    <div class="Edit_game">
+        <form action='/main_page/UpdateGame/<%= EditOneGame.ID_game %>' method="post" 
+            enctype="application/x-www-form-urlencoded">
+
+            <table class="table_edit">
+                <tr>
+                    <tr><td>Name : </td>
+                        <td>
+                            <input type="text" name="Game_Name" value="<%= EditOneGame.game_name %>">
+                        </td>
+                    </tr>
+                    <tr><td>Descritpion : </td>
+                        <td>
+                            <input type="text" name="Game_Description" value="<%= EditOneGame.game_description %>">
+                        </td>
+                    </tr>
+                    <tr><td>Category :</td>
+                        <td>
+                            <input type="text" name="Game_Category" value="<%= EditOneGame.category %>">
+                        </td>
+                    </tr>
+                    <tr><td>Price :</td>
+                        <td>
+                            <input type="number" name="Game_Price" value="<%= EditOneGame.price %>">
+                        </td>
+                    </tr>
+                    <tr><td>Stock :</td>
+                        <td>
+                            <input type="number" name="Game_Stock" value="<%= EditOneGame.game_stock %>">
+                        </td>
+                    </tr>
+                    <tr><td colspan="2"> <input type="submit" value="send"></td></tr>
+                    
+                </tr>
+
+
+            </table>
+
+        </form>
+    </div>
+</div>
+
+
+<%- include("partial_footer.ejs"); %>

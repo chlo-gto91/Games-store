@@ -1,0 +1,48 @@
+<%- include("partial_headers.ejs"); %>
+
+<style>
+    .edittable a, td{
+        color: black;
+    }
+
+</style>
+
+
+<div class="adminview_ensemble">
+    <div class="modif_table1">
+
+        <div class="game_table">
+            <table class="edittable">
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Prix</th>
+                    <th>Category</th>
+                    <th>Stock</th>
+                    <th>Edit table</th>
+                </tr>
+                <% for (var adminview of adminview) { %>
+                <tr>
+                    <td><%= adminview.game_name %></td>
+                    <td><%= adminview.game_description %></td>
+                    <td><%= adminview.price %></td>
+                    <td><%= adminview.category %></td></td>
+                    <td><%= adminview.game_stock %></td>
+                    <td><a href="/main_page/EditTable/<%= adminview.ID_game %>">Edit Game</a></td>
+                </tr>
+                <% } %>
+            </table>
+        </div>  
+    </div>
+
+
+    <div class="modif_table2">
+        <div class="console_table">
+
+        </div>
+    </div>
+
+</div>
+
+
+<%- include("partial_footer.ejs"); %>

@@ -11,7 +11,6 @@ pool.getConnection().then(function(conn){
 return;
 */
 
-
 const dotenv = require('dotenv');
 dotenv.config();
 
