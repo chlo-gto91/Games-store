@@ -10,7 +10,7 @@ pool.getConnection().then(function(conn){
 });
 return;
 */
-const mysql = require('mysql2');
+
 const dotenv = require('dotenv');
 dotenv.config();
 
