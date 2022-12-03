@@ -13,7 +13,7 @@ router.post("/login", loginPostAction);
 router.get("/logout", logoutAction);
 
 async function userAction(request, response) {
-  let userData = await userRepo.getOneUser(request.client.client_name);
+  let userData = await userRepo.getOneClient(request.client.lastname);
   let userJson = JSON.stringify(userData); // if  userData.user_role ...
   response.render("auth_view", { "extraContent": userJson });
 }
@@ -31,11 +31,11 @@ async function protectedGetAction(request, response) { //redirect link
 }
 
 async function loginPostAction(request, response) {
-  areValid = await userRepo.areValidCredentials(request.body.clientname, request.body.userpass);
+  areValid = await userRepo.areValidCredentials(request.body.username, request.body.userpass);
 
   if (areValid) {
-    user = await userRepo.getOneClient(request.body.clientname);
-    request.login(client, function (err) { 
+    user = await userRepo.getOneClient(request.body.username);
+    request.login(user, function (err) { 
         if (err) { console.log("ERROR"); console.log(err); return next(err); }
 
         if (request.client.client_role === "ADMIN") { 
