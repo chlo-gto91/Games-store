@@ -50,6 +50,7 @@ CREATE TABLE game(
    category VARCHAR(50),
    game_stock INT,
    ID_editor INT NOT NULL,
+   game_image VARCHAR(50),
    PRIMARY KEY(ID_game),
    FOREIGN KEY(ID_editor) REFERENCES editor(ID_editor)
 );
