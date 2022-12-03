@@ -1,0 +1,47 @@
+<html>
+<head>
+    <link rel="stylesheet" href="CSS/game_view.css"/>
+</head>
+<body>
+
+<div class="categories">
+    <h1> <%= onegame.game_name %></h1>
+   <div class="game_infos">
+        <div class="image">
+            <img src = "" alt="game">
+        </div>
+
+        <div class="infos">
+            <div class="description">
+                <p>description .....................................</p>
+                <!-- <p> <%= onegame.game_description %> </p> -->
+            </div>
+            <div class="data&buy">
+                <div class="data">
+                    <ul>
+                        <li><%= onegame.editor_name %></li>
+                        <li><%= onegame.price %></li>
+                        <li><%= onegame.game_stock %></li>
+                    </ul>
+                </div>
+                <div class="buy">
+
+                    <button onclick=""> BUY </button>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+    </div>
+
+    
+
+</div>
+
+
+    
+</body>
+</html>
+

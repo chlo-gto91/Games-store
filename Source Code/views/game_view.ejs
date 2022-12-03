@@ -2,33 +2,42 @@
 
 
 
-<div class="game">
+<div class="categories">
+ 
+    <br><br><h1> <%= onegame.game_name %></h1><br><br>
 
-   
-    <div class="image">
-        <img src = "" alt="game">
-    </div>
 
-    <div class="infos">
-        <div class="description">
-            <h1> <%= onegame.game_name %></h1>
-            <p> <%= onegame.game_description %> </p>
-        </div>
-        <div class="data&buy">
-            <div class="data">
-                <ul>
-                    <li><%= onegame.editor_name %></li>
-                    <li><%= onegame.price %></li>
-                    <li><%= onegame.game_stock %></li>
-                </ul>
-            </div>
-            <div class="buy">
+   <div class="game_infos">
 
-                <button onclick=""> BUY </button>
 
-            </div>
+        <div class="col_1 game_infos">
+            <img src = "/image/Games/MarioKart8.jpg" alt="game">
         </div>
 
+        <div class="col_2">
+            <div class="description">
+                <p> <%= onegame.game_description %> </p>
+            </div>
+
+            <div class="data game_infos">
+            
+                <div class="datass">
+                    <ul>
+                        <li><%= onegame.editor_name %></li>
+                        <li><%= onegame.price %>€</li>
+                        <li><%= onegame.game_stock %></li>
+                    </ul>
+                </div>
+
+                <div class="buy">
+                    <button onclick=""> BUY </button>
+                </div>
+
+
+            </div>
+
+        </div>
+        
     </div>
 
     
