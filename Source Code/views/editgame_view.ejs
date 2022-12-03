@@ -21,9 +21,7 @@
         }
     </style>
 
-
-    <div class="Edit_game">
-        <form action='/main_page/UpdateGame/<%= EditOneGame.ID_game %>' method="post" 
+        <form action='/main_page/update/<%= EditOneGame.ID_game %>' method="post" 
             enctype="application/x-www-form-urlencoded">
 
             <table class="table_edit">
@@ -37,7 +35,7 @@
                         <td>
                             <input type="text" name="Game_Description" value="<%= EditOneGame.game_description %>">
                         </td>
-                    </tr>
+
                     <tr><td>Category :</td>
                         <td>
                             <input type="text" name="Game_Category" value="<%= EditOneGame.category %>">
@@ -62,7 +60,7 @@
 
         </form>
     </div>
-</div>
+
 
 
 <%- include("partial_footer.ejs"); %>

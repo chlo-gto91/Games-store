@@ -14,7 +14,7 @@ router.get('/cart/:game_ID', AddToCart);
 router.get('/oneGame/:game_ID', ShowOneGame);
 router.get('/adminview', AdminView);
 router.get('/EditTable/:game_ID', EditTable);
-router.get('/UpdateGame', UpdateGame);
+router.post('/update/:game_ID', UpdateGame);
 
 
 async function gameStockShowAction(request, response){
@@ -92,19 +92,23 @@ async function EditTable(request, response){
     response.render("editgame_view", {"EditOneGame": EditOneGame, "game_category":game_category});
 }
 
-async function UpdateGame(request, response){
+
+async function UpdateGame(request, response) {
+    // response.send("UPDATE ACTION");
     var gameID = request.params.game_ID;
-    var numRows = await gameRepo.editOneGame(1,
-        request.body.Game_Name,
-        request.body.Game_Description,
+    if (gameID==="0") gameID = await gameRepo.addOneGame(request.params.game_ID);
+    var numRows = await gameRepo.editOneGame(gameID,
+        request.body.Game_Price, 
+        request.body.Game_Description, 
+        request.body.Game_Name, 
         request.body.Game_Category,
-        request.body.Game_Price,
-        request.body.Game_Stock,
+        request.body.Game_Stock
         );
 
-    request.session.flashMessage = "ROWS UPDATED: "+ numRows;
+    request.session.flashMessage = "ROWS UPDATED: "+numRows;
     response.redirect("/main_page/adminview");
 }
+
 // http://localhost:8000/mainpage
 
 module.exports = router;
