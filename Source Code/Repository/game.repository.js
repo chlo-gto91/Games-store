@@ -153,7 +153,6 @@ module.exports = {
         }
 
     },
-
     async getGameByPrice(price_game){
         try{
             let conn = await pool.getConnection();
