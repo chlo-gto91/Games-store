@@ -14,7 +14,7 @@ router.get('/cart/:game_ID', AddToCart);
 router.get('/oneGame/:game_ID', ShowOneGame);
 router.get('/adminview', AdminView);
 router.get('/EditTable/:game_ID', EditTable);
-router.get('/UpdateGame/:game_ID', UpdateGame);
+router.get('/UpdateGame', UpdateGame);
 
 
 async function gameStockShowAction(request, response){
@@ -88,13 +88,13 @@ async function EditTable(request, response){
     let game_category = await gameRepo.getAllGame();
     // let flashMessage = request.session.flashMessage;
     // request.session.flashMessage = "";
-    //console.log(game_category);
+    console.log(EditOneGame);
     response.render("editgame_view", {"EditOneGame": EditOneGame, "game_category":game_category});
 }
 
 async function UpdateGame(request, response){
     var gameID = request.params.game_ID;
-    var numRows = await gameRepo.editOneGame(gameID,
+    var numRows = await gameRepo.editOneGame(1,
         request.body.Game_Name,
         request.body.Game_Description,
         request.body.Game_Category,
