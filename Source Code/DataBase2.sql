@@ -26,9 +26,9 @@ CREATE TABLE client(
 );
 
 CREATE TABLE editor(
-   ID_editor INT auto_increment,
+   editor_ID INT auto_increment,
    editor_name VARCHAR(50),
-   PRIMARY KEY(ID_editor)
+   PRIMARY KEY(editor_ID)
 );
 
 
@@ -52,7 +52,7 @@ CREATE TABLE game(
    ID_editor INT NOT NULL,
    game_image VARCHAR(50),
    PRIMARY KEY(ID_game),
-   FOREIGN KEY(ID_editor) REFERENCES editor(ID_editor)
+   FOREIGN KEY(ID_editor) REFERENCES editor(editor_ID)
 );
 
 CREATE TABLE have(
