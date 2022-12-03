@@ -10,7 +10,7 @@
    <div class="game_infos">
 
 
-        <div class="col_1 game_infos">
+        <div class="col_1">
             <img src = "/image/Games/<%=onegame.game_image%>" alt="game">
         </div>
 
@@ -23,9 +23,9 @@
             
                 <div class="datass">
                     <ul>
-                        <li><%= onegame.editor_name %></li>
-                        <li><%= onegame.price %>€</li>
-                        <li><%= onegame.game_stock %></li>
+                        <li>Editor: <%= onegame.editor_name %></li>
+                        <li>Price: <%= onegame.price %> €</li>
+                        <li>We have <%= onegame.game_stock %> pieces</li>
                     </ul>
                 </div>
 
