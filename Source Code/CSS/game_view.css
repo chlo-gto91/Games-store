@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/*categories for the first part of the page in shop*/
+.categories{
+    margin: auto;
+    background: linear-gradient( #1637F2,#F20CCC);
+    /*#F20CCC #3DE0F2*/
+}
+
