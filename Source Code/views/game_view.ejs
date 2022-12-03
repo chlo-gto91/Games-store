@@ -15,16 +15,19 @@
         </div>
 
         <div class="col_2">
+            <p> Brief description of the game:</p>
+            
             <div class="description">
-                <p> <%= onegame.game_description %> </p>
+                <p><%= onegame.game_description %> </p></p>
+            
             </div>
 
             <div class="data game_infos">
             
                 <div class="datass">
                     <ul>
-                        <li>Editor: <%= onegame.editor_name %></li>
-                        <li>Price: <%= onegame.price %> €</li>
+                        <br><li>Editor: <%= onegame.editor_name %></li><br>
+                        <li>Price: <%= onegame.price %> €</li><br>
                         <li>We have <%= onegame.game_stock %> pieces</li>
                     </ul>
                 </div>
@@ -32,7 +35,6 @@
                 <div class="buy">
                     <button onclick=""> BUY </button>
                 </div>
-
 
             </div>
 
