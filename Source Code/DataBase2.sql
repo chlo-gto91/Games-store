@@ -120,7 +120,7 @@ insert into game values (NULL, 45,"The galaxy is yours in LEGO® Star Wars™: T
 insert into game values (NULL, 55,"Take on the world's fearless and become an Asphalt legend in the best arcade racing game","Asphalt 9: Legends","Car", 10,9,"Asphalt9.jpg");
 insert into game values (NULL, 20,"Experience Arena of Valor, an epic new 5v5 multiplayer online battle arena (MOBA)","Arena of Valor","RPG", 23,10,"ArenaOfValor.jpg");
 insert into game values (NULL, 5,"The game's story follows Cloud Strife, a mercenary who joins an eco-terrorist organization to stop a world-controlling megacorporation ","Final Fantasy VII","Adventure", 1,11,"FinalFantasyVII.jpg");
-insert into game values (NULL, 30, "Alors que la guerre fait rage à travers les royaumes du Nord, vous acceptez le contrat de votre vie et partez à la recherche de l'enfant de la prophétie, une arme vivante capable de changer le monde.","RPG", 20, 13,"TheWither.jpg");
+insert into game values (NULL, 30, "Alors que la guerre fait rage à travers les royaumes du Nord, vous acceptez le contrat de votre vie et partez à la recherche de l'enfant de la prophétie, une arme vivante capable de changer le monde.","The Witcher 3 : Wild Hunt","RPG", 20, 13,"TheWither.jpg");
 
 insert into console values (NULL,500,"XBOX ONE","black",250,15);
 insert into console values (NULL,500,"XBOX ONE S","white",350,9);
