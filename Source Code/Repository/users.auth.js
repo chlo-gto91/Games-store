@@ -5,11 +5,11 @@ module.exports = {
   initialization(app) {
     app.use(passport.initialize());
     app.use(passport.session());
-    passport.serializeUser(function (client, done) { //successfull log in
-      done(null, client.client_name);
+    passport.serializeUser(function (user, done) { //successfull log in
+      done(null, user.lastname);
     });
-    passport.deserializeUser(async function (clientname, done) {
-      let user = await usersRepo.getOneClient(clientname);
+    passport.deserializeUser(async function (lastname, done) {
+      let user = await usersRepo.getOneClient(lastname);
       done(null, user);
     });
   },

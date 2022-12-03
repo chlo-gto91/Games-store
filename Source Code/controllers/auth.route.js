@@ -13,7 +13,7 @@ router.post("/login", loginPostAction);
 router.get("/logout", logoutAction);
 
 async function userAction(request, response) {
-  let userData = await userRepo.getOneClient(request.client.client_name);
+  let userData = await userRepo.getOneClient(request.client.lastname);
   let userJson = JSON.stringify(userData); // if  userData.user_role ...
   response.render("auth_view", { "extraContent": userJson });
 }
