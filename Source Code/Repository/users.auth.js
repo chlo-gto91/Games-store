@@ -10,7 +10,7 @@ module.exports = {
     });
     passport.deserializeUser(async function (clientname, done) {
       let user = await usersRepo.getOneClient(clientname);
-      done(null, client);
+      done(null, user);
     });
   },
 
