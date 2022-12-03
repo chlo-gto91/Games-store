@@ -127,7 +127,7 @@ module.exports = {
     async getAllGameByCategory(category_game){
         try {
             let conn = await pool.getConnection();
-            let sql = "SELECT * FROM game WHERE category =?";
+            let sql = "SELECT * FROM game WHERE category =?  ORDER BY price";
             const rows = await conn.query(sql, category_game);
             conn.end();
             console.log("ROWS FETCHED: "+rows.length);
@@ -141,7 +141,7 @@ module.exports = {
     async getAllGameByEditor(Editor){
         try {
             let conn = await pool.getConnection();
-            let sql = "SELECT * FROM game WHERE ID_editor =?";
+            let sql = "SELECT * FROM game WHERE ID_editor =?  ORDER BY price";
             const rows = await conn.query(sql, Editor);
             conn.end();
             console.log("ROWS FETCHED: "+rows.length);
