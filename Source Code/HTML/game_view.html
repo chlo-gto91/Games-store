@@ -1,23 +1,20 @@
-<%- include("partial_headers.ejs"); %>
-
-
+<html>
+<head>
+    <link rel="stylesheet" href="CSS/game_view.css"/>
+</head>
+<body>
 
 <div class="categories">
     <h1> <%= onegame.game_name %></h1>
-
-    
    <div class="game_infos">
-
-    <!--première colonne-->
         <div class="image">
             <img src = "" alt="game">
         </div>
 
-       <!--deuxième colonne--> 
         <div class="infos">
             <div class="description">
-            
-                <p> <%= onegame.game_description %> </p>
+                <p>description .....................................</p>
+                <!-- <p> <%= onegame.game_description %> </p> -->
             </div>
             <div class="data&buy">
                 <div class="data">
@@ -44,5 +41,7 @@
 </div>
 
 
+    
+</body>
+</html>
 
-<%- include("partial_footer.ejs"); %>
