@@ -201,7 +201,7 @@ module.exports = {
         try {
             let conn = await pool.getConnection();
             let sql = "INSERT INTO game (game_id,game_name) VALUES (NULL, ?) ";
-            const okPacket = await conn.query(sql, gameID); // affectedRows, insertId
+            const okPacket = await conn.query(sql, gameId); // affectedRows, insertId
             conn.end();
             console.log(okPacket);
             return okPacket.insertId;
