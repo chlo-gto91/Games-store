@@ -14,6 +14,7 @@ router.get('/cart/:game_ID', AddToCart);
 router.get('/oneGame/:game_ID', ShowOneGame);
 router.get('/adminview', AdminView);
 router.get('/EditTable/:game_ID', EditTable);
+router.get('/del/:carId', DelGame);
 router.post('/update/:game_ID', UpdateGame);
 
 
@@ -107,6 +108,14 @@ async function UpdateGame(request, response) {
 
     request.session.flashMessage = "ROWS UPDATED: "+numRows;
     response.redirect("/main_page/adminview");
+}
+
+async function DelGame(request, response) {
+    // response.send("DEL ACTION");
+    // TODO: remove extras for car, unless the car cannot be removed!!!
+    var numRows = await carRepo.delOneGame(request.params.game_Id);
+    request.session.flashMessage = "ROWS DELETED: "+numRows;
+    response.redirect("/main_page");
 }
 
 // http://localhost:8000/mainpage
