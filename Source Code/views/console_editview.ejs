@@ -1,0 +1,59 @@
+<%- include("partial_headers.ejs"); %>
+
+<div class="iurhgizuer">
+    <style>
+        .table_console_edit input{
+            width: max-content;
+        }.iurhgizuer li {
+            color: black;
+        }
+    </style>
+        <li><%= allConsole.stockage %></li>
+        <li><%= allConsole.console_name %></li>
+        <li><%= allConsole.console_color %></li>
+        <li><%= allConsole.console_price %></li>
+        <li><%= allConsole.console_stock %></li>
+
+        <form action='/main_page/updateConsole/<%= allConsole.ID_console %>' method="post" 
+            enctype="application/x-www-form-urlencoded">
+
+            <table class="table_console_edit">
+                <tr>
+                    <tr><td>Stockage : </td>
+                        <td>
+                            <input type="number" name="Console_Stockage" value="<%= allConsole.stockage %>">
+                        </td>
+                    </tr>
+                    <tr><td>Name : </td>
+                        <td>
+                            <input type="text" name="Console_Name" value="<%= allConsole.console_name %>">
+                        </td>
+
+                    <tr><td>Color :</td>
+                        <td>
+                            <input type="text" name="Console_Color" value="<%= allConsole.console_color %>">
+                        </td>
+                    </tr>
+                    <tr><td>Price :</td>
+                        <td>
+                            <input type="number" name="Console_Price" value="<%= allConsole.console_price %>">
+                        </td>
+                    </tr>
+                    <tr><td>Stock :</td>
+                        <td>
+                            <input type="number" name="Console_Stock" value="<%= allConsole.console_stock %>">
+                        </td>
+                    </tr>
+                    <tr><td colspan="2"> <input type="submit" value="send"></td></tr>
+                    
+                </tr>
+
+
+            </table>
+
+        </form>
+    </div>
+
+
+
+<%- include("partial_footer.ejs"); %>

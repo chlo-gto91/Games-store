@@ -7,7 +7,6 @@ const consoleRepo = require('../Repository/console.repository');
 router.get('/', ConsoleShowAction);
 router.get('/ConsoleByPrice/:PriceConsole', SortConsoleByPrice);
 router.get('/ConsoleByStockage/:StockageConsole', SortConsoleByStockage);
-//router.get('/:ConsoleID', ConsoleAddToCart);
 
 async function ConsoleShowAction(request, response){
     let console = await consoleRepo.getAllConsole();
@@ -35,13 +34,6 @@ async function SortConsoleByStockage(request, response){
     response.render("ConsoleByStockage_view", {"stockage_console":stockage_console, "flashMessage":flashMessage });
 }
 
-/*
-async function ConsoleAddToCart(request, response){
-    var ConsoleToCart = await consoleRepo.getOneConsole(response.params.ConsoleID);
-    var flashMessage = request.session.flashMessage;
-    request.session.flashMessage = "";
 
-    response.render("cart", {"ConsoleToCart":ConsoleToCart, "flashMessage":flashMessage});
-}
-*/
+
 module.exports = router;
