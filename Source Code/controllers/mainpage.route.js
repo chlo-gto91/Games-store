@@ -123,7 +123,6 @@ async function UpdateGame(request, response) {
 
 async function DelGame(request, response) {
     // response.send("DEL ACTION");
-    // TODO: remove extras for car, unless the car cannot be removed!!!
     var numRows = await carRepo.delOneGame(request.params.game_Id);
     request.session.flashMessage = "ROWS DELETED: "+numRows;
     response.redirect("/main_page");
