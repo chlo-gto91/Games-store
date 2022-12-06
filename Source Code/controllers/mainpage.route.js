@@ -126,7 +126,7 @@ async function DelGame(request, response) {
     // response.send("DEL ACTION");
     var numRows = await gameRepo.delOneGame(request.params.game_ID);
     request.session.flashMessage = "ROWS DELETED: "+numRows;
-    response.redirect("/main_page");
+    response.redirect("/main_page/adminview");
 }
 
 async function updateConsole(request, response) {
