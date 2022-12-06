@@ -106,6 +106,13 @@ async function EditTableConsole(request, response){
     response.render("console_editview", {"allConsole": allConsole, "consoleColor":consoleColor});
 }
 
+async function DelGame(request, response) {
+    // response.send("DEL ACTION");
+    var numRows = await gameRepo.delOneGame(request.params.game_ID);
+    request.session.flashMessage = "ROWS DELETED: "+numRows;
+    response.redirect("/main_page/adminview");
+}
+
 async function UpdateGame(request, response) {
     // response.send("UPDATE ACTION");
     var gameID = request.params.game_ID;
@@ -119,13 +126,6 @@ async function UpdateGame(request, response) {
         );
 
     request.session.flashMessage = "ROWS UPDATED: "+numRows;
-    response.redirect("/main_page/adminview");
-}
-
-async function DelGame(request, response) {
-    // response.send("DEL ACTION");
-    var numRows = await gameRepo.delOneGame(request.params.game_ID);
-    request.session.flashMessage = "ROWS DELETED: "+numRows;
     response.redirect("/main_page/adminview");
 }
 
