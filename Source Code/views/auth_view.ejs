@@ -1,7 +1,11 @@
 <!-- views/auth_view.ejs -->
 <%- include("partial_headers.ejs"); %>
+<link rel="stylesheet" href="logIn.css">
 
-    <h1>Please Log In </h1>
+ <div class="Login">
+
+ </div>   
+<h1>Please Log In </h1>
     <form method="post" action="/auth/login">
         <input name="username" type="username" class="form-control" id="username" placeholder="Username" required>
         <input name="userpass" type="password" class="form-control" id="password" placeholder="Password" required>
