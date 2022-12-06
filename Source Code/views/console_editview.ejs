@@ -8,11 +8,6 @@
             color: black;
         }
     </style>
-        <li><%= allConsole.stockage %></li>
-        <li><%= allConsole.console_name %></li>
-        <li><%= allConsole.console_color %></li>
-        <li><%= allConsole.console_price %></li>
-        <li><%= allConsole.console_stock %></li>
 
         <form action='/main_page/updateConsole/<%= allConsole.ID_console %>' method="post" 
             enctype="application/x-www-form-urlencoded">
@@ -31,7 +26,12 @@
 
                     <tr><td>Color :</td>
                         <td>
-                            <input type="text" name="Console_Color" value="<%= allConsole.console_color %>">
+                            <select name="Console_Color" id="color_console">
+                                <option value="<%= allConsole.console_color %>"><%= allConsole.console_color %></option>
+                                <% for (var color_console of consoleColor) { %>
+                                    <option value="<%= color_console.console_color%>"><%= color_console.console_color %></option>
+                                <% } %>
+                            </select> 
                         </td>
                     </tr>
                     <tr><td>Price :</td>

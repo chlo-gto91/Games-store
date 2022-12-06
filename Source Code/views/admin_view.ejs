@@ -20,7 +20,6 @@
                     <th>Category</th>
                     <th>Stock</th>
                     <th>Edit Game</th>
-                    <th>Add Game</th>
                     <th>Delete Game</th>
                 </tr>
                 <% for (var adminview of adminview) { %>
@@ -31,12 +30,13 @@
                     <td><%= adminview.category %></td></td>
                     <td><%= adminview.game_stock %></td>
                     <td><a href="/main_page/EditTable/<%= adminview.ID_game %>">Edit Game</a></td>
-                    <td><a href=""></a>Add Game</td>
                     <td><a href=""></a>Delete Game</td>
                 </tr>
                 <% } %>
             </table>
+            <a href="/main_page/EditTable/0">Add Game</a>
         </div>  
+        <p><br/><br/><br/></p>
         <table class="console_table">
             <tr>
                 <tr>
@@ -46,7 +46,6 @@
                     <th>Price</th>
                     <th>Stock</th>
                     <th>Edit Console</th>
-                    <th>Add Console</th>
                     <th>Delete Console</th>
                 </tr>
                 <% for (var adminviewConsole of adminviewConsole) { %>
@@ -57,12 +56,12 @@
                     <td><%= adminviewConsole.console_price %></td></td>
                     <td><%= adminviewConsole.console_stock %></td>
                     <td><a href="/main_page/EditConsole/<%= adminviewConsole.ID_console %>">Edit Console</a></td>
-                    <td><a href=""></a>Add Console</td>
                     <td><a href=""></a>Delete Console</td>
                 </tr>
                 <% } %>
             </tr>
         </table>
+        <a href="/main_page/EditConsole/0">Add Console</a>
     </div>
 
 

@@ -26,36 +26,6 @@ module.exports = {
             throw err;
         }
     },
-    async getGameIDunder10(){
-        try{
-            let conn = await pool.getConnection();
-            let sql = "SELECT * FROM game WHERE id_game<=10";
-            const rows = await conn.query(sql);
-            conn.end()
-            console.log("ROWS FETCHED: "+rows.length);
-            return rows;
-        }
-        catch (err) {
-            console.log(err);
-            throw err;
-        }
-
-    },
-    async getGameIDover10(){
-        try{
-            let conn = await pool.getConnection();
-            let sql = "SELECT * FROM game WHERE id_game>10";
-            const rows = await conn.query(sql);
-            conn.end();
-            console.log("ROWS FETCHED: "+rows.length);
-            return rows;
-        }
-        catch (err) {
-            console.log(err);
-            throw err;
-        }
-
-    },
     async getAllEditor(){
         try{
             let conn = await pool.getConnection();
@@ -71,7 +41,21 @@ module.exports = {
         }
 
     },
+    async getAllCategory(){
+        try{
+            let conn = await pool.getConnection();
+            let sql = "SELECT category FROM game GROUP BY category";
+            const rows = await conn.query(sql);
+            conn.end();
+            console.log("ROWS FETCHED: "+rows.length);
+            return rows;
+        }
+        catch (err) {
+            console.log(err);
+            throw err;
+        }
 
+    },
     async getAllGameStock(){
         try{
             let conn = await pool.getConnection();
@@ -197,11 +181,11 @@ module.exports = {
             throw err;
         }
     },
-     async addOneGame(gameId){ 
+     async addOneGame(editor_ID){ 
         try {
             let conn = await pool.getConnection();
-            let sql = "INSERT INTO game (game_id,game_name) VALUES (NULL, ?) ";
-            const okPacket = await conn.query(sql, gameId); // affectedRows, insertId
+            let sql = "INSERT INTO game (game_id,ID_editor) VALUES (NULL, ?) ";
+            const okPacket = await conn.query(sql, editor_ID); // affectedRows, insertId
             conn.end();
             console.log(okPacket);
             return okPacket.insertId;

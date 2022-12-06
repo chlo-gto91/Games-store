@@ -26,6 +26,20 @@ module.exports = {
             throw err;
         }
     },
+    async getAllColor(){
+        try{
+            let conn = await pool.getConnection();
+            let sql = "SELECT console_color FROM console GROUP BY console_color";
+            const rows = await conn.query(sql);
+            conn.release();
+            console.log("ROWS FETCHED: "+rows.length);
+            return rows;
+        }
+        catch (err) {
+            console.log(err);
+            throw err;
+        }
+    },
     async getConsoleByPrice(price_console){
         try{
             let conn = await pool.getConnection();
@@ -86,11 +100,11 @@ module.exports = {
             throw err;
         }
     },
-     async addOneConsole(consoleId){ 
+     async addOneConsole(){ 
         try {
             let conn = await pool.getConnection();
-            let sql = "INSERT INTO console (console_id, console_name) VALUES (NULL, ?) "; //console ?
-            const okPacket = await conn.query(sql, consoleId); // affectedRows, insertId
+            let sql = "INSERT INTO console (console_id) VALUES (NULL) "; //console ?
+            const okPacket = await conn.query(sql); // affectedRows, insertId
             conn.release();
             console.log(okPacket);
             return okPacket.insertId;

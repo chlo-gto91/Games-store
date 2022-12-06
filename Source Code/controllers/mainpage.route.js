@@ -90,7 +90,7 @@ async function AdminView(request, response){
 
 async function EditTableGame(request, response){
     let EditOneGame = await gameRepo.getOneGameAndEditor(request.params.game_ID);
-    let game_category = await gameRepo.getAllGame();
+    let game_category = await gameRepo.getAllCategory();
     // let flashMessage = request.session.flashMessage;
     // request.session.flashMessage = "";
     //console.log(EditOneGame);
@@ -99,10 +99,11 @@ async function EditTableGame(request, response){
 
 async function EditTableConsole(request, response){
     let allConsole = await consoleRepo.getOneConsole(request.params.console_ID);
+    let consoleColor = await consoleRepo.getAllColor();
     // let flashMessage = request.session.flashMessage;
     // request.session.flashMessage = "";
     console.log(allConsole);
-    response.render("console_editview", {"allConsole": allConsole});
+    response.render("console_editview", {"allConsole": allConsole, "consoleColor":consoleColor});
 }
 
 async function UpdateGame(request, response) {
@@ -131,7 +132,7 @@ async function DelGame(request, response) {
 async function updateConsole(request, response) {
     // response.send("UPDATE ACTION");
     var consoleID = request.params.console_ID;
-    if (consoleID==="0") consoleID = await consoleRepo.addOneConsole(request.params.console_ID);
+    if (consoleID==="0") consoleID = await consoleRepo.addOneConsole();
     var numRows = await consoleRepo.editOneConsole(consoleID,
         request.body.Console_Stockage, 
         request.body.Console_Name, 
