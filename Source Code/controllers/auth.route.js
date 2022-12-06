@@ -13,14 +13,14 @@ router.post("/login", loginPostAction);
 router.get("/logout", logoutAction);
 
 async function userAction(request, response) {
-  let userData = await userRepo.getOneClient(request.client.lastname);
+  let userData = await userRepo.getOneClient(request.user.lastname);
   let userJson = JSON.stringify(userData); // if  userData.user_role ...
   response.render("auth_view", { "extraContent": userJson });
 }
 
 async function protectedGetAction(request, response) { //redirect link
   if (request.isAuthenticated()) {
-    if (request.client.client_role === "ADMIN") {
+    if (request.user.client_role === "ADMIN") {
       response.redirect("/auth/admin"); //admin page
     } else {
       response.redirect("/auth/user"); //user page
@@ -38,7 +38,7 @@ async function loginPostAction(request, response) {
     request.login(user, function (err) { 
         if (err) { console.log("ERROR"); console.log(err); return next(err); }
 
-        if (request.client.client_role === "ADMIN") { 
+        if (request.user.client_role === "ADMIN") { 
             return response.redirect("/auth/admin");
         } else {
             return response.redirect("/auth/user");

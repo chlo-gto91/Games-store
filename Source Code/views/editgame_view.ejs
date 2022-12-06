@@ -1,20 +1,6 @@
 <%- include("partial_headers.ejs"); %>
 
 <div class="ensemble">
-    <div class="one_game">
-        <!-- <li><%= EditOneGame.game_name %></li>
-        <li><%= EditOneGame.game_description %></li>
-        <li><%= EditOneGame.category %></li>
-        <li><%= EditOneGame.price %></li>
-        <li><%= EditOneGame.game_stock %></li> -->
-        <li>Mario kart 8</li>
-        <li>Frenzied karting races in the universe of super mario</li>
-        <li>Family</li>
-        <li>55</li>
-        <li>15</li>
-    </div>
-
-
     <style>
         .table_edit input{
             width: max-content;
@@ -38,8 +24,16 @@
 
                     <tr><td>Category :</td>
                         <td>
-                            <input type="text" name="Game_Category" value="<%= EditOneGame.category %>">
+                            <select name="Game_Category" id="game_category">
+                                <option value="<%= EditOneGame.category %>"><%= EditOneGame.category %></option>
+                                <% for (var category_game of game_category)  { %>
+                                <option value="<%= category_game.category %>"><%= category_game.category %></option>
+                                <% } %>
+                            </select> 
                         </td>
+                        <!-- <td>
+                            <input type="text" name="Game_Category" value="<%= EditOneGame.category %>">
+                        </td> -->
                     </tr>
                     <tr><td>Price :</td>
                         <td>

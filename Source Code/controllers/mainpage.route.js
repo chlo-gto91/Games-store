@@ -4,6 +4,7 @@ const { request, response } = require('express');
 const express = require('express');
 const router = express.Router();
 const gameRepo = require('../Repository/game.repository');
+const consoleRepo = require('../Repository/console.repository');
 
 
 router.get('/', gameStockShowAction);
@@ -13,8 +14,11 @@ router.get('/SortEditor/:Editor', SortGameByEditor);
 router.get('/cart/:game_ID', AddToCart);
 router.get('/oneGame/:game_ID', ShowOneGame);
 router.get('/adminview', AdminView);
-router.get('/EditTable/:game_ID', EditTable);
+router.get('/EditTable/:game_ID', EditTableGame);
+router.get('/EditConsole/:console_ID', EditTableConsole);
+router.get('/del/:game_ID', DelGame);
 router.post('/update/:game_ID', UpdateGame);
+router.post('/updateConsole/:console_ID', updateConsole);
 
 
 async function gameStockShowAction(request, response){
@@ -77,21 +81,37 @@ async function ShowOneGame(request, response){
 
 async function AdminView(request, response){
     let adminview = await gameRepo.getAllGame();
+    let adminviewConsole = await consoleRepo.getAllConsole();
     let flashMessage = request.session.flashMessage;
     request.session.flashMessage = "";
     //console.log(onegame);
-    response.render("admin_view", {"adminview": adminview, "flashMessage": flashMessage});
+    response.render("admin_view", {"adminview": adminview, "adminviewConsole":adminviewConsole, "flashMessage": flashMessage});
 }
 
-async function EditTable(request, response){
+async function EditTableGame(request, response){
     let EditOneGame = await gameRepo.getOneGameAndEditor(request.params.game_ID);
-    let game_category = await gameRepo.getAllGame();
+    let game_category = await gameRepo.getAllCategory();
     // let flashMessage = request.session.flashMessage;
     // request.session.flashMessage = "";
-    console.log(EditOneGame);
-    response.render("editgame_view", {"EditOneGame": EditOneGame, "game_category":game_category});
+    //console.log(EditOneGame);
+    response.render("editgame_view", {"EditOneGame": EditOneGame, "game_category": game_category});
 }
 
+async function EditTableConsole(request, response){
+    let allConsole = await consoleRepo.getOneConsole(request.params.console_ID);
+    let consoleColor = await consoleRepo.getAllColor();
+    // let flashMessage = request.session.flashMessage;
+    // request.session.flashMessage = "";
+    console.log(allConsole);
+    response.render("console_editview", {"allConsole": allConsole, "consoleColor":consoleColor});
+}
+
+async function DelGame(request, response) {
+    // response.send("DEL ACTION");
+    var numRows = await gameRepo.delOneGame(request.params.game_ID);
+    request.session.flashMessage = "ROWS DELETED: "+numRows;
+    response.redirect("/main_page/adminview");
+}
 
 async function UpdateGame(request, response) {
     // response.send("UPDATE ACTION");
@@ -103,6 +123,22 @@ async function UpdateGame(request, response) {
         request.body.Game_Name, 
         request.body.Game_Category,
         request.body.Game_Stock
+        );
+
+    request.session.flashMessage = "ROWS UPDATED: "+numRows;
+    response.redirect("/main_page/adminview");
+}
+
+async function updateConsole(request, response) {
+    // response.send("UPDATE ACTION");
+    var consoleID = request.params.console_ID;
+    if (consoleID==="0") consoleID = await consoleRepo.addOneConsole();
+    var numRows = await consoleRepo.editOneConsole(consoleID,
+        request.body.Console_Stockage, 
+        request.body.Console_Name, 
+        request.body.Console_Color, 
+        request.body.Console_Price,
+        request.body.Console_Stock
         );
 
     request.session.flashMessage = "ROWS UPDATED: "+numRows;

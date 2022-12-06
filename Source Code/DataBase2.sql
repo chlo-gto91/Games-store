@@ -102,27 +102,26 @@ insert into client values (NULL,now(),14,"Gattino","Manon","0652741670","Animal 
 insert into client values (NULL,now(),22,"Prim","Lorraine","0650020491","Rayman Legends Definitive","primlorraine@gmail.com",'ADMIN',sha2(concat(now(),'lolo91'), 224));
 
 
-insert into game values (NULL,55,"Frenzied karting races in the universe of super mario", "Mario kart 8","Family",15,2,"MarioKart8.jpg", "MarioKart.jpg"); --
-insert into game values (NULL,50,"Adventure in the universe of super mario", "Super Mario Bross","Family",14,2, "SuperMarioBross.jpg", "marioBross.jpg"); -- 
-insert into game values (NULL,48,"Family sports game", "Wii sport resort","Sport",12,2,"WiiSportResort.jpg", "WiiSport.jpg");
-insert into game values (NULL,30,"Action-adventure open-world stealth game", "Assassin's Creed Origins","Adventure",26,8,"Assassin.jpg", "assasin.jpg");
-insert into game values (NULL,20,"Players explore a blocky, procedurally generated 3D world with virtually infinite terrain and may discover and extract raw materials", "Minecraft","Adventure",4,14,"Minecraft.jpg", "Minecraft.jpg");
-insert into game values (NULL,70,"Football game that allows the player to develop his favorite team", "Fifa 23","Sport",8,1,"Fifa23.jpg", "fifa.jpg");
-insert into game values (NULL,52,"Series of life simulation games in which players control an avatar who starts a new life, in a city full of eccentric animals", "Animal Crossing","Adventure",9,2,"AnimalCrossing.jpg", "animalCross.jpg");
-insert into game values (NULL,45,"Basketball game based on the National Basketball Association", "NBA 2K23","Sport",6,5,"NBA2k23.jpg", "2K23.jpg");
-insert into game values (NULL,49,"Tennis management game", "Tennis manager 2022","Sport",4,15,"TennisManager2022.jpg", "Tennis.jpg");
-insert into game values (NULL,30,"2D side-scrolling platform video game", "Rayman Legends Definitive","Adventure",10,8,"Rayman.jpg", "Rayman.jpg");
-insert into game values (NULL, 70,"Worlds are colliding in Sonic the Hedgehog’s newest high-speed adventure!","Sonic FRONTIERS", "Adventure", 50,12,"Sonic.jpg", "Sonic.jpg");
-insert into game values (NULL, 60,"Relive the story of Goku and other Z Fighters in DRAGON BALL Z: KAKAROT!", "Dragon Ball Z: Kakarot","Action", 30,13,"DBZ.png", "DBZ.jpg");
-insert into game values (NULL, 50,"Call of Duty: WWII Multiplayer engages players in grounded, fast-paced combat across many of World War II's most iconic locations.","Call of Duty®: WWII","War", 8,3,"CallOfDuty.jpg", "WWII.jpg");
-insert into game values (NULL, 60,"Overwatch 2 is a free-to-play, team-based action game set in the optimistic future, where every match is the ultimate 5v5 battlefield brawl.","Overwatch 2","MOBA", 18,4,"Overwatch2.jpg", "Overwatch.jpg");
-insert into game values (NULL, 10,"Rocket League is a high-powered hybrid of arcade-style soccer and vehicular mayhem with easy-to-understand controls and fluid, physics-driven competition.","Rocket League","Car", 21,6,"RocketLeague.jpg", "RocketLeague.jpg");
-insert into game values (NULL, 45,"The galaxy is yours in LEGO® Star Wars™: The Skywalker Saga.","Lego Star Wars : La Saga Skywalker","Adventure", 48,7,"LegoStarWars.jpg", "lego.jpg");
-insert into game values (NULL, 55,"Take on the world's fearless and become an Asphalt legend in the best arcade racing game","Asphalt 9: Legends","Car", 10,9,"Asphalt9.jpg", "asphalt.jpg");
-insert into game values (NULL, 20,"Experience Arena of Valor, an epic new 5v5 multiplayer online battle arena (MOBA)","Arena of Valor","RPG", 23,10,"ArenaOfValor.jpg", "Arena.png");
-insert into game values (NULL, 5,"The game's story follows Cloud Strife, a mercenary who joins an eco-terrorist organization to stop a world-controlling megacorporation ","Final Fantasy VII","Adventure", 1,11,"FinalFantasyVII.jpg", "Final.png");
-insert into game values (NULL, 30, "Alors que la guerre fait rage à travers les royaumes du Nord, vous acceptez le contrat de votre vie et partez à la recherche de l'enfant de la prophétie, une arme vivante capable de changer le monde.","The Witcher 3 : Wild Hunt","RPG", 20, 13,"TheWither.jpg", "Witcher.jpg");
-
+insert into game values (NULL,55,"Frenzied karting races in the universe of super mario", "Mario kart 8","Family",15,2,"MarioKart8.jpg"); --
+insert into game values (NULL,50,"Adventure in the universe of super mario", "Super Mario Bross","Family",14,2, "SuperMarioBross.jpg"); -- 
+insert into game values (NULL,48,"Family sports game", "Wii sport resort","Sport",12,2,"WiiSportResort.jpg");
+insert into game values (NULL,30,"Action-adventure open-world stealth game", "Assassin's Creed Origins","Adventure",26,8,"Assassin.jpg");
+insert into game values (NULL,20,"Players explore a blocky, procedurally generated 3D world with virtually infinite terrain and may discover and extract raw materials", "Minecraft","Adventure",4,14,"Minecraft.jpg");
+insert into game values (NULL,70,"Football game that allows the player to develop his favorite team", "Fifa 23","Sport",8,1,"Fifa23.jpg");
+insert into game values (NULL,52,"Series of life simulation games in which players control an avatar who starts a new life, in a city full of eccentric animals", "Animal Crossing","Adventure",9,2,"AnimalCrossing.jpg");
+insert into game values (NULL,45,"Basketball game based on the National Basketball Association", "NBA 2K23","Sport",6,5,"NBA2k23.jpg");
+insert into game values (NULL,49,"Tennis management game", "Tennis manager 2022","Sport",4,15,"TennisManager2022.jpg");
+insert into game values (NULL,30,"2D side-scrolling platform video game", "Rayman Legends Definitive","Adventure",10,8,"Rayman.jpg");
+insert into game values (NULL, 70,"Worlds are colliding in Sonic the Hedgehog’s newest high-speed adventure!","Sonic FRONTIERS", "Adventure", 50,12,"Sonic.jpg");
+insert into game values (NULL, 60,"Relive the story of Goku and other Z Fighters in DRAGON BALL Z: KAKAROT!", "Dragon Ball Z: Kakarot","Action", 30,13,"DBZ.jpg");
+insert into game values (NULL, 50,"Call of Duty: WWII Multiplayer engages players in grounded, fast-paced combat across many of World War II's most iconic locations.","Call of Duty®: WWII","War", 8,3,"CallOfDuty.jpg");
+insert into game values (NULL, 60,"Overwatch 2 is a free-to-play, team-based action game set in the optimistic future, where every match is the ultimate 5v5 battlefield brawl.","Overwatch 2","MOBA", 18,4,"Overwatch2.jpg");
+insert into game values (NULL, 10,"Rocket League is a high-powered hybrid of arcade-style soccer and vehicular mayhem with easy-to-understand controls and fluid, physics-driven competition.","Rocket League","Car", 21,6,"RocketLeague.jpg");
+insert into game values (NULL, 45,"The galaxy is yours in LEGO® Star Wars™: The Skywalker Saga.","Lego Star Wars : La Saga Skywalker","Adventure", 48,7,"LegoStarWars.jpg");
+insert into game values (NULL, 55,"Take on the world's fearless and become an Asphalt legend in the best arcade racing game","Asphalt 9: Legends","Car", 10,9,"Asphalt9.jpg");
+insert into game values (NULL, 20,"Experience Arena of Valor, an epic new 5v5 multiplayer online battle arena (MOBA)","Arena of Valor","RPG", 23,10,"ArenaOfValor.jpg");
+insert into game values (NULL, 5,"The game's story follows Cloud Strife, a mercenary who joins an eco-terrorist organization to stop a world-controlling megacorporation ","Final Fantasy VII","Adventure", 1,11,"FinalFantasyVII.jpg");
+insert into game values (NULL, 30, "Alors que la guerre fait rage à travers les royaumes du Nord, vous acceptez le contrat de votre vie et partez à la recherche de l'enfant de la prophétie, une arme vivante capable de changer le monde.","The Witcher 3 : Wild Hunt","RPG", 20, 13,"TheWitcher.jpg");
 
 insert into console values (NULL,500,"XBOX ONE","black",250,15);
 insert into console values (NULL,500,"XBOX ONE S","white",350,9);

@@ -84,7 +84,7 @@
                 <div class="global-container">
                     <div class="grid-container">
                     <% for (var game of game_stock) { %>    
-                        <div class="grid-item">Image</div>
+                        <div class="grid-item"><img src="/image/Games/<%=game.game_image%>" alt="game"></div>
                             <div class="grid-item">
                                 <div class="grid-item2">
                                     <ul>                              
@@ -107,7 +107,7 @@
 
 <button onclick="AddRows()">Add rows</button>
 <button onclick="DelRows()">Del rows</button> 
-<a href="/main_page/adminview">Admin view</a>
+<a href="/main_page/adminview">Admin View Game</a>
 
 <%- include("partial_footer.ejs"); %>
   
