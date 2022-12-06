@@ -16,7 +16,7 @@ router.get('/oneGame/:game_ID', ShowOneGame);
 router.get('/adminview', AdminView);
 router.get('/EditTable/:game_ID', EditTableGame);
 router.get('/EditConsole/:console_ID', EditTableConsole);
-router.get('/del/:carId', DelGame);
+router.get('/del/:game_ID', DelGame);
 router.post('/update/:game_ID', UpdateGame);
 router.post('/updateConsole/:console_ID', updateConsole);
 
@@ -124,7 +124,7 @@ async function UpdateGame(request, response) {
 
 async function DelGame(request, response) {
     // response.send("DEL ACTION");
-    var numRows = await carRepo.delOneGame(request.params.game_Id);
+    var numRows = await gameRepo.delOneGame(request.params.game_ID);
     request.session.flashMessage = "ROWS DELETED: "+numRows;
     response.redirect("/main_page");
 }
