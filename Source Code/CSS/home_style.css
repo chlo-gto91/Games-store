@@ -2,32 +2,34 @@
     width:100%;
 }
 
-.boutttons{
+.boutttons {
+    display: flex;
+    border:100px;
+}
+.boutttons:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+.button1 {
+    padding: 1em 1.5em;
+    /* background-image: url(/image/gift.png); */
+  
+    padding: 0 20px;
     
-    display:flex;
+    border-radius: 10px;
+    
+    font-size: 1rem;
+    
 }
 
-.button1 button{
-    background-color:  rgb(14, 84, 14);
-    box-shadow: 0 5px 0  rgb(14, 84, 14);
-    color: white;
+.button2 {
     padding: 1em 1.5em;
-    /*position: relative;
-    text-decoration: none;
-    display: inline-block;*/
-    object-position: 5% 90%;
-    background-image: url(/image/gift.png);
-
-}
-
-.button2 button{
-    background-color:  rgb(14, 84, 14);
-    box-shadow: 0 5px 0  rgb(14, 84, 14);
-    padding: 1em 1.5em;
-    /* position: relative; 
-    text-decoration: none;
-    display: inline-block;
-    border: 13px;*/
-    object-position:  right 50%;
-    background-image: url(/image/gift.png);
+    /* background-image: url(/image/gift.png); */
+    padding: 0 20px;
+  
+    border-radius: 10px;
+    
+    font-size: 1rem;
+  
+    
 }

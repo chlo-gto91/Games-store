@@ -1,8 +1,10 @@
 <!-- views/auth_view.ejs -->
 <%- include("partial_headers.ejs"); %>
-<link rel="stylesheet" href="logIn.css">
+
+<link rel="stylesheet" href="/CSS/auth.css">
+
 <div class="imgcontainer">
-    <img src="image\Avatar.png" alt="Avatar" class="avatar">
+    <img src="image\Avatar.png" alt="Avatar" >
 </div>
 
  <div class="login">
@@ -15,16 +17,16 @@
         <button type="submit" class="btn btn-dark btn-block">Login</button>
     </form>
 </div>
- </div>   
-
+ 
+<div class="link">
     <a href="/auth/logout">LOG OUT</a> <br/>
     <a href="/auth/user">USERS ONLY</a> <br/>
     <a href="/auth/admin">ADMINS ONLY</a> <br/>
-    <a href="/auth/protected">USER LEVEL DEPENDENT AUTO REDIRECT</a> <br/>
-    <p><a href="/CreateAccount">Any account? Create one </a> <br/></p>
+    <a href="/auth/protected">USER LEVEL DEPENDENT AUTO REDIRECT</a> <br/></br>
+    <p><a href="/CreateAccount">Any account? Create one </a> <br/></p> </br></br>
     
     <%= extraContent %>
-
+</div>
     </body>
 </html>
 <%- include("partial_footer.ejs"); %>
