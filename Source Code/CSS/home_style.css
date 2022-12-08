@@ -2,24 +2,32 @@
     width:100%;
 }
 
-.button1 {
+.boutttons{
+    
+    display:flex;
+}
+
+.button1 button{
     background-color:  rgb(14, 84, 14);
     box-shadow: 0 5px 0  rgb(14, 84, 14);
     color: white;
     padding: 1em 1.5em;
-    position: relative;
+    /*position: relative;
     text-decoration: none;
-    display: inline-block;
+    display: inline-block;*/
     object-position: 5% 90%;
+    background-image: url(/image/gift.png);
+
 }
 
-.button2 {
+.button2 button{
     background-color:  rgb(14, 84, 14);
     box-shadow: 0 5px 0  rgb(14, 84, 14);
     padding: 1em 1.5em;
-    position: relative;
+    /* position: relative; 
     text-decoration: none;
     display: inline-block;
-    border: 13px;
+    border: 13px;*/
     object-position:  right 50%;
+    background-image: url(/image/gift.png);
 }
