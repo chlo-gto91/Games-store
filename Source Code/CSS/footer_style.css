@@ -8,7 +8,8 @@
     background: linear-gradient( rgb(231, 222, 224),  rgb(14, 84, 14) 80%);
     z-index: 99;
     box-shadow: 0 0 10px rgba(0,0,0,0.9);
-    position:sticky;
+    position:sticky ;
+   
 }
 .foot p {
     text-align: left;

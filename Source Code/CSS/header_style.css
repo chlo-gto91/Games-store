@@ -11,65 +11,62 @@
 }
 
 .logo img{
-            width: 280px;
-            height: 100px;
+        width: 280px;
+        height: 100px;
 }
 
 .images img {
-            width: auto;
-            height: auto;
+        width: auto;
+        height: auto;
 }
 
 a:link {
-            text-decoration: none;
+        text-decoration: none;
 }
-
 .header ul{
         margin: auto;
-            display: flex;
-            padding: 5px -5px 5px -5px; /*top right bottom left*/
+        display: flex;
+        padding: 5px -5px 5px -5px; /*top right bottom left*/
 
 }
-
 
 .header ul li{
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
 }
 
-
 .header li a{
-            font-family: Arial, Helvetica, sans-serif;
-            background: -webkit-linear-gradient(315deg, #1f5bb6 0%, #15db39 74%);
-            background-clip: border-box;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-color: #b8c6db;
-            text-decoration: none;
-            text-transform: uppercase;    
+        font-family: Arial, Helvetica, sans-serif;
+        background: -webkit-linear-gradient(315deg, #1f5bb6 0%, #15db39 74%);
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-color: #b8c6db;
+        text-decoration: none;
+        text-transform: uppercase;    
 }
 
 
 .search_bar{
-            position: relative;
-            width: 250px;
-            height: auto;
-            display:inline-block;
+        position: relative;
+        width: 250px;
+        height: auto;
+        display:inline-block;
 }    
 
 .search_bar .search{
-            width: 200px;
-            height: 28px;
+        width: 200px;
+        height: 28px;
             
 }
 
 .bouton{
-            width: 35px;
-            background-image: url(/image/recherche.png);
-            height: 35px;
-            padding: 0;
-            float:right;
+        width: 35px;
+        background-image: url(/image/recherche.png);
+        height: 35px;
+        padding: 0;
+        float:right;
 }   
