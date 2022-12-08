@@ -8,7 +8,7 @@ router.post('/updateClient/:client_ID', updateClient);
 async function updateClient(request, response) {
     // response.send("UPDATE ACTION");
     var clientID = request.params.client_ID;
-    if (clientID==="0") clientID = await clientRepo.addOneClient();
+    if (clientID==="0") clientID = await clientRepo.addOneClient(request.params.client_ID);
     var numRows = await clientRepo.editOneClient(clientID,
         request.body.clientAge, 
         request.body.clientName, 
@@ -22,9 +22,7 @@ async function updateClient(request, response) {
     request.session.flashMessage = "ROWS UPDATED: "+numRows;
     response.redirect("/main_page/adminview");
 }
-router.get('/', (req, res) => {
-    res.render('edit_user', { favourites: [], EditOneClient : {} });
-});
+
 
 // http://localhost:8000/edit_user
 
