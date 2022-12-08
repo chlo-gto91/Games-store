@@ -170,9 +170,9 @@ module.exports = {
         try {
             let conn = await pool.getConnection();
             let sql = "DELETE FROM have WHERE ID_game=?";
-            const okPacket = await conn.query(sql, game_ID);
+        
             sql = "DELETE FROM game WHERE ID_game=?";
-            okPacket = await conn.query(sql, game_ID);
+            const okPacket = await conn.query(sql, game_ID);
             conn.end();
             console.log(okPacket);
             return okPacket.affectedRows;
