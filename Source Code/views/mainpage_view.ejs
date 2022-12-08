@@ -81,7 +81,24 @@
                     <th>Cart</th>
                 </tr>
                 -->  
-                <div class="global-container">
+                <div class="grid-container">
+                    <% for (var game of game_stock) { %>
+                    <div class="OneGame">
+                        <div class="GameImage">
+                            <a href="/main_page/oneGame/<%= game.ID_game %>"><img src="/image/jacket/<%= game.jacket %>" alt="game"></a>
+                        </div>
+                        <div class="GameName">
+                            <a href="/main_page/oneGame/<%= game.ID_game %>"><%= game.game_name %></a>
+
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+
+
+
+
+                <!-- <div class="global-container">
                     <div class="grid-container">
                     <% for (var game of game_stock) { %>    
                         <div class="grid-item"><img src="/image/jacket/<%=game.jacket%>" alt="game"></div>
@@ -99,7 +116,7 @@
                     </div> 
                     
 
-                    </div>
+                    </div> -->
      
             </table>
         </div>
