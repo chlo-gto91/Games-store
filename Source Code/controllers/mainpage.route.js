@@ -19,6 +19,7 @@ router.get('/EditConsole/:console_ID', EditTableConsole);
 router.get('/del/:game_ID', DelGame);
 router.post('/update/:game_ID', UpdateGame);
 router.post('/updateConsole/:console_ID', updateConsole);
+router.post('/search', SearchAction);
 
 
 
@@ -145,6 +146,24 @@ async function updateConsole(request, response) {
     request.session.flashMessage = "ROWS UPDATED: "+numRows;
     response.redirect("/main_page/adminview");
 }
+
+async function SearchAction(request, response){
+    let a = (request.body.game_search);
+    let i=1;
+    let onegame;
+    while(i<=20){
+        onegame = await gameRepo.getOneGame(i);
+        if (a == onegame.game_name){
+            response.redirect("game_view", {"onegame":onegame});
+        }
+        else{
+            i++;
+        }
+    }
+
+    response.redirect('/main_page');
+}
+
 
 
 // http://localhost:8000/mainpage
