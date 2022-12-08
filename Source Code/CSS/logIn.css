@@ -13,3 +13,7 @@ img.avatar {
     width: 10%;
     border-radius: 40%;
     }
+ p {
+    text-align: center;
+    color: blue;
+ }
