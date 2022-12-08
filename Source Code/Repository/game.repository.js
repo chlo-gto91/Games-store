@@ -169,8 +169,7 @@ module.exports = {
     async delOneGame(game_ID) {
         try {
             let conn = await pool.getConnection();
-            let sql = "DELETE FROM have WHERE ID_game=?";
-        
+            let sql = "DELETE FROM have WHERE ID_game=?"; //delete have because it contains also ID_game
             sql = "DELETE FROM game WHERE ID_game=?";
             const okPacket = await conn.query(sql, game_ID);
             conn.end();
