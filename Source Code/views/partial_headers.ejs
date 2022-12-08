@@ -19,11 +19,12 @@
             </div></li>
 
             <li><div class="search_bar">
+                <form action="/main_page/search" method="post" enctype="application/x-www-form-urlencoded">
+                    <!--Création barre de recherche-->    <!-- Onchange : Execute a JavaScript when the user changes the content of an input field:-->
+                    <input class="search" name="game_search" type = "texte" id ="search"  placeholder="Search ..."  onchange = "submit" >
+                    <input class="bouton" type="submit" value="" />
+                </form>
 
-
-                <!--Création barre de recherche-->    <!-- Onchange : Execute a JavaScript when the user changes the content of an input field:-->
-                <input class="search" name="game_search" type = "texte" id ="search" value = ""  placeholder="Search ..."   >
-                <input class="bouton" type="button"  />
             </div></li>
 
  
