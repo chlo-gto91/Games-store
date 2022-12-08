@@ -1,0 +1,14 @@
+.xmas img {
+    width:100%;
+}
+
+.button {
+    background-color: #1c87c9;
+    box-shadow: 0 5px 0 #105cad;
+    color: white;
+    padding: 1em 1.5em;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+}
+      
