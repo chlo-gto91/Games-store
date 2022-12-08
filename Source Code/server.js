@@ -51,4 +51,5 @@ app.use("/CreateAccount", require("./controllers/CreateAccountpage.route"));
 app.use("/console", require("./controllers/Console"));
 app.use("/LogIn", require("./controllers/Log"));
 app.use("/Auth", require("./controllers/auth.route"));
-app.use("/home", require("./controllers/home.route"))
+app.use("/home", require("./controllers/home.route"));
+app.use("/edit_user", require("./controllers/user.route"));

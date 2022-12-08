@@ -1,4 +1,4 @@
-pool = require("../utils/db.js");
+pool = require("../Repository/db.js");
 
 
 module.exports = {
@@ -76,12 +76,12 @@ module.exports = {
             throw err; 
         }
     },
-     async editOneClient(clientID, clientAge, clientName, clientLastname, clientPhone, clientListSale, clientMail_addresse){ 
+     async editOneClient(clientID, clientAge, clientName, clientLastname, clientPhone, clientMail_addresse,clientPassword){ 
         try {
             let conn = await pool.getConnection();
-            let sql = "UPDATE client SET client_age=?, client_name=?, lastname=?, phone=?, list_sale=?, mail_addresse=?, client_password=?  WHERE ID_client=? "; // TODO: named parameters? :something
+            let sql = "UPDATE client SET client_age=?, client_name=?, lastname=?, phone=?,  mail_addresse=?, client_password=?  WHERE ID_client=? "; // TODO: named parameters? :something
             const okPacket = await conn.query(sql, 
-                        [clientAge, clientName, clientLastname, clientPhone, clientListSale, clientMail_addresse, clientPassword,clientID]);
+                        [clientAge, clientName, clientLastname, clientPhone, clientMail_addresse, clientPassword,clientID]);
             conn.end()
             console.log(okPacket);
             return okPacket.affectedRows;

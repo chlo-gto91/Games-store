@@ -1,0 +1,57 @@
+<%- include("partial_headers.ejs"); %>
+
+<div class="ensemble">
+    <style>
+        .table_edit input{
+            width: max-content;
+        }
+    </style>
+
+        <form action='/main_page/updateClient/<%= EditOneClient.ID_client %>' method="post" 
+            enctype="application/x-www-form-urlencoded">
+
+            <table class="table_edit">
+                <tr>
+                    <tr><td>Name : </td>
+                        <td>
+                            <input type="text" name="Client_Name" value="<%= EditOneClient.client_name %>">
+                        </td>
+                    </tr>
+                    <tr><td>Lastname : </td>
+                        <td>
+                            <input type="text" name="Lastname" value="<%= EditOneClient.lastname %>">
+                        </td>
+
+                    <tr><td>Age :</td>
+                        <td>
+                            <input type="number" name="Age" value="<%= EditOneClient.client_age %>">
+                            
+                        </td>
+                    </tr>
+                    <tr><td>Phone :</td>
+                        <td>
+                            <input type="text" name="phone" value="<%= EditOneClient.phone %>">
+                        </td>
+                    </tr>
+                    <tr><td>Mail address :</td>
+                        <td>
+                            <input type="text" name="mail" value="<%= EditOneClient.mail_address %>">
+                        </td>
+                    </tr>
+                    <tr><td>Password :</td>
+                        <td>
+                            <input type="text" name="password" value="<%= EditOneClient.client_password %>">
+                        </td>
+                    </tr>
+                    
+                    
+                </tr>
+
+
+            </table>
+
+        </form>
+    </div>
+
+
+<%- include("partial_footer.ejs"); %>
