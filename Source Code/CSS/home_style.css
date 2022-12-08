@@ -2,13 +2,24 @@
     width:100%;
 }
 
-.button {
-    background-color: #1c87c9;
-    box-shadow: 0 5px 0 #105cad;
+.button1 {
+    background-color:  rgb(14, 84, 14);
+    box-shadow: 0 5px 0  rgb(14, 84, 14);
     color: white;
     padding: 1em 1.5em;
     position: relative;
     text-decoration: none;
     display: inline-block;
+    object-position: 5% 90%;
 }
-      
+
+.button2 {
+    background-color:  rgb(14, 84, 14);
+    box-shadow: 0 5px 0  rgb(14, 84, 14);
+    padding: 1em 1.5em;
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    border: 13px;
+    object-position:  right 50%;
+}
