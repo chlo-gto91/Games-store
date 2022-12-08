@@ -48,15 +48,22 @@
 .grid-container {
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
-    gap: 10px;
+    gap: 5px;
     padding: 10px;
 }
 
 .OneGame{
-    border: 1px solid black;
+    border: 3px solid black;
 }
 
+
 .GameImage{
-    width: 250px;
-    height: 300px;
+    text-align: center;
+}
+
+.GameName{
+    text-align: center;
+    text-shadow:0 0 3px #FE0000, 0 0 10px #FE0000, 0 0 20px #FE0000;
+    color:#FE0000;
+    font-size: 2.0rem;
 }
