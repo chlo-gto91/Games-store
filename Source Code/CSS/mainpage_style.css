@@ -1,42 +1,41 @@
 
-#ensemble{
+.ensemble{
     position: relative;
     display: flex;
-    margin-left: 15px;
 }
 
 
-#parameter{
+.parameter{
     width: max-content;
     height: auto;
     border: 1px solid black;
 }
 
-#parameter a{
+.parameter a{
     text-decoration: none;
     text-align: left;
 
 }
 
-#parameter li{
+.parameter li{
     list-style: none;
 }
 
-#list_parameter{
+.list_parameter{
     text-align: left;
 }
 
-#Game_Price_list label{
+.Game_Price_list label{
     font-weight: bold;
     font-size: 20px;
 }
 
-#Game_type_list label{
+.Game_type_list label{
     font-weight: bold;
     font-size: 20px;
 }
 
-#Game_Editor_list label{
+.Game_Editor_list label{
     font-weight: bold;
     font-size: 20px;
 }
