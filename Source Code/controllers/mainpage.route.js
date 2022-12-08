@@ -75,7 +75,7 @@ async function ShowOneGame(request, response){
     let onegame = await gameRepo.getOneGameAndEditor(request.params.game_ID);
     let flashMessage = request.session.flashMessage;
     request.session.flashMessage = "";
-    console.log(onegame);
+    //console.log(onegame);
     response.render("game_view", {"onegame": onegame, "flashMessage": flashMessage});
 }
 
