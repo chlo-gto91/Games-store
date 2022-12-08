@@ -4,6 +4,7 @@
 
 .boutttons {
     display: flex;
+ 
     border:100px;
 }
 .boutttons:active {
@@ -17,6 +18,8 @@
     border-radius: 10px;
     font-size: 1rem;
     
+    display:flex;
+ 
 }
 
 .button2 {

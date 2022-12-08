@@ -11,7 +11,6 @@ router.get('/', gameStockShowAction);
 router.get('/SortPrice/:Price', SortGameByPrice);
 router.get('/SortParameter/:Parameter', SortGameByParameter);
 router.get('/SortEditor/:Editor', SortGameByEditor);
-router.get('/cart/:game_ID', AddToCart);
 router.get('/oneGame/:game_ID', ShowOneGame);
 router.get('/adminview', AdminView);
 router.get('/EditTable/:game_ID', EditTableGame);
@@ -63,15 +62,6 @@ async function SortGameByEditor(request, response){
     response.render("gameParameter_view", {"game_Parameter": game_Editor, "flashMessage": flashMessage});
 }
 
-
-async function AddToCart(request, response){
-    let game_cart = await gameRepo.getOneGame(request.params.game_ID);
-    let flashMessage = request.session.flashMessage;
-    request.session.flashMessage = "";
-
-    //console.log(game_to_cart);
-    response.render("cart", {"game_cart": game_cart, "flashMessage": flashMessage});
-}
 
 async function ShowOneGame(request, response){
     let onegame = await gameRepo.getOneGameAndEditor(request.params.game_ID);
@@ -148,22 +138,15 @@ async function updateConsole(request, response) {
 }
 
 async function SearchAction(request, response){
-    let a = (request.body.game_search);
-    let i=1;
-    let onegame;
-    while(i<=20){
-        onegame = await gameRepo.getOneGame(i);
-        if (a == onegame.game_name){
-            response.redirect("game_view", {"onegame":onegame});
-        }
-        else{
-            i++;
-        }
+    let onegame = await gameRepo.getGameByName(request.body.game_search);
+    //console.log(onegame);
+    if(onegame.length===0){
+        response.redirect("/main_page");
+    }else{
+        response.redirect(`/main_page/oneGame/${onegame[0].ID_game}`);
     }
-
-    response.redirect('/main_page');
+    
 }
-
 
 
 // http://localhost:8000/mainpage

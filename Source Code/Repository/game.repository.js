@@ -26,6 +26,21 @@ module.exports = {
             throw err;
         }
     },
+    async getGameByName(name){
+        try{
+            let conn = await pool.getConnection();
+            let sql = "SELECT * FROM game WHERE upper(game_name) like upper(?)";
+            const rows = await conn.query(sql, name);
+            conn.end()
+            console.log("ROWS FETCHED: "+rows.length);
+            return rows;
+        }
+        catch (err) {
+            console.log(err);
+            throw err;
+        }
+    },
+    
     async getAllEditor(){
         try{
             let conn = await pool.getConnection();
