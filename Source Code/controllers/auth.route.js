@@ -29,7 +29,6 @@ async function protectedGetAction(request, response) { //redirect link
       response.redirect("/auth"); //log in page
   }
 }
-
 async function loginPostAction(request, response) {
   areValid = await userRepo.areValidCredentials(request.body.username, request.body.userpass);
 
