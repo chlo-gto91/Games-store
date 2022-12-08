@@ -22,8 +22,8 @@
 
 
                 <!--Création barre de recherche-->    <!-- Onchange : Execute a JavaScript when the user changes the content of an input field:-->
-                <input class="search" type = "texte" id ="search" value = ""  placeholder="Search ..."  onchange = "openPage()">
-                <input class="bouton" type="button" onclick = "openPage()" />
+                <input class="search" name="game_search" type = "texte" id ="search" value = ""  placeholder="Search ..."  onchange = "/search" >
+                <input class="bouton" type="button" onclick = "/search" />
             </div></li>
 
  
@@ -43,20 +43,6 @@
     </div>
 </head>
 <body>
-
-
-
-        <script>
-            function openPage(){
-                var a = document.getElementById("search").value;
-
-                if(a==="call of duty" || a==="Call of Duty" || a==="Call Of Duty" || a==="call of Duty"){
-                    window.open("test.html")
-                }
-                else
-                window.alert("Game not found !!!");
-            }
-        </script>
             
         
         

@@ -1,41 +1,41 @@
 
-.ensemble{
+#ensemble{
     position: relative;
     display: flex;
 }
 
 
-.parameter{
+#parameter{
     width: max-content;
     height: auto;
     border: 1px solid black;
 }
 
-.parameter a{
+#parameter a{
     text-decoration: none;
     text-align: left;
 
 }
 
-.parameter li{
+#parameter li{
     list-style: none;
 }
 
-.list_parameter{
+#list_parameter{
     text-align: left;
 }
 
-.Game_Price_list label{
+#Game_Price_list label{
     font-weight: bold;
     font-size: 20px;
 }
 
-.Game_type_list label{
+#Game_type_list label{
     font-weight: bold;
     font-size: 20px;
 }
 
-.Game_Editor_list label{
+#Game_Editor_list label{
     font-weight: bold;
     font-size: 20px;
 }
@@ -47,12 +47,11 @@
 .grid-container {
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
-    gap: 5px;
     padding: 10px;
 }
 
 .OneGame{
-    border: 3px solid black;
+    border: 1px solid black;
 }
 
 

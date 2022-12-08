@@ -21,6 +21,7 @@ router.post('/update/:game_ID', UpdateGame);
 router.post('/updateConsole/:console_ID', updateConsole);
 
 
+
 async function gameStockShowAction(request, response){
     let game_stock = await gameRepo.getAllGame();
     // let game_stock1 = await gameRepo.getGameIDover10();
@@ -144,6 +145,7 @@ async function updateConsole(request, response) {
     request.session.flashMessage = "ROWS UPDATED: "+numRows;
     response.redirect("/main_page/adminview");
 }
+
 
 // http://localhost:8000/mainpage
 
