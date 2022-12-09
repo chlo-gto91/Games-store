@@ -7,44 +7,44 @@
         }
     </style>
 
-        <form action='/main_page/updateClient/<%= EditOneClient.ID_client %>' method="post" 
+        <form action='/auth/updateClient/<%= EditOneClient.ID_client %>' method="post" 
             enctype="application/x-www-form-urlencoded">
 
             <table class="table_edit">
                 <tr>
                     <tr><td>Name : </td>
                         <td>
-                            <input type="text" name="Client_Name" value="<%= EditOneClient.client_name %>">
+                            <input type="text" name="clientName" value="<%= EditOneClient.client_name %>">
                         </td>
                     </tr>
                     <tr><td>Lastname : </td>
                         <td>
-                            <input type="text" name="Lastname" value="<%= EditOneClient.lastname %>">
+                            <input type="text" name="clientLastname" value="<%= EditOneClient.lastname %>">
                         </td>
 
                     <tr><td>Age :</td>
                         <td>
-                            <input type="number" name="Age" value="<%= EditOneClient.client_age %>">
+                            <input type="number" name="clientAge" value="<%= EditOneClient.client_age %>">
                             
                         </td>
                     </tr>
                     <tr><td>Phone :</td>
                         <td>
-                            <input type="text" name="phone" value="<%= EditOneClient.phone %>">
+                            <input type="text" name="clientPhone" value="<%= EditOneClient.phone %>">
                         </td>
                     </tr>
                     <tr><td>Mail address :</td>
                         <td>
-                            <input type="text" name="mail" value="<%= EditOneClient.mail_address %>">
+                            <input type="text" name="clientMail_addresse" value="<%= EditOneClient.mail_address %>">
                         </td>
                     </tr>
                     <tr><td>Password :</td>
                         <td>
-                            <input type="text" name="password" value="<%= EditOneClient.client_password %>">
+                            <input type="text" name="clientPassword" value="<%= EditOneClient.client_password %>">
                         </td>
                     </tr>
                     
-                    
+                    <tr><td colspan="2"> <input type="submit" value="send"></td></tr>
                 </tr>
 
 

@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const auth = require("../Repository/users.auth");
 const userRepo = require("../Repository/users.repository");
+const clientRepo = require('../Repository/client.repository');
 
 // http://localhost:9000/auth
 router.get('/', (req, res) => res.render('auth_view', { extraContent: "" }) );
@@ -11,11 +12,13 @@ router.get("/admin", auth.checkAuthentication("ADMIN"), userAction);
 router.get("/protected", protectedGetAction);
 router.post("/login", loginPostAction);
 router.get("/logout", logoutAction);
+router.get('/edit', EditTableClient);
+router.post('/updateClient/:client_ID', updateClient);
 
 async function userAction(request, response) {
   let userData = await userRepo.getOneClient(request.user.lastname);
   let userJson = JSON.stringify(userData); // if  userData.user_role ...
-  response.render("auth_view", { "extraContent": userJson });
+  response.render("auth_view", { "extraContent": userData });
 }
 
 async function protectedGetAction(request, response) { //redirect link
@@ -56,4 +59,28 @@ function logoutAction(request, response) {
     });
 }
 
+async function EditTableClient(request, response){
+  let EditOneClient = await clientRepo.getOneClient(request.user.ID_client); 
+  console.log(EditOneClient);
+  response.render("edit_user", {"EditOneClient": EditOneClient});
+}
+
+
+async function updateClient(request, response) {
+  // response.send("UPDATE ACTION");
+  var clientID = request.params.client_ID;
+  if (clientID==="0") clientID = await clientRepo.addOneClient(request.params.client_ID);
+  var numRows = await clientRepo.editOneClient(clientID,
+      request.body.clientAge, 
+      request.body.clientName, 
+      request.body.clientLastname, 
+      request.body.clientPhone,
+      request.body.clientMail_addresse,
+      request.body.clientPassword,
+      request.body.clientID
+      );
+
+  request.session.flashMessage = "ROWS UPDATED: "+numRows;
+  response.redirect("/auth");
+}
 module.exports = router;
