@@ -7,6 +7,7 @@ const consoleRepo = require('../Repository/console.repository');
 router.get('/', ConsoleShowAction);
 router.get('/ConsoleByPrice/:PriceConsole', SortConsoleByPrice);
 router.get('/ConsoleByStockage/:StockageConsole', SortConsoleByStockage);
+router.get('/OneConsole/:ID_console', ShowOneConsole);
 
 async function ConsoleShowAction(request, response){
     let console = await consoleRepo.getAllConsole();
@@ -32,6 +33,15 @@ async function SortConsoleByStockage(request, response){
     //console.log(stockage_console);
 
     response.render("ConsoleByStockage_view", {"stockage_console":stockage_console, "flashMessage":flashMessage });
+}
+
+
+async function ShowOneConsole(request, response){
+    let oneconsole = await consoleRepo.getOneConsole(request.params.ID_console);
+    let flashMessage = request.session.flashMessage;
+    request.session.flashMessage = "";
+    //console.log(onegame);
+    response.render("console_view", {"oneconsole": oneconsole, "flashMessage": flashMessage});
 }
 
 

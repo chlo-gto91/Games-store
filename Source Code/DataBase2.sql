@@ -39,6 +39,8 @@ CREATE TABLE console(
    console_color VARCHAR(50),
    console_price INT,
    console_stock INT,
+   console_image VARCHAR(50),
+   console_jacket VARCHAR(50),
    PRIMARY KEY(ID_console)
 );
 
@@ -124,7 +126,7 @@ insert into game values (NULL, 5,"The game's story follows Cloud Strife, a merce
 insert into game values (NULL, 30, "As war rages across the Northern Kingdoms, you accept the contract of your life and seek out the Child of Prophecy, a living weapon capable of changing the world.","The Witcher 3 : Wild Hunt","RPG", 20, 13,"TheWitcher.jpg", "Witcher.jpg");
 
 
-insert into console values (NULL,500,"XBOX ONE","black",250,15);
+insert into console values (NULL,500,"XBOX ONE","black",250,15,"XBOXone.jpg");
 insert into console values (NULL,500,"XBOX ONE S","white",350,9);
 insert into console values (NULL,1000,"XBOX ONE X","black",500,5);
 insert into console values (NULL,500,"PS4","black",250,14);
