@@ -48,10 +48,12 @@
     display: grid;
     grid-template-columns: 20% 20% 20% 20% 20%;
     padding: 10px;
+    gap:2.5px;
 }
 
 .OneGame{
     border: 1px solid black;
+    border-radius: 25px;
 }
 
 
