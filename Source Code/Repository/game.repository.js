@@ -196,11 +196,11 @@ module.exports = {
             throw err;
         }
     },
-     async addOneGame(editor_ID){ 
+     async addOneGame(){ 
         try {
             let conn = await pool.getConnection();
-            let sql = "INSERT INTO game (game_id,ID_editor) VALUES (NULL, ?) ";
-            const okPacket = await conn.query(sql, editor_ID); // affectedRows, insertId
+            let sql = "INSERT INTO game (game_id) VALUES (NULL) ";
+            const okPacket = await conn.query(sql); // affectedRows, insertId
             conn.end();
             console.log(okPacket);
             return okPacket.insertId;
@@ -210,12 +210,13 @@ module.exports = {
             throw err; 
         }
     },
-    async editOneGame(gameId, gamePrice, gameDescription, gameName, gameCategory, gameStock){ 
+
+    async editOneGame(gameId, gamePrice, gameDescription, gameName, gameCategory, gameStock, editor_ID){ 
         try {
             let conn = await pool.getConnection();
-            let sql = "UPDATE game SET price=?, game_description=?, game_name=?, category=?, game_stock=? WHERE ID_game=? "; // TODO: named parameters? :something
+            let sql = "UPDATE game SET price=?, game_description=?, game_name=?, category=?, game_stock=?, ID_editor=? WHERE ID_game=?"; // TODO: named parameters? :something
             const okPacket = await conn.query(sql, 
-                        [gamePrice, gameDescription, gameName, gameCategory, gameStock, gameId]);
+                        [gamePrice, gameDescription, gameName, gameCategory, gameStock,editor_ID, gameId]);
             conn.end();
             console.log(okPacket);
             return okPacket.affectedRows;

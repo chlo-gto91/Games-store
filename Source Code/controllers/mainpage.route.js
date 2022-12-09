@@ -5,6 +5,7 @@ const express = require('express');
 const router = express.Router();
 const gameRepo = require('../Repository/game.repository');
 const consoleRepo = require('../Repository/console.repository');
+const editRepo = require("../Repository/editor.repository");
 
 
 router.get('/', gameStockShowAction);
@@ -84,10 +85,11 @@ async function AdminView(request, response){
 async function EditTableGame(request, response){
     let EditOneGame = await gameRepo.getOneGameAndEditor(request.params.game_ID);
     let game_category = await gameRepo.getAllCategory();
+    let allEditors = await gameRepo.getAllEditor();
     // let flashMessage = request.session.flashMessage;
     // request.session.flashMessage = "";
     //console.log(EditOneGame);
-    response.render("editgame_view", {"EditOneGame": EditOneGame, "game_category": game_category});
+    response.render("editgame_view", {"EditOneGame": EditOneGame, "game_category": game_category, "Editors": allEditors});
 }
 
 async function EditTableConsole(request, response){
@@ -101,30 +103,31 @@ async function EditTableConsole(request, response){
 
 async function DelGame(request, response) {
     // response.send("DEL ACTION");
-    var numRows = await gameRepo.delOneGame(request.params.game_ID);
+    let numRows = await gameRepo.delOneGame(request.params.game_ID);
     request.session.flashMessage = "ROWS DELETED: "+numRows;
     response.redirect("/main_page/adminview");
 }
 
 async function DelConsole(request, response) {
     // response.send("DEL ACTION");
-    var numRows = await consoleRepo.delOneConsole(request.params.console_ID);
+    let numRows = await consoleRepo.delOneConsole(request.params.console_ID);
     request.session.flashMessage = "ROWS DELETED: "+numRows;
     response.redirect("/main_page/adminview");
 }
 
+
 async function UpdateGame(request, response) {
     // response.send("UPDATE ACTION");
     var gameID = request.params.game_ID;
-    if (gameID==="0") gameID = await gameRepo.addOneGame(request.params.game_ID);
+    if (gameID==="0") gameID = await gameRepo.addOneGame();
     var numRows = await gameRepo.editOneGame(gameID,
         request.body.Game_Price, 
         request.body.Game_Description, 
         request.body.Game_Name, 
         request.body.Game_Category,
-        request.body.Game_Stock
+        request.body.Game_Stock,
+        request.body.Game_Editor
         );
-
     request.session.flashMessage = "ROWS UPDATED: "+numRows;
     response.redirect("/main_page/adminview");
 }
@@ -132,7 +135,7 @@ async function UpdateGame(request, response) {
 async function updateConsole(request, response) {
     // response.send("UPDATE ACTION");
     var consoleID = request.params.console_ID;
-    if (consoleID==="0") consoleID = await consoleRepo.addOneConsole();
+    if (consoleID==="0") consoleID = await consoleRepo.addOneConsole(request.body.Console_Name);
     var numRows = await consoleRepo.editOneConsole(consoleID,
         request.body.Console_Stockage, 
         request.body.Console_Name, 

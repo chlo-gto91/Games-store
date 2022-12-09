@@ -42,8 +42,21 @@
                             <input type="number" name="Game_Stock" value="<%= EditOneGame.game_stock %>">
                         </td>
                     </tr>
-                    <tr><td colspan="2"> <input type="submit" value="send"></td></tr>
                     
+                    <tr><td>Editor :</td>
+                        <td>
+                            <select name="Game_Editor" id="game_editor">
+                                <option value="<%= EditOneGame.editor_name %>"><%= EditOneGame.editor_name %></option>
+                                <% for (var editor of Editors)  { %>
+                                <option value="<%= editor.editor_ID %>"><%= editor.editor_name %></option>
+                                <% } %>
+                            </select> 
+                        </td>
+                    </tr>
+
+                    <tr><td colspan="2"> <input type="submit" value="send"></td></tr>
+
+
                 </tr>
 
 

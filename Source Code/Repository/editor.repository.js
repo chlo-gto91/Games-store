@@ -40,6 +40,24 @@ module.exports = {
             throw err;
         }
     },
+    async getEditorByName(editor_name){
+        try {
+            let conn = await pool.getConnection();
+            let sql = "SELECT editor_ID FROM editor WHERE editor_name =? ";
+            const rows = await conn.query(sql, editor_name);
+            conn.end()
+            console.log("ROWS FETCHED: "+rows.length);
+            if (rows.length == 1){
+                return rows[0];
+            }else{
+                return false;
+            }
+        }
+        catch (err) {
+            console.log(err);
+            throw err;
+        }
+    },
     async delOneEditor(ID_editor) {
         try {
             let conn = await pool.getConnection();
