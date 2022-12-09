@@ -8,7 +8,7 @@ const consoleRepo = require('../Repository/console.repository');
 const editRepo = require("../Repository/editor.repository");
 
 
-router.get('/', gameStockShowAction);
+router.get('/', gameStockShowAction); //get to access a page
 router.get('/SortPrice/:Price', SortGameByPrice);
 router.get('/SortParameter/:Parameter', SortGameByParameter);
 router.get('/SortEditor/:Editor', SortGameByEditor);
@@ -156,7 +156,6 @@ async function SearchAction(request, response){
     }else{
         response.redirect(`/main_page/oneGame/${onegame[0].ID_game}`);
     }
-    
 }
 
 

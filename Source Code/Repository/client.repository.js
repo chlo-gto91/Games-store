@@ -79,7 +79,7 @@ module.exports = {
      async editOneClient(clientID, clientAge, clientName, clientLastname, clientPhone, clientMail_addresse,clientPassword){ 
         try {
             let conn = await pool.getConnection();
-            let sql = "UPDATE client SET client_age=?, client_name=?, lastname=?, phone=?,  mail_addresse=?, client_password=?  WHERE ID_client=? "; // TODO: named parameters? :something
+            let sql = "UPDATE client SET client_age=?, client_name=?, lastname=?, phone=?,  mail_address=?, client_password=?  WHERE ID_client=? "; // TODO: named parameters? :something
             const okPacket = await conn.query(sql, 
                         [clientAge, clientName, clientLastname, clientPhone, clientMail_addresse, clientPassword,clientID]);
             conn.end()
