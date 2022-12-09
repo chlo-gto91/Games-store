@@ -14,6 +14,7 @@ router.post("/login", loginPostAction);
 router.get("/logout", logoutAction);
 router.get('/edit', EditTableClient);
 router.post('/updateClient/:client_ID', updateClient);
+router.post('/profil',GetProfil); //redirection
 
 async function userAction(request, response) {
   let userData = await userRepo.getOneClient(request.user.lastname);
@@ -83,4 +84,16 @@ async function updateClient(request, response) {
   request.session.flashMessage = "ROWS UPDATED: "+numRows;
   response.redirect("/auth");
 }
+
+async function GetProfil(request,response){
+  if (auth.checkAuthentication("USER")){
+    response.render("home_view");
+  }else if (auth.checkAuthentication("ADMIN")){
+    response.render("admin_view");
+  }
+  response.render("auth_view");
+
+}
+
+
 module.exports = router;
