@@ -30,7 +30,7 @@
                     <td><%= adminview.category %></td></td>
                     <td><%= adminview.game_stock %></td>
                     <td><a href="/main_page/EditTable/<%= adminview.ID_game %>">Edit Game</a></td>
-                    <td><a href="/main_page/del/<%= adminview.ID_game %>">Delete Game</a></td>
+                    <td><a href="/main_page/delGame/<%= adminview.ID_game %>">Delete Game</a></td>
                 </tr>
                 <% } %>
             </table>
@@ -57,7 +57,7 @@
                     <td><%= adminviewConsole.console_price %></td></td>
                     <td><%= adminviewConsole.console_stock %></td>
                     <td><a href="/main_page/EditConsole/<%= adminviewConsole.ID_console %>">Edit Console</a></td>
-                    <td><a href=""></a>Delete Console</td>
+                    <td><a href="/main_page/delConsole/<%= adminviewConsole.ID_console %>">Delete Console</a></td>
                 </tr>
                 <% } %>
             </tr>

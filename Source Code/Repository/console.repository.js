@@ -86,12 +86,13 @@ module.exports = {
             throw err;
         }
     },
-    async delOneConsole(ID_console) {
+    async delOneConsole(IDconsole) {
         try {
             let conn = await pool.getConnection();
+            // let sql = "DELETE FROM buy WHERE ID_console=?";//delete buy because it contains also ID_console
             let sql = "DELETE FROM console WHERE ID_console=?";
-            const okPacket = await conn.query(sql, ID_console);
-            conn.release();
+            const okPacket = await conn.query(sql, IDconsole);
+            conn.end();
             console.log(okPacket);
             return okPacket.affectedRows;
         }

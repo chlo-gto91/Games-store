@@ -34,7 +34,7 @@ module.exports = {
         try {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM client WHERE ID_client =? ";
-            const rows = await conn.query(sql, [ID_client]); //crochet si sql entre id_client
+            const rows = await conn.query(sql, [ID_client]); //[] for sql
             conn.end()
             console.log("ROWS FETCHED: "+rows.length);
             if (rows.length == 1){

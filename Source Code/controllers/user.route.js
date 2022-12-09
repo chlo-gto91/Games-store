@@ -20,7 +20,7 @@ async function updateClient(request, response) {
         );
 
     request.session.flashMessage = "ROWS UPDATED: "+numRows;
-    response.redirect("/main_page/adminview");
+    response.redirect("/auth");
 }
 
 

@@ -15,7 +15,8 @@ router.get('/oneGame/:game_ID', ShowOneGame);
 router.get('/adminview', AdminView);
 router.get('/EditTable/:game_ID', EditTableGame);
 router.get('/EditConsole/:console_ID', EditTableConsole);
-router.get('/del/:game_ID', DelGame);
+router.get('/delGame/:game_ID', DelGame);
+router.get('/delConsole/:console_ID', DelConsole);
 router.post('/update/:game_ID', UpdateGame);
 router.post('/updateConsole/:console_ID', updateConsole);
 router.post('/search', SearchAction);
@@ -101,6 +102,13 @@ async function EditTableConsole(request, response){
 async function DelGame(request, response) {
     // response.send("DEL ACTION");
     var numRows = await gameRepo.delOneGame(request.params.game_ID);
+    request.session.flashMessage = "ROWS DELETED: "+numRows;
+    response.redirect("/main_page/adminview");
+}
+
+async function DelConsole(request, response) {
+    // response.send("DEL ACTION");
+    var numRows = await consoleRepo.delOneConsole(request.params.console_ID);
     request.session.flashMessage = "ROWS DELETED: "+numRows;
     response.redirect("/main_page/adminview");
 }
