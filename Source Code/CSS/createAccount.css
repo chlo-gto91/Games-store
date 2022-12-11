@@ -1,5 +1,5 @@
 
-#container{
+#container{ /* "#" because it is a id*/
     width:400px;
     margin:0 auto;
     margin-top:10%;
@@ -69,7 +69,7 @@ input[type=email], input[type=email] {
     cursor: pointer;
     width: 100%;
 }
-.create:hover {
+.create:hover { /*create effect on button */
     background-color: white;
     color: #348196;
     border: 1px solid #348196;
