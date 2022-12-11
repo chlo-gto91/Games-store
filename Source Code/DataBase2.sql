@@ -40,6 +40,7 @@ CREATE TABLE console(
    console_price INT,
    console_stock INT,
    console_image VARCHAR(50),
+   view_image VARCHAR(50),
    PRIMARY KEY(ID_console)
 );
 
@@ -125,16 +126,16 @@ insert into game values (NULL, 5,"The game's story follows Cloud Strife, a merce
 insert into game values (NULL, 30, "As war rages across the Northern Kingdoms, you accept the contract of your life and seek out the Child of Prophecy, a living weapon capable of changing the world.","The Witcher 3 : Wild Hunt","RPG", 20, 13,"TheWitcher.jpg", "Witcher.jpg");
 
 
-insert into console values (NULL,500,"XBOX ONE","black",250,15,"XBOXone.png");
-insert into console values (NULL,500,"XBOX ONE S","white",350,9, "XBOXoneS.png");
-insert into console values (NULL,1000,"XBOX ONE X","black",500,5, "XBOXoneX.png");
-insert into console values (NULL,500,"PS4","black",250,14, "ps4.png");
-insert into console values (NULL,1000,"PS5","white",500,3, "PS5.png");
-insert into console values (NULL,0,"Nitendo 3DS","blue",130,6, "Nintendo3DS.png");
-insert into console values (NULL,32,"Nitendo SWITCH","black",260,11, "Switch.png");
-insert into console values (NULL,64,"Nitendo SWITCH OLED","white",320,2, "SwitchOLED.png");
-insert into console values (NULL,32,"Nitendo SWITCH LITE","pink",200,5, "SwitchLite.png");
-insert into console values (NULL,0,"Game Boy","grey",60,1, "gameboy.png");
+insert into console values (NULL,500,"XBOX ONE","black",250,15,"XBOXone.png", "XboxOne.png");
+insert into console values (NULL,500,"XBOX ONE S","white",350,9, "XBOXoneS.png", "XboxS.png");
+insert into console values (NULL,1000,"XBOX ONE X","black",500,5, "XBOXoneX.png", "XboxX.png");
+insert into console values (NULL,500,"PS4","black",250,14, "ps4.png", "PS4.png");
+insert into console values (NULL,1000,"PS5","white",500,3, "PS5.png", "PS5.png");
+insert into console values (NULL,0,"Nitendo 3DS","blue",130,6, "Nintendo3DS.png", "3DS.png");
+insert into console values (NULL,32,"Nitendo SWITCH","black",260,11, "Switch.png", "Switch.png");
+insert into console values (NULL,64,"Nitendo SWITCH OLED","white",320,2, "SwitchOLED.png", "SwitchOled.png");
+insert into console values (NULL,32,"Nitendo SWITCH LITE","pink",200,5, "SwitchLite.png", "Switchlite.png");
+insert into console values (NULL,0,"Game Boy","grey",60,1, "gameboy.png", "Gameboy.png");
 
 
 insert into have values (1,15);
