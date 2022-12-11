@@ -10,7 +10,8 @@ module.exports = {
     },
     async getAllEditor(){
         try{
-            let conn = await pool.getConnection();
+            let conn = await pool.getConnection();// await is used to pause the execution of the current async function 
+            //until the promise is resolved. This allows the function to wait for an asynchronous operation to complete before continuing.
             let sql = "SELECT * FROM editor";
             const rows = await conn.query(sql);
             conn.end()
@@ -60,9 +61,11 @@ module.exports = {
     },
     async delOneEditor(ID_editor) {
         try {
-            let conn = await pool.getConnection();
+            let conn = await pool.getConnection();// await is used to pause the execution of the current async function 
+            //until the promise is resolved. This allows the function to wait for an asynchronous operation to complete before continuing.
             let sql = "DELETE FROM editor WHERE ID_editor=?";
-            const okPacket = await conn.query(sql, ID_editor);
+            const okPacket = await conn.query(sql, ID_editor);// query is used to retrieve an element or a set of elements from the DOM (Document Object Model) based on a specified CSS selector. 
+            //This method is typically used to access and manipulate elements in the DOM, such as changing their styles or adding event listeners.
             conn.end();
             console.log(okPacket);
             return okPacket.affectedRows;

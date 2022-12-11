@@ -1,0 +1,45 @@
+<%- include("partial_headers.ejs"); %>
+
+
+<div class="categories">
+    
+ 
+    <br><br><h1> <%= onegame.console_name %></h1><br><br>
+
+
+   <div class="console_infos">
+
+
+        <div class="col_1">
+            <img src = "/image/console/<%=onegame.console_image%>" alt="game">
+        </div>
+
+        <div class="col_2">
+            
+            <div class="data console_infos">
+            
+                <div class="datass">
+                    <ul>
+                        <br><li>Color: <%= onegame.console_color %></li><br>
+                        <li>Price: <%= onegame.console_price %> €</li><br>
+                        <li>We have <%= onegame.console_stock %> pieces</li>
+                    </ul>
+                </div>
+
+                <div class="buy">
+                    <button onclick="window.location.href = '/cart/add/<%= onegame.game_name %>'"> BUY </button>
+                </div>
+
+            </div>
+
+        </div>
+        
+    </div>
+
+    
+
+</div>
+
+
+
+<%- include("partial_footer.ejs"); %>

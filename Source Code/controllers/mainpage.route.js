@@ -21,6 +21,7 @@ router.get('/delConsole/:console_ID', DelConsole);
 router.post('/update/:game_ID', UpdateGame);
 router.post('/updateConsole/:console_ID', updateConsole);
 router.post('/search', SearchAction);
+router.get('/oneConsole/:console_ID', ShowOneConsole);
 
 
 
@@ -72,6 +73,15 @@ async function ShowOneGame(request, response){
     //console.log(onegame);
     response.render("game_view", {"onegame": onegame, "flashMessage": flashMessage});
 }
+
+
+async function ShowOneConsole(request, response){
+    let oneconsole = await gameRepo.getOneConsole(request.params.console_ID);
+    let flashMessage = request.session.flashMessage;
+    request.session.flashMessage = "";
+    response.render("game_view", {"oneconsole": oneconsole, "flashMessage": flashMessage});
+}
+
 
 async function AdminView(request, response){
     let adminview = await gameRepo.getAllGame();
