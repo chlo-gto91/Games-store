@@ -1,17 +1,17 @@
 <%- include("partial_headers.ejs"); %>
 
-
+<link rel="stylesheet" type="text/css" href="/CSS/one_console.css"/>
 <div class="categories">
     
  
-    <br><br><h1> <%= onegame.console_name %></h1><br><br>
+    <br><br><h1> <%= oneconsole.console_name %></h1><br><br>
 
 
    <div class="console_infos">
 
 
         <div class="col_1">
-            <img src = "/image/View_Console/<%=onegame.console_image%>" alt="game">
+            <img src = "/image/View_Console/<%=oneconsole.view_image%>" alt="game">
         </div>
 
         <div class="col_2">
@@ -20,14 +20,14 @@
             
                 <div class="datass">
                     <ul>
-                        <br><li>Color: <%= onegame.console_color %></li><br>
-                        <li>Price: <%= onegame.console_price %> €</li><br>
-                        <li>We have <%= onegame.console_stock %> pieces</li>
+                        <br><li>Color: <%= oneconsole.console_color %></li><br>
+                        <li>Price: <%= oneconsole.console_price %> €</li><br>
+                        <li>We have <%= oneconsole.console_stock %> pieces</li>
                     </ul>
                 </div>
 
                 <div class="buy">
-                    <button onclick="window.location.href = '/cart/add/<%= onegame.game_name %>'"> BUY </button>
+                    <button onclick="window.location.href = '/cart/add/<%= oneconsole.console_name %>'"> BUY </button>
                 </div>
 
             </div>

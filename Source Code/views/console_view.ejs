@@ -47,31 +47,7 @@
 </div>   
 
 <a href="/main_page/adminview">Admin View Game</a>
-    <div class="list_console">
-        <table class="test">
-            <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Stockage</th>
-                <th>Color</th>
-                <th>Stock</th>
-                <th>Price</th>
-                <th>Cart</th>
-            </tr>
-            <% for (var console of consoles) { %>
-            <tr>
-                <td></td>
-                <td><%= console.console_name %></td>
-                <td><%= console.stockage %></td>
-                <td><%= console.console_color %></td>
-                <td><%= console.console_stock %></td>
-                <td><%= console.console_price %></td>
-                <td><a href="/main_page/cart/<%= console.ID_console %>">Add to cart</a></td>
-            </tr>
-            <% } %>
-        </table>
-        
-    </div>
+    
 </div>
 
 <%- include("partial_footer.ejs"); %>
