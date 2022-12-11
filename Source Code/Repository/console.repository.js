@@ -14,10 +14,11 @@ module.exports = {
     },
     async getAllConsole(){
         try{
-            let conn = await pool.getConnection();
+            let conn = await pool.getConnection();// await is used to pause the execution of the current async function 
+            //until the promise is resolved. This allows the function to wait for an asynchronous operation to complete before continuing.
             let sql = "SELECT * FROM console";
             const rows = await conn.query(sql);
-            conn.release();
+            conn.release();// release() method is used to release the memory used by an object
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
@@ -56,11 +57,13 @@ module.exports = {
     },
     async getConsoleByStockage(stockage){
         try{
-            let conn = await pool.getConnection();
+            let conn = await pool.getConnection(); // await is used to pause the execution of the current async function 
+            //until the promise is resolved. This allows the function to wait for an asynchronous operation to complete before continuing.
             let sql = "SELECT * FROM console WHERE stockage  <= ? ORDER BY stockage";
-            const rows = await conn.query(sql, stockage);
-            conn.release();
-            console.log("ROWS FETCHED: "+rows.length);
+            const rows = await conn.query(sql, stockage); // query is used to retrieve an element or a set of elements from the DOM (Document Object Model) based on a specified CSS selector. 
+            //This method is typically used to access and manipulate elements in the DOM, such as changing their styles or adding event listeners.
+            conn.release(); // release() method is used to release the memory used by an object
+            console.log("ROWS FETCHED: "+rows.length); // display
             return rows;
         }
         catch (err) {
@@ -73,7 +76,7 @@ module.exports = {
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM console WHERE ID_console =? ";
             const rows = await conn.query(sql, ID_console);
-            conn.release();
+            conn.release(); // release() method is used to release the memory used by an object
             console.log("ROWS FETCHED: "+rows.length);
             if (rows.length == 1){
                 return rows[0];
@@ -103,10 +106,11 @@ module.exports = {
     },
      async addOneConsole(){ 
         try {
-            let conn = await pool.getConnection();
+            let conn = await pool.getConnection();// await is used to pause the execution of the current async function 
+            //until the promise is resolved. This allows the function to wait for an asynchronous operation to complete before continuing.
             let sql = "INSERT INTO console (console_id) VALUES (NULL) "; //console ?
             const okPacket = await conn.query(sql); // affectedRows, insertId
-            conn.release();
+            conn.release();// release() method is used to release the memory used by an object
             console.log(okPacket);
             return okPacket.insertId;
         }

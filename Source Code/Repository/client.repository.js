@@ -18,9 +18,11 @@ module.exports = {
     },
     async getAllClient(){
         try{
-            let conn = await pool.getConnection();
+            let conn = await pool.getConnection();// await is used to pause the execution of the current async function 
+            //until the promise is resolved. This allows the function to wait for an asynchronous operation to complete before continuing.
             let sql = "SELECT * FROM client";
-            const rows = await conn.query(sql);
+            const rows = await conn.query(sql);// query is used to retrieve an element or a set of elements from the DOM (Document Object Model) based on a specified CSS selector. 
+            //This method is typically used to access and manipulate elements in the DOM, such as changing their styles or adding event listeners.
             conn.end()
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
@@ -64,7 +66,8 @@ module.exports = {
     },
      async addOneClient(){  //comment  creer un ID alors qu'il s'incrémente seul ?
         try {
-            let conn = await pool.getConnection();
+            let conn = await pool.getConnection();// await is used to pause the execution of the current async function 
+            //until the promise is resolved. This allows the function to wait for an asynchronous operation to complete before continuing.
             let sql = "INSERT INTO client (client_id) VALUES (NULL) ";
             const okPacket = await conn.query(sql, []); // affectedRows, insertId
             conn.end()
@@ -82,6 +85,8 @@ module.exports = {
             let sql = "UPDATE client SET client_age=?, client_name=?, lastname=?, phone=?,  mail_address=?, client_password=?  WHERE ID_client=? "; // TODO: named parameters? :something
             const okPacket = await conn.query(sql, 
                         [clientAge, clientName, clientLastname, clientPhone, clientMail_addresse, clientPassword,clientID]);
+                        // query is used to retrieve an element or a set of elements from the DOM (Document Object Model) based on a specified CSS selector. 
+            //This method is typically used to access and manipulate elements in the DOM, such as changing their styles or adding event listeners.
             conn.end()
             console.log(okPacket);
             return okPacket.affectedRows;
