@@ -46,7 +46,7 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: 22% 22% 22% 22%;
+    grid-template-columns: auto auto auto auto auto;
     padding: 10px;
     gap:4px;
     margin: auto;

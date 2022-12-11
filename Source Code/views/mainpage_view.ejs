@@ -1,25 +1,7 @@
 <!-- mainpage_view.ejs -->
 
 <%- include("partial_headers.ejs"); %>
-
-
-        <script>
-        function AddRows(){
-            var table = document.getElementById('table');
-            var ligne = table.insertRow(-1);
-            var td1 = ligne.insertCell(0);
-            var td2 = ligne.insertCell(1);
-            var td3 = ligne.insertCell(2);
-            var td4 = ligne.insertCell(3); 
-            var td5 = ligne.insertCell(4);
-        };
-
-        function DelRows(){
-            document.getElementById('table').deleteRow(-1);
-        }
-        </script>
-
-        
+    
 <div id="ensemble">
     <div id="parameter">
         <ul id="Game_Price_list">
@@ -92,8 +74,6 @@
         </div>
 </div>   
 
-<button onclick="AddRows()">Add rows</button>
-<button onclick="DelRows()">Del rows</button> 
 <a href="/main_page/adminview">Admin View Game</a>
 
 <%- include("partial_footer.ejs"); %>
