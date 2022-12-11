@@ -52,24 +52,20 @@
     text-align: left;
 }
 
-#Game_Price_list label{
+#Console_Price_list label{
     font-weight: bold;
     font-size: 20px;
 }
 
-#Game_type_list label{
+#Console_type_list label{
     font-weight: bold;
     font-size: 20px;
 }
 
-#Game_Editor_list label{
+#Console_Editor_list label{
     font-weight: bold;
     font-size: 20px;
 }
-
-
-
-
 
 .grid-container {
     display: grid;
@@ -79,18 +75,18 @@
     margin: auto;
 }
 
-.OneGame{
+.OneConsole{
     border: 1px solid black;
     border-radius: 25px;
     background-color: lightgray;
 }
 
 
-.GameImage{
+.ConsoleImage{
     text-align: center;
 }
 
-.GameName{
+.ConsoleName{
     text-align: center;
     text-shadow:0 0 3px #FE0000, 0 0 10px #FE0000, 0 0 20px #FE0000;
     color:#FE0000;

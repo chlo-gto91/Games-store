@@ -54,4 +54,3 @@ app.use("/auth", require("./controllers/auth.route"));
 app.use("/home", require("./controllers/home.route"));
 app.use("/edit_user", require("./controllers/user.route"));
 app.use("/cart", require("./controllers/cart.route"));
-app.use("/console_page", require("./controllers/Console"));

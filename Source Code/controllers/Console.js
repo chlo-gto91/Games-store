@@ -8,13 +8,13 @@ router.get('/', ConsoleShowAction);
 router.get('/ConsoleByPrice/:PriceConsole', SortConsoleByPrice);
 router.get('/ConsoleByStockage/:StockageConsole', SortConsoleByStockage);
 router.get('/OneConsole/:ID_console', ShowOneConsole);
+router.get('/', consoleStockShowAction);
 
 async function ConsoleShowAction(request, response){
     let console = await consoleRepo.getAllConsole();
     let flashMessage = request.session.flashMessage;
     request.session.flashMessage = "";
 
-    
     response.render("console_view", {"console":console, "flashMessage":flashMessage});
 }
 
@@ -44,10 +44,15 @@ async function ShowOneConsole(request, response){
     response.render("console_view", {"oneconsole": oneconsole, "flashMessage": flashMessage});
 }
 
-
-router.get('/', (req, res) => {
-    res.render('console_page', { favourites: []});
-});
+async function consoleStockShowAction(request, response){
+    let console_stock = await consoleRepo.getAllConsole();
+    
+    let flashMessage = request.session.flashMessage;
+    request.session.flashMessage = "";
+    
+    //console.log(game_stock);
+    response.render("console_view", {"console_stock": console_stock, "flashMessage": flashMessage});
+}
 
 // http://localhost:8000/home
 
