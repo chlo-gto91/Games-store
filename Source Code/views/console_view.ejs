@@ -1,6 +1,6 @@
 <%- include("partial_headers.ejs"); %>
 
-<link rel="stylesheet" type="text/css" href="/CSS/console_style.css"/>
+<link rel="stylesheet" type="text/css" href="/CSS/console_style.css">
 
 <div class="console_ensemble">
 
@@ -24,18 +24,18 @@
         </ul>
         
     </div>
+    
     <div id="viewing_bloc">
         <table id="table"> 
-        
             <div class="grid-container">
-                <% for (var console of console_stock) { %>
+                <% for (var console of consoles) { %>
                 <div class="OneConsole">
                     <div class="ConsoleImage">
-                        <a href="/main_page/oneConsole/<%= console.ID_console %>"><img src="/image/console/<%= console.console %>" alt="console"></a>
+                        <a href="/console/oneConsole/<%= console.ID_console %>"><img src="/image/console/<%= console.console_image %>" alt="console"></a>
                     </div>
                     <br><br>
                     <div class="ConsoleName">
-                        <a href="/main_page/oneConsole/<%= console.ID_console %>"><%= console.console_name %></a>
+                        <a href="/console/oneConsole/<%= console.ID_console %>"><%= console.console_name %></a>
 
                     </div>
                 </div>
@@ -43,7 +43,7 @@
             </div>
  
         </table>
-    </div>
+    </div> 
 </div>   
 
 <a href="/main_page/adminview">Admin View Game</a>
@@ -58,7 +58,7 @@
                 <th>Price</th>
                 <th>Cart</th>
             </tr>
-            <% for (var console of console) { %>
+            <% for (var console of consoles) { %>
             <tr>
                 <td></td>
                 <td><%= console.console_name %></td>
