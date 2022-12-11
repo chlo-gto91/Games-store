@@ -45,5 +45,11 @@ async function ShowOneConsole(request, response){
 }
 
 
+router.get('/', (req, res) => {
+    res.render('console_page', { favourites: []});
+});
+
+// http://localhost:8000/home
 
 module.exports = router;
+

@@ -1,4 +1,7 @@
 <%- include("partial_headers.ejs"); %>
+
+<link rel="stylesheet" type="text/css" href="/CSS/console_style.css"/>
+
 <div class="console_ensemble">
 
     <div class="console_parameter">
@@ -21,7 +24,29 @@
         </ul>
         
     </div>
+    <div id="viewing_bloc">
+        <table id="table"> 
+        
+            <div class="grid-container">
+                <% for (var console of console_stock) { %>
+                <div class="OneConsole">
+                    <div class="ConsoleImage">
+                        <a href="/main_page/oneConsole/<%= console.ID_console %>"><img src="/image/console/<%= console.console %>" alt="console"></a>
+                    </div>
+                    <br><br>
+                    <div class="ConsoleName">
+                        <a href="/main_page/oneConsole/<%= console.ID_console %>"><%= console.console_name %></a>
 
+                    </div>
+                </div>
+                <% } %>
+            </div>
+ 
+        </table>
+    </div>
+</div>   
+
+<a href="/main_page/adminview">Admin View Game</a>
     <div class="list_console">
         <table class="test">
             <tr>
