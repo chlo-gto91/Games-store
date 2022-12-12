@@ -1,20 +1,17 @@
-
 #ensemble{
     position: relative;
     display: flex;
 }
 
-
 #parameter{
     width: max-content;
-    height: auto;
+    height: 100%;
     border: 1px solid black;
 }
 
 #parameter a{
     text-decoration: none;
     text-align: left;
-
 }
 
 #parameter li{
