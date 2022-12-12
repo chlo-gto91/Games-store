@@ -129,7 +129,9 @@ async function DelConsole(request, response) {
 async function UpdateGame(request, response) {
     // response.send("UPDATE ACTION");
     var gameID = request.params.game_ID;
-    if (gameID==="0") gameID = await gameRepo.addOneGame();
+    if (gameID==="0"){
+        gameID = await gameRepo.addOneGame();
+    } 
     var numRows = await gameRepo.editOneGame(gameID,
         request.body.Game_Price, 
         request.body.Game_Description, 
@@ -145,7 +147,7 @@ async function UpdateGame(request, response) {
 async function updateConsole(request, response) {
     // response.send("UPDATE ACTION");
     var consoleID = request.params.console_ID;
-    if (consoleID==="0") consoleID = await consoleRepo.addOneConsole(request.body.Console_Name);
+    if (consoleID==="0") consoleID = await consoleRepo.addOneConsole();
     var numRows = await consoleRepo.editOneConsole(consoleID,
         request.body.Console_Stockage, 
         request.body.Console_Name, 

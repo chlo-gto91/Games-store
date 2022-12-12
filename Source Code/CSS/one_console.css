@@ -24,7 +24,6 @@
   align-items: center;
   flex-wrap: nowrap;
   justify-content: space-around;
-  
 }
 
 .col_1 .col_2{
@@ -55,6 +54,10 @@
   list-style: none;
   font-size: 1.6rem;
   font-weight: bold;
+}
+
+.datass{
+  padding-right: 100px;
 }
 
 
