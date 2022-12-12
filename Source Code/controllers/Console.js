@@ -41,7 +41,7 @@ async function ShowOneConsole(request, response){
     let flashMessage = request.session.flashMessage;
     request.session.flashMessage = "";
     //console.log(onegame);
-    response.render("console_view", {"oneconsole": oneconsole, "flashMessage": flashMessage});
+    response.render("one_console", {"oneconsole": oneconsole, "flashMessage": flashMessage});
 }
 
 // async function consoleStockShowAction(request, response){
