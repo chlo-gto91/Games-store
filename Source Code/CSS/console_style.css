@@ -4,9 +4,9 @@
 }
 
 #console_parameter{
-    margin-top: 0;
-    border: 1px solid black;
+    width: max-content;
     height: 100%;
+    border: 1px solid black;
 }
 
 #console_parameter a{
