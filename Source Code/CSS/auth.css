@@ -2,7 +2,6 @@
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
-
 .user {
     text-align: center;
     margin: 24px 0 12px 0;
@@ -13,7 +12,7 @@
     margin:auto;
     display: flex;
     position: relative;
-    }
+}
  p {
     text-align: center;
     color: blue;

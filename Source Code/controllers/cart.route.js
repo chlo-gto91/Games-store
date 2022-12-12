@@ -11,6 +11,9 @@ router.get("/:game_name", AddGameToCart);
 router.get("/Cart/:console_name", AddConsoleToCart)
 router.post("/add/:game_name", AddToCart);
 
+router.get('/', (req, res) => {
+    res.render('', { favourites: []});
+});
 
 
 // le cart est toujours vide pour new client
@@ -29,10 +32,6 @@ async function CartShowAction(request, response){
             console.log(TotalCart[i]);
         }
     }
-    
-
-
-
 }
 
 async function AddToCart(request, response){
