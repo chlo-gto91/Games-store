@@ -4,6 +4,8 @@ const router = express.Router();
 const auth = require("../Repository/users.auth");
 const userRepo = require("../Repository/users.repository");
 const clientRepo = require('../Repository/client.repository');
+const gameRepo = require('../Repository/game.repository');
+const consoleRepo = require('../Repository/console.repository');
 
 // http://localhost:9000/auth
 router.get('/', (req, res) => res.render('auth_view', { extraContent: "" }) );
@@ -14,7 +16,8 @@ router.post("/login", loginPostAction);
 router.get("/logout", logoutAction);
 router.get('/edit', EditTableClient);
 router.post('/updateClient/:client_ID', updateClient);
-router.post('/profil',GetProfil); //redirection
+router.get('/profil',GetProfil); //redirection
+router.get('/AccessCart', AccessCart);
 
 async function userAction(request, response) {
   let userData = await userRepo.getOneClient(request.user.lastname);
@@ -85,14 +88,29 @@ async function updateClient(request, response) {
   response.redirect("/auth");
 }
 
+// Button that redirect the user to a different page if he is (USER/ADMIN/NOT LOGGED IN)
 async function GetProfil(request,response){
-  if (auth.checkAuthentication("USER")){
-    response.render("home_view");
-  }else if (auth.checkAuthentication("ADMIN")){
-    response.render("admin_view");
+  if(request.isAuthenticated()){
+    if(request.user.client_role === "USER"){
+      let EditOneClient = await clientRepo.getOneClient(request.user.ID_client); 
+      response.render("edit_user", {"EditOneClient": EditOneClient});
+    }
+    else{ 
+      let adminview = await gameRepo.getAllGame();
+      let adminviewConsole = await consoleRepo.getAllConsole();
+      response.render("admin_view", {"adminview": adminview, "adminviewConsole":adminviewConsole});
+    }
+  }else{
+    response.render("auth_view");
   }
-  response.render("auth_view");
+}
 
+async function AccessCart(request, response){
+  if(request.isAuthenticated()){
+    response.render("cart");
+  }else{
+    response.render("auth_view");
+  }
 }
 
 

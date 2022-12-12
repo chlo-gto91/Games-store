@@ -41,6 +41,20 @@ module.exports = {
             throw err;
         }
     },
+    async getConsoleByName(name){
+        try{
+            let conn = await pool.getConnection();
+            let sql = "SELECT * FROM console WHERE upper(console_name) like upper(?)";
+            const rows = await conn.query(sql, name);
+            conn.end()
+            console.log("ROWS FETCHED: "+rows.length);
+            return rows;
+        }
+        catch (err) {
+            console.log(err);
+            throw err;
+        }
+    },
     async getConsoleByPrice(price_console){
         try{
             let conn = await pool.getConnection();

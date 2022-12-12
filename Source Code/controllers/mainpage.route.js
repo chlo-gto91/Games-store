@@ -162,11 +162,15 @@ async function updateConsole(request, response) {
 
 async function SearchAction(request, response){
     let onegame = await gameRepo.getGameByName(request.body.game_search);
+    let oneconsole = await consoleRepo.getConsoleByName(request.body.game_search);
     //console.log(onegame);
-    if(onegame.length===0){
+    if(onegame.length===0 && oneconsole.length===0){
         response.redirect("/main_page");
-    }else{
+    }else if(onegame.length!=0){
         response.redirect(`/main_page/oneGame/${onegame[0].ID_game}`);
+    }
+    else if (oneconsole.length!=0){
+        response.redirect(`/console/OneConsole/${oneconsole[0].ID_console}`);
     }
 }
 
