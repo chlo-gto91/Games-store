@@ -18,12 +18,10 @@
     list-style: none;
 }
 
-
 #console_price label{
     font-weight: bold;
     font-size: 20px;
 }
-
 
 #console_stockage label{
     font-weight: bold;
@@ -34,9 +32,10 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
     gap:4px;
-    text-align: center;
+    margin: auto;
 }
 
 .OneConsole{
@@ -45,9 +44,12 @@
     background-color: lightgray;
     width: 500px;
     height: auto;
-    text-align: center;
+    
 }
 
+.ConsoleImage{
+    text-align: center;
+}
 
 .ConsoleName{
  
