@@ -11,6 +11,9 @@ router.get("/", CartShowAction);
 router.get("/add/:name", AddCart);
 router.get("/Remove/:name", RemoveFromCart);
 
+router.get('/', (req, res) => {
+    res.render('', { favourites: []});
+});
 
 
 // le cart est toujours vide pour new client
@@ -47,6 +50,36 @@ async function RemoveFromCart(request, response){
             request.session.cart.splice(i, 1);
         }
     }
+<<<<<<< HEAD
+=======
+}
+
+async function AddToCart(request, response){
+    if (request.session.cart === undefined){
+        request.session.cart = [];
+        console.log("Le panier n'existe pas");
+        response.redirect("/home");
+    }
+    request.session.cart.push(request.params.game_name);
+    console.log(request.params.game_name + "a été ajouté a la session");
+    response.redirect("/home");
+}
+
+
+async function AddGameToCart(request, response){
+    if (request.session.cart === undefined) request.session.cart = [];
+    request.session.cart.push(request.params.game_name);
+
+    response.render("cart", {"cart": cart});
+}
+
+
+async function AddConsoleToCart(request, response){
+    if (request.session.cart === undefined) request.session.cart = [];
+    request.session.cart.push(request.params.console_name);
+
+    response.render("cart", {"cart": cart});
+>>>>>>> 7ecd8567dac2b3eaa332e8dd13a8dc46a88a507d
 }
 
 
