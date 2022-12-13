@@ -68,7 +68,7 @@ module.exports = {
         try {
             let conn = await pool.getConnection();// await is used to pause the execution of the current async function 
             //until the promise is resolved. This allows the function to wait for an asynchronous operation to complete before continuing.
-            let sql = "INSERT INTO client (client_id) VALUES (NULL) ";
+            let sql = "INSERT INTO client (id_client) VALUES (NULL) ";
             const okPacket = await conn.query(sql, []); // affectedRows, insertId
             conn.end()
             console.log(okPacket);

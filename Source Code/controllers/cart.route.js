@@ -50,8 +50,6 @@ async function RemoveFromCart(request, response){
             request.session.cart.splice(i, 1);
         }
     }
-<<<<<<< HEAD
-=======
 }
 
 async function AddToCart(request, response){
@@ -79,7 +77,7 @@ async function AddConsoleToCart(request, response){
     request.session.cart.push(request.params.console_name);
 
     response.render("cart", {"cart": cart});
->>>>>>> 7ecd8567dac2b3eaa332e8dd13a8dc46a88a507d
+
 }
 
 
