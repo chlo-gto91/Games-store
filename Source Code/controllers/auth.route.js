@@ -7,6 +7,7 @@ const clientRepo = require('../Repository/client.repository');
 const gameRepo = require('../Repository/game.repository');
 const consoleRepo = require('../Repository/console.repository');
 
+
 // http://localhost:9000/auth
 router.get('/', (req, res) => res.render('auth_view', { extraContent: "" }) );
 router.get("/user", auth.checkAuthentication("USER"), userAction);
@@ -45,8 +46,10 @@ async function loginPostAction(request, response) {
         if (err) { console.log("ERROR"); console.log(err); return next(err); }
 
         if (request.user.client_role === "ADMIN") { 
+            request.session.cart = [];
             return response.redirect("/auth/admin");
         } else {
+            request.session.cart = [];
             return response.redirect("/auth/user");
         }
     });
@@ -58,7 +61,9 @@ async function loginPostAction(request, response) {
 
 function logoutAction(request, response) {
     request.logout(function(err) { //it destroyes all and remove the session
-        if (err) { return next(err); }
+        if (err) { 
+          return next(err); 
+        }
         response.redirect('/auth');
     });
 }

@@ -165,7 +165,7 @@ async function SearchAction(request, response){
     let oneconsole = await consoleRepo.getConsoleByName(request.body.game_search);
     //console.log(onegame);
     if(onegame.length===0 && oneconsole.length===0){
-        response.redirect("/main_page");
+        response.redirect("/home");
     }else if(onegame.length!=0){
         response.redirect(`/main_page/oneGame/${onegame[0].ID_game}`);
     }
