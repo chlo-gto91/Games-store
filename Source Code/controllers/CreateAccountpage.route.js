@@ -13,6 +13,7 @@ router.post('/updateclient/:client_ID', updateClient);
 async function clientEditAction(request, response) {
     // response.send("EDIT ACTION");
     let OneClient = await clientRepo.getBlankClient();
+    console.log(OneClient);
     response.render("CreateAccountpage_view", {"OneClient":OneClient});
 }
 

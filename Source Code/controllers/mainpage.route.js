@@ -93,12 +93,16 @@ async function AdminView(request, response){
 }
 
 async function EditTableGame(request, response){
-    let EditOneGame = await gameRepo.getOneGameAndEditor(request.params.game_ID);
+    game_ID = request.params.game_ID;
+    if(game_ID!=="0"){
+        let EditOneGame = await gameRepo.getOneGame(game_ID);
+        let game_category = await gameRepo.getAllCategory();
+        let allEditors = await gameRepo.getAllEditor();
+    }
+    let EditOneGame = gameRepo.getBlankGame();
     let game_category = await gameRepo.getAllCategory();
     let allEditors = await gameRepo.getAllEditor();
-    // let flashMessage = request.session.flashMessage;
-    // request.session.flashMessage = "";
-    //console.log(EditOneGame);
+
     response.render("editgame_view", {"EditOneGame": EditOneGame, "game_category": game_category, "Editors": allEditors});
 }
 
