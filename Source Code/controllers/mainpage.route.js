@@ -95,22 +95,27 @@ async function AdminView(request, response){
 async function EditTableGame(request, response){
     game_ID = request.params.game_ID;
     if(game_ID!=="0"){
-        let EditOneGame = await gameRepo.getOneGame(game_ID);
-        let game_category = await gameRepo.getAllCategory();
-        let allEditors = await gameRepo.getAllEditor();
+        var EditOneGame = await gameRepo.getOneGame(game_ID);
+        var game_category = await gameRepo.getAllCategory();
+        var allEditors = await gameRepo.getAllEditor();
+    }else {
+        var EditOneGame = gameRepo.getBlankGame();
+        var game_category = await gameRepo.getAllCategory();
+        var allEditors = await gameRepo.getAllEditor();
     }
-    let EditOneGame = gameRepo.getBlankGame();
-    let game_category = await gameRepo.getAllCategory();
-    let allEditors = await gameRepo.getAllEditor();
-
+    console.log(EditOneGame);
     response.render("editgame_view", {"EditOneGame": EditOneGame, "game_category": game_category, "Editors": allEditors});
 }
 
 async function EditTableConsole(request, response){
-    let allConsole = await consoleRepo.getOneConsole(request.params.console_ID);
-    let consoleColor = await consoleRepo.getAllColor();
-    // let flashMessage = request.session.flashMessage;
-    // request.session.flashMessage = "";
+    console_ID = request.params.console_ID;
+    if(console_ID!=="0"){
+        var allConsole = await consoleRepo.getOneConsole(console_ID);
+        var consoleColor = await consoleRepo.getAllColor();
+    }else {
+        var allConsole = await consoleRepo.getBlankConsole();
+        var consoleColor = await consoleRepo.getAllColor();
+    }
     console.log(allConsole);
     response.render("console_editview", {"allConsole": allConsole, "consoleColor":consoleColor});
 }
