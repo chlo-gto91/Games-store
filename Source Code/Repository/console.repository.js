@@ -18,7 +18,7 @@ module.exports = {
             //until the promise is resolved. This allows the function to wait for an asynchronous operation to complete before continuing.
             let sql = "SELECT * FROM console";
             const rows = await conn.query(sql);
-            conn.release();// release() method is used to release the memory used by an object
+            conn.end();// release() method is used to release the memory used by an object
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
         }
@@ -122,7 +122,7 @@ module.exports = {
         try {
             let conn = await pool.getConnection();// await is used to pause the execution of the current async function 
             //until the promise is resolved. This allows the function to wait for an asynchronous operation to complete before continuing.
-            let sql = "INSERT INTO console (console_id) VALUES (NULL) "; //console ?
+            let sql = "INSERT INTO console (ID_console) VALUES (NULL) "; //console ?
             const okPacket = await conn.query(sql); // affectedRows, insertId
             conn.release();// release() method is used to release the memory used by an object
             console.log(okPacket);
