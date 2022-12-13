@@ -42,6 +42,10 @@ async function AddCart(request, response){
     for(let i=0; i<request.session.cart.length; i++){
         console.log(request.session.cart[i]);
     }
+    console.log("Après");
+    console.log(request.session.cart[0]);
+    console.log(request.session.cart[1]);
+    console.log(request.session.cart[2]);
 }
 
 async function RemoveFromCart(request, response){
@@ -51,7 +55,6 @@ async function RemoveFromCart(request, response){
         }
     }
 }
-
 
 
 
