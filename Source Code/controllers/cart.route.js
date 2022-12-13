@@ -23,23 +23,23 @@ router.get('/', (req, res) => {
 async function CartShowAction(request, response){
     if (request.session.cart === undefined){
         request.session.cart = [];
-        console.log("Panier vide");
-        response.render("cart");
+        console.log("Panier Vide");
+        var gameCart =  await gameRepo.getOneGame(request.params.name);
+        response.render("cart", {"GameCart": gameCart});
+    }else{
+        console.log("Jai des choses dans le panier ! ");
+        for (var i=0 ; i<request.session.cart.length ; i++){
+            console.log(request.session.cart[i]);
+        }
     }
-    console.log("Voici les élements du panier");
-    for (var i=0; i <request.session.cart.length; i++){
-        console.log(request.session.cart[i]);
-    }
-    response.render("cart");
 }
-
 
 async function AddCart(request, response){ 
     if (request.session.cart === undefined) {
         request.session.cart = [];
     }
     request.session.cart.push(request.params.name);
-    for(i=0; i<request.session.cart.length; i++){
+    for(let i=0; i<request.session.cart.length; i++){
         console.log(request.session.cart[i]);
     }
 }
@@ -50,36 +50,6 @@ async function RemoveFromCart(request, response){
             request.session.cart.splice(i, 1);
         }
     }
-<<<<<<< HEAD
-=======
-}
-
-async function AddToCart(request, response){
-    if (request.session.cart === undefined){
-        request.session.cart = [];
-        console.log("Le panier n'existe pas");
-        response.redirect("/home");
-    }
-    request.session.cart.push(request.params.game_name);
-    console.log(request.params.game_name + "a été ajouté a la session");
-    response.redirect("/home");
-}
-
-
-async function AddGameToCart(request, response){
-    if (request.session.cart === undefined) request.session.cart = [];
-    request.session.cart.push(request.params.game_name);
-
-    response.render("cart", {"cart": cart});
-}
-
-
-async function AddConsoleToCart(request, response){
-    if (request.session.cart === undefined) request.session.cart = [];
-    request.session.cart.push(request.params.console_name);
-
-    response.render("cart", {"cart": cart});
->>>>>>> 7ecd8567dac2b3eaa332e8dd13a8dc46a88a507d
 }
 
 

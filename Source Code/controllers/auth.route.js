@@ -46,10 +46,8 @@ async function loginPostAction(request, response) {
         if (err) { console.log("ERROR"); console.log(err); return next(err); }
 
         if (request.user.client_role === "ADMIN") { 
-            request.session.cart = [];
             return response.redirect("/auth/admin");
         } else {
-            request.session.cart = [];
             return response.redirect("/auth/user");
         }
     });
