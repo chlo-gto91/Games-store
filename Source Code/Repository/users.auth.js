@@ -20,10 +20,12 @@ module.exports = {
         if (role) {
           if (role === request.user.client_role) { 
             return next();
-          } else {
+          } 
+          else {
             return response.end("401 Unautorized (bad user level)"); // TODO: Hierarchy
           }
-        } else { // No special role needed for page -> next middleware
+        } 
+        else { // No special role needed for page -> next middleware
           return next();
         }
       } else {
