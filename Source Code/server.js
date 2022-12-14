@@ -38,7 +38,7 @@ app.use(session({
     secret: "SecretRandomStringDskghadslkghdlkghdghaksdghdksh",
     saveUninitialized: true,
     cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 1 day in msec
-    resave: false
+    resave: true
 }));
 
 const auth = require("./Repository/users.auth");

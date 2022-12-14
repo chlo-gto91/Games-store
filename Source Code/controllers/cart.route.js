@@ -28,28 +28,27 @@ async function CartShowAction(request, response){
         response.render("cart", {"GameCart": gameCart});
     }else{
         console.log("Jai des choses dans le panier ! ");
-        for (var i=0 ; i<request.session.cart.length ; i++){
+        for (let i=0 ; i<request.session.cart.length ; i++){
             console.log(request.session.cart[i]);
+            game
         }
     }
 }
 
 async function AddCart(request, response){ 
+    console.log(request.session.cart);
     if (request.session.cart === undefined) {
-        request.session.cart = [];
+        request.session.cart = { contents: [] };
     }
-    request.session.cart.push(request.params.name);
-    for(let i=0; i<request.session.cart.length; i++){
-        console.log(request.session.cart[i]);
-    }
+    request.session.cart.contents.push(request.params.name);
+    request.session.save()
     console.log("Après");
-    console.log(request.session.cart[0]);
-    console.log(request.session.cart[1]);
-    console.log(request.session.cart[2]);
+    console.log(request.session.cart);
+    console.log(request.session.cart.contents[0]);
 }
 
 async function RemoveFromCart(request, response){
-    for (i=0; request.session.cart.length; i++){
+    for (let i=0; request.session.cart.length; i++){
         if (request.session.cart[i] === request.params.name){
             request.session.cart.splice(i, 1);
         }
