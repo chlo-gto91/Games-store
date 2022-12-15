@@ -147,5 +147,21 @@ module.exports = {
             console.log(err);
             throw err; 
         }
+    },
+
+    
+    async editConsoleStock(console_name){
+        try {
+            let conn = await pool.getConnection();
+            let sql = "UPDATE console_stock=? WHERE console_name=?";
+            const okPacket = await conn.query(sql, this.getStockOfAGame(console_name)-1, console_name); // exemples_bought should be 1 but in case someone wants to buy 2 games
+            conn.end();
+            console.log(okPacket);
+            return okPacket.affectedRows;
+        }
+        catch(err){
+            console.log(err);
+            throw err;
+        }
     }
 }
