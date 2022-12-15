@@ -28,11 +28,9 @@ router.get('/oneConsole/:console_ID', ShowOneConsole);
 async function gameStockShowAction(request, response){
     let game_stock = await gameRepo.getAllGame();
     // let game_stock1 = await gameRepo.getGameIDover10();
-    let flashMessage = request.session.flashMessage;
-    request.session.flashMessage = "";
     
     //console.log(game_stock);
-    response.render("mainpage_view", {"game_stock": game_stock, "flashMessage": flashMessage});
+    response.render("mainpage_view", {"game_stock": game_stock});
 }
 
 

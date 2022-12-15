@@ -10,22 +10,45 @@
             <th>Quantity</th>
             <th>Subtotal</th>
         </tr>
-
+    <% for (var allGame of allGame){ %>
         <tr>
             <td>
                 <div class="cart-info">
-                <img src="recherche.png">
+                <img src="/image/jacket/<%= allGame.jacket%>">
                 <div>
-                    <p>Recherche payante</p>
-                    <small>Price: 50.00$</small>
+                    <p>Recherche Game : <%= allGame.game_name%></p>
+                    <small>Price Game: <%= allGame.price %> $</small>
+                    <p>Stock Game: <%= allGame.game_stock %></p>
                     <br>
                     <a href="">Remove</a>
                 </div>
                 </div>
             </td>
-            <td><input type = "number" value ="2"></td>
-            <td>$50.00</td>
+            <td><input type = "number" name="Quantity" value ="1"></td>
+            <td>$<%= allGame.price %></td>
         </tr>
+    <% } %> 
+
+    <br><br><br>
+
+    <% for (var console of allConsole){ %>
+        <tr>
+            <td>
+                <div class="cart-info">
+                <img src="/image/View_console/<%= console.view_image%>">
+                <div>
+                    <p>Recherche Console : <%= console.console_name%></p>
+                    <small>Price Console: <%= console.console_price %> $</small>
+                    <p>Stock Console: <%= console.console_stock %></p>
+                    <br>
+                    <a href="">Remove</a>
+                </div>
+                </div>
+            </td>
+            <td><input type = "number" name="Quantity" value ="1"></td>
+            <td>$<%= console.console_price %></td>
+        </tr>
+    <% } %> 
 
     </table>
 
@@ -39,6 +62,7 @@
     </div>
 
 </div>
+  
 
 <div class="Payment">
     <input type ="button" onclick="window.location.href ='/payment';" value="PAYMENT"/>

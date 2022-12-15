@@ -185,7 +185,7 @@ module.exports = {
         try{
             let conn = await pool.getConnection();
             let sql = "SELECT * FROM game CROSS JOIN console WHERE game_name=? OR console_name=?";
-            const rows = await conn.query(sql, name);
+            const rows = await conn.query(sql, name, name);
             conn.end()
             console.log("ROWS FETCHED: "+rows.length);
             return rows;
