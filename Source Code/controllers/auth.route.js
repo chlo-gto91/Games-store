@@ -76,7 +76,7 @@ async function EditTableClient(request, response){
 
 
 async function updateClient(request, response) {
- 
+  // response.send("UPDATE ACTION");
   var clientID = request.params.client_ID;
   if (clientID==="0") clientID = await clientRepo.addOneClient(request.params.client_ID);
   var numRows = await clientRepo.editOneClient(clientID,
