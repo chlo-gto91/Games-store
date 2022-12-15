@@ -68,7 +68,7 @@ async function RemoveFromCart(request, response){
             request.session.cart.splice(i, 1);
         }
     }
-    response.redirect("/home");
+    response.redirect("/cart");
 }
 
 async function Payment(request, response){
