@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
 
 var TotalPrice = 0;
 
-async function CartShowAction(request, response){
+async function CartShowAction(request, response){ //display view cart
     if(request.isAuthenticated()){    
         if (request.session.cart === undefined){
             request.session.cart = [];
