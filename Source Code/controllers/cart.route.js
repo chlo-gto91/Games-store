@@ -16,12 +16,10 @@ router.get('/', (req, res) => {
     res.render('', { favourites: []});
 });
 
-
 // le cart est toujours vide pour new client
 // if (request.session.cart === undefined) request.session.cart = [];
 // request.session.cart.push("xxx");
 
-var TotalPrice = 0;
 
 async function CartShowAction(request, response){
     if(request.isAuthenticated()){    
@@ -33,22 +31,21 @@ async function CartShowAction(request, response){
         }    
         let allGame = [];
         let allConsole = [];
+        let sum = 0;
         for (let i=0; i<request.session.cart.length; i++){
             let game = await gameRepo.getGameByName(request.session.cart[i]);
             let console = await consoleRepo.getConsoleByName(request.session.cart[i]);
             if (game.length===0){
-                allConsole.push(console);
+                allConsole.push(console[0]);
+                sum+= console[0].console_price;
             }else{
-                allGame.push(game); // Add to the array
+                allGame.push(game[0]); // Add to the array
+                sum+=game[0].price;
             }
-            // allProducts.push(await gameRepo.getGameByName(request.session.cart[i]));
-            
         }
-        console.log(allGame);
-        console.log(allConsole);
-        response.render("cart", {"allGame": allGame, "allConsole": allConsole});
+        response.render("cart", {"allGame": allGame, "allConsole": allConsole, "sum": sum});
       }else{
-        response.render("auth_view");
+        response.redirect("/auth");
       }
 }
 
@@ -63,11 +60,12 @@ async function AddCart(request, response){
 }
 // A tester
 async function RemoveFromCart(request, response){
-    for (let i=0; request.session.cart.length; i++){
+    for (let i=0; i<request.session.cart.length; i++){
         if (request.session.cart[i] === request.params.name){
             request.session.cart.splice(i, 1);
         }
     }
+    response.redirect("/home");
 }
 
 async function Payment(request, response){
@@ -77,9 +75,10 @@ async function Payment(request, response){
             request.session.save();
             console.log("Valid command");
             response.redirect("/home");
+        }else if(request.user.client_role === "ADMIN"){
+            console.log("Admin cannot buy any games");
+            response.redirect("/home");
         }
-        console.log("Admin cannot buy any games");
-        response.redirect("/home");
     }
 }
 

@@ -241,11 +241,11 @@ module.exports = {
         }
     },
 
-    async editGameStock(game_name, exemples_bought){
+    async editGameStock(game_name){
         try {
             let conn = await pool.getConnection();
             let sql = "UPDATE game_stock=? WHERE game_name=?";
-            const okPacket = await conn.query(sql, this.getStockOfAGame(game_name)-exemples_bought, game_name); // exemples_bought should be 1 but in case someone wants to buy 2 games
+            const okPacket = await conn.query(sql, this.getStockOfAGame(game_name)-1, game_name); // exemples_bought should be 1 but in case someone wants to buy 2 games
             conn.end();
             console.log(okPacket);
             return okPacket.affectedRows;
