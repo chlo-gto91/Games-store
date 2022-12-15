@@ -27,23 +27,26 @@ async function CartShowAction(request, response){ //display view cart
             request.session.cart = [];
             let allGame = [];
             let allConsole = [];
-            response.render("cart", {"allGame": allGame, "allConsole": allConsole});
-        }    
-        let allGame = [];
-        let allConsole = [];
-        let sum = 0;
-        for (let i=0; i<request.session.cart.length; i++){
-            let game = await gameRepo.getGameByName(request.session.cart[i]);
-            let console = await consoleRepo.getConsoleByName(request.session.cart[i]);
-            if (game.length===0){
-                allConsole.push(console[0]);
-                sum+= console[0].console_price;
-            }else{
-                allGame.push(game[0]); // Add to the array
-                sum+=game[0].price;
+            let sum = 0;
+            response.render("cart", {"allGame": allGame, "allConsole": allConsole, "sum": sum});
+        }else{
+            let allGame = [];
+            let allConsole = [];
+            let sum = 0;
+            for (let i=0; i<request.session.cart.length; i++){
+                let game = await gameRepo.getGameByName(request.session.cart[i]);
+                let console = await consoleRepo.getConsoleByName(request.session.cart[i]);
+                if (game.length===0){
+                    allConsole.push(console[0]);
+                    sum+= console[0].console_price;
+                }else{
+                    allGame.push(game[0]); // Add to the array
+                    sum+=game[0].price;
+                }
             }
-        }
-        response.render("cart", {"allGame": allGame, "allConsole": allConsole, "sum": sum});
+            response.render("cart", {"allGame": allGame, "allConsole": allConsole, "sum": sum});
+        }    
+
       }else{
         response.redirect("/auth");
       }
