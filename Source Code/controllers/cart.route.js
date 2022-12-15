@@ -27,12 +27,10 @@ async function CartShowAction(request, response){
     if(request.isAuthenticated()){    
         if (request.session.cart === undefined){
             request.session.cart = [];
-            console.log("Empty Cart");
             let allGame = [];
             let allConsole = [];
             response.render("cart", {"allGame": allGame, "allConsole": allConsole});
         }    
-        console.log("Cart is full");
         let allGame = [];
         let allConsole = [];
         for (let i=0; i<request.session.cart.length; i++){
@@ -41,7 +39,7 @@ async function CartShowAction(request, response){
             if (game.length===0){
                 allConsole.push(console);
             }else{
-                allGame.push(game);
+                allGame.push(game); // Add to the array
             }
             // allProducts.push(await gameRepo.getGameByName(request.session.cart[i]));
             
@@ -55,16 +53,15 @@ async function CartShowAction(request, response){
 }
 
 async function AddCart(request, response){ 
-    if (request.session.cart === undefined) {
-        request.session.cart = [];
-    }
-    request.session.cart.push(request.params.name);
-    request.session.save();
-    console.log("Après");
-    console.log(request.session);
-    response.redirect("/home");
+        if (request.session.cart === undefined) {
+            request.session.cart = [];
+        }
+        request.session.cart.push(request.params.name);
+        request.session.save();
+        console.log(request.session);
+        response.redirect("/home");      
 }
-
+// A tester
 async function RemoveFromCart(request, response){
     for (let i=0; request.session.cart.length; i++){
         if (request.session.cart[i] === request.params.name){
@@ -74,8 +71,16 @@ async function RemoveFromCart(request, response){
 }
 
 async function Payment(request, response){
-    request.session.cart.destroy();
-    response.redirect("/home");
+    if(request.isAuthenticated()){
+        if(request.user.client_role === "USER"){
+            request.session.cart.splice(0, request.session.cart.length);
+            request.session.save();
+            console.log("Valid command");
+            response.redirect("/home");
+        }
+        console.log("Admin cannot buy any games");
+        response.redirect("/home");
+    }
 }
 
 
