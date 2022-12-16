@@ -59,8 +59,8 @@ async function SortGameByEditor(request, response){
     var flashMessage = request.session.flashMessage;
     request.session.flashMessage = "";
     
-    //console.log(game_Editor);
-    response.render("gameParameter_view", {"game_Parameter": game_Editor, "flashMessage": flashMessage});
+    console.log(game_Editor);
+    response.render("gameEditor_view", {"game_Editor": game_Editor, "flashMessage": flashMessage});
 }
 
 

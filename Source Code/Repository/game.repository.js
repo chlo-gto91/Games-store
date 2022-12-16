@@ -140,7 +140,7 @@ module.exports = {
     async getAllGameByEditor(Editor){
         try {
             let conn = await pool.getConnection();
-            let sql = "SELECT * FROM game WHERE ID_editor =?  ORDER BY price";
+            let sql = "SELECT * FROM game WHERE ID_editor =? ORDER BY price";
             const rows = await conn.query(sql, Editor);
             conn.end();
             console.log("ROWS FETCHED: "+rows.length);
