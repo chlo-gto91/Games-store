@@ -9,11 +9,11 @@
         }
     </style>
 
-        <form action='/main_page/updateConsole/<%= allConsole.id_console %>' method="post" 
+        <form action='/main_page/updateConsole/<%= allConsole.ID_console %>' method="post" 
             enctype="application/x-www-form-urlencoded">
 
             <table class="table_console_edit">
-                <tr>
+                <tr>    
                     <tr><td>Stockage : </td>
                         <td>
                             <input type="number" name="Console_Stockage" value="<%= allConsole.stockage %>">

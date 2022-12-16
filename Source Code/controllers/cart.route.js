@@ -61,7 +61,7 @@ async function AddCart(request, response){
         console.log(request.session);
         response.redirect("/home");      
 }
-// A tester
+
 async function RemoveFromCart(request, response){
     for (let i=0; i<request.session.cart.length; i++){
         if (request.session.cart[i] === request.params.name){

@@ -18,7 +18,6 @@ router.get("/logout", logoutAction);
 router.get('/edit', EditTableClient);
 router.post('/updateClient/:client_ID', updateClient);
 router.get('/profil',GetProfil); //redirection
-router.get('/AccessCart', AccessCart);
 
 async function userAction(request, response) {
   let userData = await userRepo.getOneClient(request.user.lastname);
@@ -110,13 +109,6 @@ async function GetProfil(request,response){
   }
 }
 
-async function AccessCart(request, response){
-  if(request.isAuthenticated()){
-    response.render("cart");
-  }else{
-    response.render("auth_view");
-  }
-}
 
 
 module.exports = router;

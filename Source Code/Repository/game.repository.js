@@ -4,7 +4,7 @@ pool = require("../Repository/db.js");
 module.exports = {
     getBlankGame(){
         return {
-            "id_game": 0,
+            "ID_game": 0,
             "price": 0,
             "game_description": 0,
             "game_name": 0,
@@ -213,7 +213,7 @@ module.exports = {
      async addOneGame(){ 
         try {
             let conn = await pool.getConnection();
-            let sql = "INSERT INTO game (game_id) VALUES (NULL) ";
+            let sql = "INSERT INTO game (ID_game) VALUES (NULL) ";
             const okPacket = await conn.query(sql); // affectedRows, insertId
             conn.end();
             console.log(okPacket);

@@ -51,7 +51,7 @@ CREATE TABLE game(
    game_name VARCHAR(50),
    category VARCHAR(50),
    game_stock INT,
-   ID_editor INT NOT NULL,
+   ID_editor INT,
    game_image VARCHAR(50),
    jacket VARCHAR(50),
    PRIMARY KEY(ID_game),

@@ -1,6 +1,4 @@
 <%- include("partial_headers.ejs"); %>
-
-<h2 id="cart_link" class="sub-title">CART</h2>
 <div class="small-container cart_page">
 
     <table>
@@ -16,7 +14,7 @@
                 <div class="cart-info">
                 <img src="/image/jacket/<%= allGame.jacket%>">
                 <div>
-                    <p>Recherche Game : <%= allGame.game_name%></p>
+                    <h2><%= allGame.game_name%></h2>
                     <small>Price Game: <%= allGame.price %> $</small>
                     <p>Stock Game: <%= allGame.game_stock %></p>
                     <br>
@@ -37,7 +35,7 @@
                 <div class="cart-info">
                 <img src="/image/View_console/<%= console.view_image%>">
                 <div>
-                    <p>Recherche Console : <%= console.console_name%></p>
+                    <h2><%= console.console_name%></h2>
                     <small>Price Console: <%= console.console_price %> $</small>
                     <p>Stock Console: <%= console.console_stock %></p>
                     <br>

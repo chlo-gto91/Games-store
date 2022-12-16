@@ -4,7 +4,7 @@ pool = require("../Repository/db.js");
 module.exports = {
     getBlankConsole(){
         return {
-            "id_console": 0,
+            "ID_console": 0,
             "stockage": 0,
             "console_name": 0,
             "console_color": 0,
